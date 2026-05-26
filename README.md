@@ -1,21 +1,8 @@
-# CSI2000 Strategy Dashboard
+# 数字资产策略观察公开页
 
-Website: https://justinflex.github.io/csi2000-strategy-dashboard/
+本目录是公开发布版，只保留策略表现，不包含研究代码、因子细节、交易规则、数据路径、复现命令、持仓或订单明细。
 
-Public static website snapshot for strategy follow-up.
+公开文件：
 
-This repository intentionally contains only the sanitized published page. The
-research notebook, Python reproduction script, model implementation, Tushare
-cache, and backtest detail files are kept out of the public repository.
-
-Published content:
-
-- `docs/index.html`
-- `docs/.nojekyll`
-- `docs/data/dashboard.json`
-
-The page is data-driven. Future public updates should replace the sanitized
-`docs/data/dashboard.json` snapshot and push the site again; no research code or
-raw data is required in the public repository.
-
-Current snapshot uses market data through `2026-05-26`.
+- `index.html`
+- `assets/equity_curve.svg`
