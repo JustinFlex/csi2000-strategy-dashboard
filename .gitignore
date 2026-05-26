@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Local/generated data artifacts.
+data/
+outputs/
+strategy_dashboard.html
+scripts/
+requirements.txt
+
+# Local environment files.
+.env
+.venv/
+venv/
