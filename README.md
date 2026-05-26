@@ -12,5 +12,10 @@ Published content:
 
 - `docs/index.html`
 - `docs/.nojekyll`
+- `docs/data/dashboard.json`
+
+The page is data-driven. Future public updates should replace the sanitized
+`docs/data/dashboard.json` snapshot and push the site again; no research code or
+raw data is required in the public repository.
 
 Current snapshot uses market data through `2026-05-26`.

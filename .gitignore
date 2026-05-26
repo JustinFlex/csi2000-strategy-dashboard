@@ -4,6 +4,8 @@ __pycache__/
 
 # Local/generated data artifacts.
 data/
+!docs/data/
+!docs/data/dashboard.json
 outputs/
 strategy_dashboard.html
 scripts/

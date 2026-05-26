@@ -14,8 +14,9 @@
       --muted: #647181;
       --line: #dce3ec;
       --blue: #1268b3;
-      --green: #167d55;
+      --green: #0b7a75;
       --amber: #a66d05;
+      --danger: #b94a3b;
     }
     * { box-sizing: border-box; }
     body {
@@ -26,7 +27,7 @@
       letter-spacing: 0;
     }
     .shell {
-      max-width: 1100px;
+      max-width: 1120px;
       margin: 0 auto;
       padding: 24px;
     }
@@ -58,6 +59,10 @@
       color: var(--green);
       text-align: center;
       font-weight: 760;
+    }
+    .badge.skip {
+      color: var(--amber);
+      border-color: rgba(166, 109, 5, 0.35);
     }
     .kpis {
       display: grid;
@@ -96,9 +101,7 @@
       grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
       gap: 14px;
     }
-    .wide-panel {
-      margin-bottom: 14px;
-    }
+    .wide-panel { margin-bottom: 14px; }
     .panel {
       padding: 14px;
       overflow: hidden;
@@ -132,6 +135,78 @@
       line-height: 1.7;
       margin-top: 12px;
     }
+    .chart-shell {
+      position: relative;
+      width: 100%;
+      min-height: 320px;
+    }
+    .chart {
+      display: block;
+      width: 100%;
+      height: auto;
+      min-height: 300px;
+      touch-action: none;
+    }
+    .chart-title { font-size: 15px; font-weight: 720; fill: var(--ink); }
+    .chart-subtitle { font-size: 12px; fill: var(--muted); }
+    .axis-label { font-size: 11px; fill: var(--muted); }
+    .grid-line { stroke: #e7ebf0; stroke-width: 1; }
+    .axis-line { stroke: #bdc6d2; stroke-width: 1; }
+    .nav-line {
+      fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .legend-text { font-size: 12px; fill: var(--muted); }
+    .crosshair {
+      pointer-events: none;
+      display: none;
+    }
+    .crosshair line {
+      stroke: #7d8794;
+      stroke-width: 1;
+      stroke-dasharray: 4 4;
+    }
+    .crosshair circle {
+      stroke: #ffffff;
+      stroke-width: 2;
+    }
+    .tooltip {
+      position: absolute;
+      display: none;
+      min-width: 168px;
+      padding: 9px 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: 0 8px 24px rgba(23, 32, 43, 0.12);
+      color: var(--ink);
+      font-size: 12px;
+      line-height: 1.45;
+      pointer-events: none;
+      z-index: 2;
+    }
+    .tooltip strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 12px;
+    }
+    .tooltip-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      white-space: nowrap;
+    }
+    .swatch {
+      display: inline-block;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      margin-right: 6px;
+      vertical-align: 0;
+    }
     .status {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -153,26 +228,14 @@
       color: var(--muted);
       font-size: 12px;
     }
-    .chart {
-      display: block;
-      width: 100%;
-      height: auto;
-      min-height: 260px;
+    .load-error {
+      color: var(--danger);
+      font-size: 13px;
+      padding: 12px;
+      border: 1px solid rgba(185, 74, 59, 0.28);
+      border-radius: 8px;
+      background: rgba(185, 74, 59, 0.06);
     }
-    .chart-title { font-size: 15px; font-weight: 720; fill: var(--ink); }
-    .chart-subtitle { font-size: 12px; fill: var(--muted); }
-    .axis-label { font-size: 11px; fill: var(--muted); }
-    .grid-line { stroke: #e7ebf0; stroke-width: 1; }
-    .axis-line { stroke: #bdc6d2; stroke-width: 1; }
-    .nav-area { fill: rgba(18, 104, 179, 0.10); }
-    .nav-line {
-      fill: none;
-      stroke: var(--blue);
-      stroke-width: 2.5;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-    .end-dot { fill: var(--blue); stroke: white; stroke-width: 2; }
     footer {
       color: var(--muted);
       font-size: 12px;
@@ -188,6 +251,7 @@
       .badge { width: 100%; }
       h1 { font-size: 21px; }
       .status { grid-template-columns: 1fr; }
+      th, td { padding: 8px 7px; }
     }
   </style>
 </head>
@@ -196,62 +260,21 @@
     <header>
       <div>
         <h1>中证2000策略跟进面板</h1>
-        <div class="meta">公开脱敏快照 · 数据截至 2026-05-26 · 生成时间 2026-05-26 17:00 CST</div>
-        <div class="meta">本页面只展示跟进结果，不包含研究代码、模型实现、原始缓存或回测明细。</div>
+        <div class="meta" id="snapshotMeta">公开脱敏快照</div>
+        <div class="meta">本页面由脱敏 JSON 自动渲染，不包含研究代码、模型实现、原始缓存、持仓或交易明细。</div>
       </div>
-      <div class="badge">ACTIVE</div>
+      <div class="badge" id="actionBadge">...</div>
     </header>
 
-    <section class="kpis">
-      <div class="kpi">
-        <div class="kpi-label">Next Action</div>
-        <div class="kpi-value">TRADE</div>
-        <span>target 2026-05-29</span>
-      </div>
-      <div class="kpi">
-        <div class="kpi-label">Index Annualized</div>
-        <div class="kpi-value">14.42%</div>
-        <span>OOS weekly basis</span>
-      </div>
-      <div class="kpi">
-        <div class="kpi-label">Index Max Drawdown</div>
-        <div class="kpi-value">-4.53%</div>
-        <span>risk control snapshot</span>
-      </div>
-      <div class="kpi">
-        <div class="kpi-label">Index Calmar</div>
-        <div class="kpi-value">3.19</div>
-        <span>strategy result</span>
-      </div>
-      <div class="kpi">
-        <div class="kpi-label">Trade Rate</div>
-        <div class="kpi-value">42.13%</div>
-        <span>166 / 394 weeks</span>
-      </div>
-    </section>
+    <section class="kpis" id="kpis"></section>
 
     <section class="panel wide-panel">
       <h2>累计收益 / 净值曲线</h2>
-      <svg class="chart" viewBox="0 0 960 300" role="img" aria-label="CSI2000 strategy net value curve">
-        <text x="58" y="18" class="chart-title">策略净值走势</text>
-        <text x="58" y="36" class="chart-subtitle">OOS 周频净值，起点 1.00，最新 2.78，累计收益 +177.6%</text>
-        <line x1="58" x2="936" y1="32" y2="32" class="grid-line" />
-        <line x1="58" x2="936" y1="88.5" y2="88.5" class="grid-line" />
-        <line x1="58" x2="936" y1="145" y2="145" class="grid-line" />
-        <line x1="58" x2="936" y1="201.5" y2="201.5" class="grid-line" />
-        <line x1="58" x2="936" y1="258" y2="258" class="axis-line" />
-        <text x="48" y="36" class="axis-label" text-anchor="end">3.0</text>
-        <text x="48" y="92.5" class="axis-label" text-anchor="end">2.5</text>
-        <text x="48" y="149" class="axis-label" text-anchor="end">2.0</text>
-        <text x="48" y="205.5" class="axis-label" text-anchor="end">1.5</text>
-        <text x="48" y="262" class="axis-label" text-anchor="end">1.0</text>
-        <text x="58" y="286" class="axis-label">2018-03</text>
-        <text x="936" y="286" class="axis-label" text-anchor="end">2026-05</text>
-        <polygon class="nav-area" points="58,258 58.0,258.0 67.9,257.6 77.7,257.6 87.6,257.6 97.5,257.6 107.3,257.6 117.2,257.6 127.1,257.6 136.9,257.4 146.8,257.4 156.7,257.4 166.5,244.5 176.4,238.2 186.2,239.6 196.1,239.6 206.0,239.6 215.8,239.6 225.7,237.5 235.6,237.5 245.4,237.5 255.3,237.8 265.2,230.5 275.0,235.3 284.9,235.3 294.8,235.3 304.6,230.4 314.5,216.8 324.4,216.8 334.2,216.8 344.1,216.8 354.0,216.8 363.8,216.8 373.7,216.8 383.6,218.9 393.4,219.4 403.3,217.1 413.1,211.0 423.0,208.5 432.9,206.5 442.7,205.3 452.6,202.3 462.5,205.7 472.3,205.7 482.2,205.7 492.1,208.0 501.9,208.0 511.8,206.8 521.7,202.1 531.5,195.0 541.4,192.8 551.3,192.8 561.1,190.0 571.0,193.0 580.9,191.6 590.7,184.7 600.6,185.7 610.4,189.6 620.3,188.7 630.2,186.8 640.0,187.0 649.9,186.7 659.8,187.3 669.6,181.0 679.5,181.6 689.4,181.6 699.2,180.3 709.1,174.2 719.0,176.8 728.8,175.8 738.7,175.8 748.6,181.4 758.4,181.4 768.3,140.9 778.2,134.9 788.0,139.6 797.9,139.6 807.8,129.0 817.6,132.0 827.5,126.4 837.3,115.5 847.2,105.3 857.1,86.1 866.9,79.2 876.8,73.5 886.7,71.8 896.5,72.0 906.4,67.0 916.3,67.8 926.1,65.1 936.0,57.3 936,258" />
-        <polyline class="nav-line" points="58.0,258.0 67.9,257.6 77.7,257.6 87.6,257.6 97.5,257.6 107.3,257.6 117.2,257.6 127.1,257.6 136.9,257.4 146.8,257.4 156.7,257.4 166.5,244.5 176.4,238.2 186.2,239.6 196.1,239.6 206.0,239.6 215.8,239.6 225.7,237.5 235.6,237.5 245.4,237.5 255.3,237.8 265.2,230.5 275.0,235.3 284.9,235.3 294.8,235.3 304.6,230.4 314.5,216.8 324.4,216.8 334.2,216.8 344.1,216.8 354.0,216.8 363.8,216.8 373.7,216.8 383.6,218.9 393.4,219.4 403.3,217.1 413.1,211.0 423.0,208.5 432.9,206.5 442.7,205.3 452.6,202.3 462.5,205.7 472.3,205.7 482.2,205.7 492.1,208.0 501.9,208.0 511.8,206.8 521.7,202.1 531.5,195.0 541.4,192.8 551.3,192.8 561.1,190.0 571.0,193.0 580.9,191.6 590.7,184.7 600.6,185.7 610.4,189.6 620.3,188.7 630.2,186.8 640.0,187.0 649.9,186.7 659.8,187.3 669.6,181.0 679.5,181.6 689.4,181.6 699.2,180.3 709.1,174.2 719.0,176.8 728.8,175.8 738.7,175.8 748.6,181.4 758.4,181.4 768.3,140.9 778.2,134.9 788.0,139.6 797.9,139.6 807.8,129.0 817.6,132.0 827.5,126.4 837.3,115.5 847.2,105.3 857.1,86.1 866.9,79.2 876.8,73.5 886.7,71.8 896.5,72.0 906.4,67.0 916.3,67.8 926.1,65.1 936.0,57.3" />
-        <circle class="end-dot" cx="936" cy="57.3" r="4" />
-      </svg>
-      <div class="note">图中只展示聚合后的净值路径，不展示持仓、交易明细、信号特征或模型参数。</div>
+      <div class="chart-shell" id="chartShell">
+        <svg class="chart" id="navChart" viewBox="0 0 960 340" role="img" aria-label="theoretical and tradable ETF net value curves"></svg>
+        <div class="tooltip" id="chartTooltip"></div>
+      </div>
+      <div class="note">横坐标按月份展示，十字光标按月吸附。图中只展示聚合后的净值路径，不展示持仓、交易明细、信号特征或模型参数。</div>
     </section>
 
     <section class="grid">
@@ -261,60 +284,291 @@
           <thead>
             <tr>
               <th>Target</th>
+              <th>Type</th>
               <th>AnnReturn</th>
               <th>MaxDD</th>
               <th>Calmar</th>
-              <th>Sharpe</th>
-              <th>Weeks</th>
+              <th>NAV</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>CSI2000 Index</td>
-              <td>14.42%</td>
-              <td>-4.53%</td>
-              <td>3.19</td>
-              <td>1.80</td>
-              <td>394</td>
-            </tr>
-            <tr>
-              <td>CSI2000 ETF</td>
-              <td>23.13%</td>
-              <td>-5.47%</td>
-              <td>4.23</td>
-              <td>2.26</td>
-              <td>126</td>
-            </tr>
-          </tbody>
+          <tbody id="performanceRows"></tbody>
         </table>
         <div class="note">指标为当前静态快照，用于跟进与展示，不构成投资建议。</div>
       </div>
 
       <div class="panel">
         <h2>Follow-up Status</h2>
-        <div class="status">
-          <div class="status-item">
-            <span>Decision Date</span>
-            <strong>2026-05-26</strong>
-          </div>
-          <div class="status-item">
-            <span>Next Checkpoint</span>
-            <strong>2026-05-29</strong>
-          </div>
-          <div class="status-item">
-            <span>Signal State</span>
-            <strong>Active</strong>
-          </div>
-          <div class="status-item">
-            <span>Public Scope</span>
-            <strong>Sanitized</strong>
-          </div>
-        </div>
-        <div class="note">核心代码、参数搜索、特征构造、训练过程和明细数据均未公开。</div>
+        <div class="status" id="statusGrid"></div>
+        <div class="note">公开仓库只包含页面和脱敏数据；后续更新只需要重新生成 `docs/data/dashboard.json` 并推送。</div>
       </div>
     </section>
 
-    <footer>Static dashboard snapshot. Research implementation remains private.</footer>
+    <footer>Static website. Public data is sanitized aggregate output.</footer>
   </main>
+
+  <script>
+    const SVG_NS = "http://www.w3.org/2000/svg";
+    const WIDTH = 960;
+    const HEIGHT = 340;
+    const PAD = { left: 62, right: 28, top: 52, bottom: 54 };
+
+    const $ = (id) => document.getElementById(id);
+
+    function createSvg(tag, attrs = {}) {
+      const el = document.createElementNS(SVG_NS, tag);
+      Object.entries(attrs).forEach(([key, value]) => el.setAttribute(key, value));
+      return el;
+    }
+
+    function monthToDate(month) {
+      const [year, mon] = month.split("-").map(Number);
+      return new Date(Date.UTC(year, mon - 1, 1));
+    }
+
+    function formatMonthFromTs(ts) {
+      const d = new Date(ts);
+      const y = d.getUTCFullYear();
+      const m = String(d.getUTCMonth() + 1).padStart(2, "0");
+      return `${y}-${m}`;
+    }
+
+    function roundUp(value, step) {
+      return Math.ceil(value / step) * step;
+    }
+
+    function renderKpis(kpis) {
+      $("kpis").innerHTML = kpis.map((item) => `
+        <div class="kpi">
+          <div class="kpi-label">${item.label}</div>
+          <div class="kpi-value">${item.value}</div>
+          <span>${item.sub}</span>
+        </div>
+      `).join("");
+    }
+
+    function renderPerformance(rows) {
+      $("performanceRows").innerHTML = rows.map((row) => `
+        <tr>
+          <td>${row.target}</td>
+          <td>${row.type}</td>
+          <td>${row.ann_return}</td>
+          <td>${row.max_dd}</td>
+          <td>${row.calmar}</td>
+          <td>${row.latest_nav}</td>
+        </tr>
+      `).join("");
+    }
+
+    function renderStatus(decision) {
+      $("statusGrid").innerHTML = [
+        ["Decision Date", decision.date],
+        ["Next Checkpoint", decision.next_checkpoint],
+        ["Signal State", decision.action === "TRADE" ? "Active" : "Skip"],
+        ["Public Scope", "Sanitized"],
+      ].map(([label, value]) => `
+        <div class="status-item">
+          <span>${label}</span>
+          <strong>${value}</strong>
+        </div>
+      `).join("");
+    }
+
+    function normalizeSeries(series) {
+      return series.map((s) => ({
+        ...s,
+        points: s.points.map((p) => ({
+          month: p.month,
+          t: monthToDate(p.month).getTime(),
+          nav: Number(p.nav),
+        })),
+      }));
+    }
+
+    function drawChart(rawSeries) {
+      const series = normalizeSeries(rawSeries);
+      const allPoints = series.flatMap((s) => s.points);
+      const svg = $("navChart");
+      svg.textContent = "";
+
+      if (!allPoints.length) {
+        svg.appendChild(createSvg("text", { x: 62, y: 60, class: "axis-label" })).textContent = "No data";
+        return;
+      }
+
+      const minT = Math.min(...allPoints.map((p) => p.t));
+      const maxT = Math.max(...allPoints.map((p) => p.t));
+      const maxY = roundUp(Math.max(...allPoints.map((p) => p.nav)) + 0.05, 0.2);
+      const minY = Math.min(0.9, Math.floor(Math.min(...allPoints.map((p) => p.nav)) * 10) / 10);
+      const plotW = WIDTH - PAD.left - PAD.right;
+      const plotH = HEIGHT - PAD.top - PAD.bottom;
+      const xScale = (t) => PAD.left + ((t - minT) / (maxT - minT || 1)) * plotW;
+      const yScale = (v) => PAD.top + ((maxY - v) / (maxY - minY || 1)) * plotH;
+
+      svg.appendChild(createSvg("text", { x: PAD.left, y: 20, class: "chart-title" })).textContent = "理论净值 vs ETF可交易净值";
+      svg.appendChild(createSvg("text", { x: PAD.left, y: 39, class: "chart-subtitle" })).textContent = "月度聚合净值，鼠标悬停查看月份读数";
+
+      const yTicks = 5;
+      for (let i = 0; i < yTicks; i += 1) {
+        const val = minY + ((maxY - minY) * i) / (yTicks - 1);
+        const y = yScale(val);
+        svg.appendChild(createSvg("line", { x1: PAD.left, x2: WIDTH - PAD.right, y1: y, y2: y, class: i === 0 ? "axis-line" : "grid-line" }));
+        const label = createSvg("text", { x: PAD.left - 10, y: y + 4, class: "axis-label", "text-anchor": "end" });
+        label.textContent = val.toFixed(1);
+        svg.appendChild(label);
+      }
+
+      const xTickCount = 7;
+      for (let i = 0; i < xTickCount; i += 1) {
+        const t = minT + ((maxT - minT) * i) / (xTickCount - 1);
+        const x = xScale(t);
+        svg.appendChild(createSvg("line", { x1: x, x2: x, y1: PAD.top, y2: HEIGHT - PAD.bottom, class: "grid-line" }));
+        const label = createSvg("text", {
+          x,
+          y: HEIGHT - 18,
+          class: "axis-label",
+          "text-anchor": i === 0 ? "start" : i === xTickCount - 1 ? "end" : "middle",
+        });
+        label.textContent = formatMonthFromTs(t);
+        svg.appendChild(label);
+      }
+
+      let legendX = PAD.left;
+      series.forEach((s) => {
+        const pts = s.points.map((p) => `${xScale(p.t).toFixed(1)},${yScale(p.nav).toFixed(1)}`).join(" ");
+        svg.appendChild(createSvg("polyline", { points: pts, class: "nav-line", stroke: s.color }));
+        const last = s.points[s.points.length - 1];
+        svg.appendChild(createSvg("circle", { cx: xScale(last.t), cy: yScale(last.nav), r: 4, fill: s.color, stroke: "#fff", "stroke-width": 2 }));
+        svg.appendChild(createSvg("rect", { x: legendX, y: HEIGHT - 39, width: 10, height: 10, rx: 2, fill: s.color }));
+        const text = createSvg("text", { x: legendX + 16, y: HEIGHT - 30, class: "legend-text" });
+        text.textContent = `${s.label} 最新 ${s.latest_nav}`;
+        svg.appendChild(text);
+        legendX += 205;
+      });
+
+      const monthIndex = new Map();
+      allPoints.forEach((p) => monthIndex.set(p.month, p.t));
+      const months = [...monthIndex.entries()].sort((a, b) => a[1] - b[1]);
+
+      const crosshair = createSvg("g", { class: "crosshair" });
+      const vLine = createSvg("line", { x1: 0, x2: 0, y1: PAD.top, y2: HEIGHT - PAD.bottom });
+      const hLine = createSvg("line", { x1: PAD.left, x2: WIDTH - PAD.right, y1: 0, y2: 0 });
+      crosshair.appendChild(vLine);
+      crosshair.appendChild(hLine);
+      const pointDots = series.map((s) => {
+        const dot = createSvg("circle", { cx: 0, cy: 0, r: 4, fill: s.color });
+        dot.style.display = "none";
+        crosshair.appendChild(dot);
+        return dot;
+      });
+      svg.appendChild(crosshair);
+
+      const overlay = createSvg("rect", {
+        x: PAD.left,
+        y: PAD.top,
+        width: plotW,
+        height: plotH,
+        fill: "transparent",
+        style: "cursor: crosshair;",
+      });
+      svg.appendChild(overlay);
+
+      const tooltip = $("chartTooltip");
+      const shell = $("chartShell");
+
+      function nearestMonth(targetT) {
+        let best = months[0];
+        for (const item of months) {
+          if (Math.abs(item[1] - targetT) < Math.abs(best[1] - targetT)) best = item;
+        }
+        return best;
+      }
+
+      function pointAtMonth(s, month) {
+        return s.points.find((p) => p.month === month);
+      }
+
+      function pointerToSvg(evt) {
+        const rect = svg.getBoundingClientRect();
+        const clientX = evt.touches ? evt.touches[0].clientX : evt.clientX;
+        const clientY = evt.touches ? evt.touches[0].clientY : evt.clientY;
+        return {
+          x: ((clientX - rect.left) / rect.width) * WIDTH,
+          y: ((clientY - rect.top) / rect.height) * HEIGHT,
+          pageX: clientX - shell.getBoundingClientRect().left,
+          pageY: clientY - shell.getBoundingClientRect().top,
+        };
+      }
+
+      function showCrosshair(evt) {
+        const pos = pointerToSvg(evt);
+        const x = Math.max(PAD.left, Math.min(WIDTH - PAD.right, pos.x));
+        const y = Math.max(PAD.top, Math.min(HEIGHT - PAD.bottom, pos.y));
+        const targetT = minT + ((x - PAD.left) / plotW) * (maxT - minT);
+        const [month, snappedT] = nearestMonth(targetT);
+        const snappedX = xScale(snappedT);
+
+        crosshair.style.display = "block";
+        vLine.setAttribute("x1", snappedX);
+        vLine.setAttribute("x2", snappedX);
+        hLine.setAttribute("y1", y);
+        hLine.setAttribute("y2", y);
+
+        const rows = series.map((s, i) => {
+          const p = pointAtMonth(s, month);
+          if (p) {
+            pointDots[i].style.display = "block";
+            pointDots[i].setAttribute("cx", snappedX);
+            pointDots[i].setAttribute("cy", yScale(p.nav));
+          } else {
+            pointDots[i].style.display = "none";
+          }
+          const value = p ? p.nav.toFixed(2) : "--";
+          return `<div class="tooltip-row"><span><i class="swatch" style="background:${s.color}"></i>${s.label}</span><b>${value}</b></div>`;
+        }).join("");
+
+        tooltip.innerHTML = `<strong>${month}</strong>${rows}`;
+        tooltip.style.display = "block";
+        const left = Math.min(Math.max(pos.pageX + 12, 8), shell.clientWidth - tooltip.offsetWidth - 8);
+        const top = Math.min(Math.max(pos.pageY + 12, 8), shell.clientHeight - tooltip.offsetHeight - 8);
+        tooltip.style.left = `${left}px`;
+        tooltip.style.top = `${top}px`;
+      }
+
+      function hideCrosshair() {
+        crosshair.style.display = "none";
+        tooltip.style.display = "none";
+      }
+
+      overlay.addEventListener("mousemove", showCrosshair);
+      overlay.addEventListener("mouseleave", hideCrosshair);
+      overlay.addEventListener("touchmove", (evt) => {
+        evt.preventDefault();
+        showCrosshair(evt);
+      }, { passive: false });
+      overlay.addEventListener("touchend", hideCrosshair);
+    }
+
+    function renderDashboard(data) {
+      $("snapshotMeta").textContent = `公开脱敏快照 · 数据截至 ${data.as_of} · 生成时间 ${data.generated_at}`;
+      const badge = $("actionBadge");
+      badge.textContent = data.decision.action;
+      badge.classList.toggle("skip", data.decision.action !== "TRADE");
+      renderKpis(data.kpis);
+      renderPerformance(data.performance);
+      renderStatus(data.decision);
+      drawChart(data.series);
+    }
+
+    fetch("data/dashboard.json", { cache: "no-store" })
+      .then((res) => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.json();
+      })
+      .then(renderDashboard)
+      .catch((err) => {
+        $("chartShell").innerHTML = `<div class="load-error">数据加载失败：${err.message}</div>`;
+        $("actionBadge").textContent = "DATA";
+      });
+  </script>
 </body>
 </html>
