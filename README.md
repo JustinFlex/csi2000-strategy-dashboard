@@ -1,6 +1,8 @@
 # CSI2000 Strategy Dashboard
 
-Public static dashboard snapshot for strategy follow-up.
+Website: https://justinflex.github.io/csi2000-strategy-dashboard/
+
+Public static website snapshot for strategy follow-up.
 
 This repository intentionally contains only the sanitized published page. The
 research notebook, Python reproduction script, model implementation, Tushare
