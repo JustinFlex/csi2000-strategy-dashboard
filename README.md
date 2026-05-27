@@ -1,5 +1,7 @@
 # CSI2000 Strategy Dashboard
 
+Website: https://quant002.gofintech.cn/
+
 Vercel serves the static dashboard from the `docs/` output directory.
 
 Public static website snapshot for strategy follow-up.
@@ -12,6 +14,7 @@ Published content:
 
 - `docs/index.html`
 - `docs/data/dashboard.json`
+- `docs/favicon.svg`
 - `vercel.json`
 
 The page is data-driven. Future public updates should replace the sanitized
