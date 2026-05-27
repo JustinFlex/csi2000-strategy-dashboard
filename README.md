@@ -1,6 +1,6 @@
 # CSI2000 Strategy Dashboard
 
-Website: https://justinflex.github.io/csi2000-strategy-dashboard/
+Vercel serves the static dashboard from the `docs/` output directory.
 
 Public static website snapshot for strategy follow-up.
 
@@ -11,7 +11,6 @@ cache, and backtest detail files are kept out of the public repository.
 Published content:
 
 - `docs/index.html`
-- `docs/.nojekyll`
 - `docs/data/dashboard.json`
 
 The page is data-driven. Future public updates should replace the sanitized
