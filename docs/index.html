@@ -8,87 +8,145 @@
   <style>
     :root {
       color-scheme: light;
-      --bg: #f5f7fa;
+      --bg: #f4f7fb;
       --panel: #ffffff;
-      --ink: #17202b;
-      --muted: #647181;
-      --line: #dce3ec;
-      --blue: #1268b3;
-      --green: #0b7a75;
-      --amber: #a66d05;
-      --danger: #b94a3b;
+      --panel-soft: #f8fafc;
+      --ink: #172033;
+      --muted: #667085;
+      --line: #dde5ef;
+      --line-soft: #eef2f7;
+      --blue: #155f9f;
+      --blue-soft: #e8f2fb;
+      --green: #0b806f;
+      --green-soft: #e7f6f2;
+      --amber: #b26a00;
+      --amber-soft: #fff4dc;
+      --red: #b0443d;
+      --shadow: 0 18px 45px rgba(21, 39, 65, 0.10);
+      --shadow-soft: 0 8px 24px rgba(21, 39, 65, 0.07);
+      --hero: #122238;
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      background: var(--bg);
+      background:
+        linear-gradient(180deg, var(--hero) 0 268px, var(--bg) 268px 100%);
       color: var(--ink);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", Arial, sans-serif;
       letter-spacing: 0;
+      min-width: 320px;
     }
     .shell {
-      max-width: 1120px;
+      max-width: 1180px;
       margin: 0 auto;
-      padding: 24px;
+      padding: 26px 24px 34px;
     }
-    header {
+    .hero {
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       justify-content: space-between;
-      gap: 16px;
-      padding-bottom: 18px;
-      border-bottom: 1px solid var(--line);
+      gap: 28px;
+      min-height: 178px;
+      color: #ffffff;
+    }
+    .hero-copy { max-width: 780px; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 3px 9px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      color: #c7dbef;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0;
+      margin-bottom: 13px;
     }
     h1 {
-      margin: 0 0 8px;
-      font-size: 25px;
-      line-height: 1.2;
-      font-weight: 760;
+      margin: 0 0 12px;
+      font-size: 32px;
+      line-height: 1.16;
+      font-weight: 800;
+      letter-spacing: 0;
     }
     .meta {
-      color: var(--muted);
-      font-size: 13px;
+      color: #b9c8d8;
+      font-size: 14px;
       line-height: 1.6;
+      max-width: 820px;
+    }
+    .hero-side {
+      display: grid;
+      justify-items: end;
+      gap: 8px;
+      min-width: 180px;
+    }
+    .badge-label {
+      color: #a8bbcf;
+      font-size: 12px;
+      font-weight: 700;
     }
     .badge {
-      min-width: 116px;
-      padding: 9px 13px;
-      border: 1px solid rgba(22, 125, 85, 0.35);
+      min-width: 142px;
+      padding: 13px 18px;
+      border: 1px solid rgba(58, 201, 173, 0.36);
       border-radius: 8px;
-      background: var(--panel);
-      color: var(--green);
+      background: rgba(231, 246, 242, 0.12);
+      color: #52d4bd;
       text-align: center;
-      font-weight: 760;
+      font-size: 18px;
+      font-weight: 800;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.10);
     }
     .badge.skip {
-      color: var(--amber);
-      border-color: rgba(166, 109, 5, 0.35);
+      color: #f4bc5e;
+      border-color: rgba(244, 188, 94, 0.38);
+      background: rgba(255, 244, 220, 0.10);
     }
     .kpis {
       display: grid;
       grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 10px;
-      margin: 18px 0;
+      gap: 12px;
+      margin: 4px 0 16px;
     }
     .kpi, .panel {
       background: var(--panel);
       border: 1px solid var(--line);
       border-radius: 8px;
+      box-shadow: var(--shadow-soft);
     }
     .kpi {
-      min-height: 92px;
-      padding: 12px;
+      position: relative;
+      min-height: 112px;
+      padding: 15px;
+      overflow: hidden;
+    }
+    .kpi::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 4px;
+      background: var(--blue);
+    }
+    .kpi.is-action::before { background: var(--green); }
+    .kpi.is-risk::before { background: var(--amber); }
+    .kpi.is-action {
+      background: linear-gradient(180deg, #ffffff 0%, var(--green-soft) 160%);
     }
     .kpi-label {
       color: var(--muted);
       font-size: 12px;
-      margin-bottom: 8px;
+      font-weight: 700;
+      margin-bottom: 10px;
     }
     .kpi-value {
-      font-size: 23px;
+      font-size: 25px;
       line-height: 1.15;
-      font-weight: 760;
+      font-weight: 800;
       white-space: nowrap;
+      color: var(--ink);
     }
     .kpi span {
       display: block;
@@ -99,36 +157,76 @@
     .grid {
       display: grid;
       grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-      gap: 14px;
+      gap: 16px;
     }
-    .wide-panel { margin-bottom: 14px; }
+    .wide-panel {
+      margin-bottom: 16px;
+      box-shadow: var(--shadow);
+    }
     .panel {
-      padding: 14px;
+      padding: 18px;
       overflow: hidden;
     }
+    .section-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
     .panel h2 {
-      margin: 0 0 12px;
-      font-size: 16px;
+      margin: 0;
+      font-size: 17px;
       line-height: 1.3;
-      font-weight: 720;
+      font-weight: 800;
+    }
+    .section-kicker {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+      margin-top: 4px;
+    }
+    .table-scroll {
+      width: 100%;
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 8px;
     }
     table {
       width: 100%;
       border-collapse: collapse;
       font-size: 13px;
+      background: #ffffff;
     }
     th, td {
-      padding: 9px 10px;
-      border-bottom: 1px solid #edf1f5;
+      padding: 12px 12px;
+      border-bottom: 1px solid var(--line-soft);
       text-align: right;
       white-space: nowrap;
     }
     th {
-      color: #4d5968;
-      background: #f9fafc;
-      font-weight: 680;
+      color: #475467;
+      background: var(--panel-soft);
+      font-size: 12px;
+      font-weight: 800;
     }
     th:first-child, td:first-child { text-align: left; }
+    tbody tr:last-child td { border-bottom: 0; }
+    tbody tr:hover td { background: #fbfdff; }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 22px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: var(--blue-soft);
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .metric-pos { color: var(--green); font-weight: 800; }
+    .metric-risk { color: var(--red); font-weight: 800; }
     .note {
       color: var(--muted);
       font-size: 12px;
@@ -138,27 +236,32 @@
     .chart-shell {
       position: relative;
       width: 100%;
-      min-height: 320px;
+      min-height: 342px;
+      border: 1px solid var(--line-soft);
+      border-radius: 8px;
+      background: linear-gradient(180deg, #fbfdff 0%, #ffffff 100%);
+      overflow: hidden;
     }
     .chart {
       display: block;
       width: 100%;
       height: auto;
-      min-height: 300px;
+      min-height: 320px;
       touch-action: none;
     }
-    .chart-title { font-size: 15px; font-weight: 720; fill: var(--ink); }
+    .plot-bg { fill: rgba(21, 95, 159, 0.035); }
+    .chart-title { font-size: 16px; font-weight: 800; fill: var(--ink); }
     .chart-subtitle { font-size: 12px; fill: var(--muted); }
     .axis-label { font-size: 11px; fill: var(--muted); }
-    .grid-line { stroke: #e7ebf0; stroke-width: 1; }
-    .axis-line { stroke: #bdc6d2; stroke-width: 1; }
+    .grid-line { stroke: #e4eaf2; stroke-width: 1; }
+    .axis-line { stroke: #b8c4d2; stroke-width: 1; }
     .nav-line {
       fill: none;
-      stroke-width: 2.5;
+      stroke-width: 3;
       stroke-linecap: round;
       stroke-linejoin: round;
     }
-    .legend-text { font-size: 12px; fill: var(--muted); }
+    .legend-text { font-size: 12px; font-weight: 700; fill: #475467; }
     .crosshair {
       pointer-events: none;
       display: none;
@@ -176,11 +279,11 @@
       position: absolute;
       display: none;
       min-width: 168px;
-      padding: 9px 10px;
+      padding: 10px 11px;
       border: 1px solid var(--line);
       border-radius: 8px;
       background: rgba(255, 255, 255, 0.96);
-      box-shadow: 0 8px 24px rgba(23, 32, 43, 0.12);
+      box-shadow: var(--shadow);
       color: var(--ink);
       font-size: 12px;
       line-height: 1.45;
@@ -209,27 +312,37 @@
     }
     .status {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
+      gap: 0;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      background: #ffffff;
     }
     .status-item {
-      border: 1px solid #edf1f5;
-      border-radius: 8px;
-      padding: 12px;
-      min-height: 78px;
-      background: #fbfcfe;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 13px 14px;
+      min-height: 54px;
+      border-bottom: 1px solid var(--line-soft);
+    }
+    .status-item:last-child {
+      border-bottom: 0;
     }
     .status-item strong {
       display: block;
-      font-size: 18px;
-      margin-top: 5px;
+      font-size: 15px;
+      font-weight: 800;
+      text-align: right;
     }
     .status-item span {
       color: var(--muted);
       font-size: 12px;
+      font-weight: 700;
     }
     .load-error {
-      color: var(--danger);
+      color: var(--red);
       font-size: 13px;
       padding: 12px;
       border: 1px solid rgba(185, 74, 59, 0.28);
@@ -239,37 +352,75 @@
     footer {
       color: var(--muted);
       font-size: 12px;
-      padding: 14px 0 0;
+      padding: 18px 0 0;
+    }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.95em;
     }
     @media (max-width: 900px) {
       .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .grid { grid-template-columns: 1fr; }
+      .hero {
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        gap: 18px;
+      }
+      .hero-side {
+        justify-items: start;
+        min-width: 0;
+      }
     }
     @media (max-width: 560px) {
-      .shell { padding: 15px; }
-      header { flex-direction: column; }
+      body {
+        background: linear-gradient(180deg, var(--hero) 0 338px, var(--bg) 338px 100%);
+      }
+      .shell { padding: 18px 14px 26px; }
+      .hero { min-height: 246px; }
+      h1 { font-size: 25px; }
+      .meta { font-size: 13px; }
       .badge { width: 100%; }
-      h1 { font-size: 21px; }
-      .status { grid-template-columns: 1fr; }
-      th, td { padding: 8px 7px; }
+      .kpis { grid-template-columns: 1fr; }
+      .kpi { min-height: 96px; }
+      .panel { padding: 14px; }
+      .section-head { flex-direction: column; }
+      th, td { padding: 10px 9px; }
+      .chart-shell { min-height: 288px; }
+      .chart { min-height: 270px; }
+      .status-item {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .status-item strong { text-align: left; }
     }
   </style>
 </head>
 <body>
   <main class="shell">
-    <header>
-      <div>
+    <header class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">PUBLIC SANITIZED SNAPSHOT</div>
         <h1>中证2000策略跟进面板</h1>
         <div class="meta" id="snapshotMeta">公开脱敏快照</div>
         <div class="meta">本页面由脱敏 JSON 自动渲染，不包含研究代码、模型实现、原始缓存、持仓或交易明细。</div>
       </div>
-      <div class="badge" id="actionBadge">...</div>
+      <div class="hero-side">
+        <div class="badge-label">Next Action</div>
+        <div class="badge" id="actionBadge">...</div>
+      </div>
     </header>
 
     <section class="kpis" id="kpis"></section>
 
     <section class="panel wide-panel">
-      <h2>累计收益 / 净值曲线</h2>
+      <div class="section-head">
+        <div>
+          <h2>累计收益 / 净值曲线</h2>
+          <div class="section-kicker">聚合后的月度净值路径，仅用于公开跟进展示。</div>
+        </div>
+      </div>
       <div class="chart-shell" id="chartShell">
         <svg class="chart" id="navChart" viewBox="0 0 960 340" role="img" aria-label="theoretical and tradable ETF net value curves"></svg>
         <div class="tooltip" id="chartTooltip"></div>
@@ -279,25 +430,37 @@
 
     <section class="grid">
       <div class="panel">
-        <h2>Performance Snapshot</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Target</th>
-              <th>Type</th>
-              <th>AnnReturn</th>
-              <th>MaxDD</th>
-              <th>Calmar</th>
-              <th>NAV</th>
-            </tr>
-          </thead>
-          <tbody id="performanceRows"></tbody>
-        </table>
+        <div class="section-head">
+          <div>
+            <h2>Performance Snapshot</h2>
+            <div class="section-kicker">核心指标概览</div>
+          </div>
+        </div>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Target</th>
+                <th>Type</th>
+                <th>AnnReturn</th>
+                <th>MaxDD</th>
+                <th>Calmar</th>
+                <th>NAV</th>
+              </tr>
+            </thead>
+            <tbody id="performanceRows"></tbody>
+          </table>
+        </div>
         <div class="note">指标为当前静态快照，用于跟进与展示，不构成投资建议。</div>
       </div>
 
       <div class="panel">
-        <h2>Follow-up Status</h2>
+        <div class="section-head">
+          <div>
+            <h2>Follow-up Status</h2>
+            <div class="section-kicker">当前公开快照状态</div>
+          </div>
+        </div>
         <div class="status" id="statusGrid"></div>
         <div class="note">公开仓库只包含页面和脱敏数据；后续更新只需要重新生成 `docs/data/dashboard.json` 并推送。</div>
       </div>
@@ -337,24 +500,31 @@
     }
 
     function renderKpis(kpis) {
-      $("kpis").innerHTML = kpis.map((item) => `
-        <div class="kpi">
+      $("kpis").innerHTML = kpis.map((item, index) => {
+        const classes = [
+          "kpi",
+          index === 0 ? "is-action" : "",
+          item.label.includes("Calmar") ? "is-risk" : "",
+        ].filter(Boolean).join(" ");
+        return `
+        <div class="${classes}">
           <div class="kpi-label">${item.label}</div>
           <div class="kpi-value">${item.value}</div>
           <span>${item.sub}</span>
         </div>
-      `).join("");
+      `;
+      }).join("");
     }
 
     function renderPerformance(rows) {
       $("performanceRows").innerHTML = rows.map((row) => `
         <tr>
           <td>${row.target}</td>
-          <td>${row.type}</td>
-          <td>${row.ann_return}</td>
-          <td>${row.max_dd}</td>
-          <td>${row.calmar}</td>
-          <td>${row.latest_nav}</td>
+          <td><span class="chip">${row.type}</span></td>
+          <td class="metric-pos">${row.ann_return}</td>
+          <td class="metric-risk">${row.max_dd}</td>
+          <td><strong>${row.calmar}</strong></td>
+          <td><strong>${row.latest_nav}</strong></td>
         </tr>
       `).join("");
     }
@@ -406,6 +576,7 @@
 
       svg.appendChild(createSvg("text", { x: PAD.left, y: 20, class: "chart-title" })).textContent = "理论净值 vs ETF可交易净值";
       svg.appendChild(createSvg("text", { x: PAD.left, y: 39, class: "chart-subtitle" })).textContent = "月度聚合净值，鼠标悬停查看月份读数";
+      svg.appendChild(createSvg("rect", { x: PAD.left, y: PAD.top, width: plotW, height: plotH, class: "plot-bg" }));
 
       const yTicks = 5;
       for (let i = 0; i < yTicks; i += 1) {
