@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>中证2000策略观察 | GoFinTech Quant</title>
-  <meta name="description" content="中证2000策略公开观察页，展示本期信号、净值曲线和核心表现指标。" />
+  <title>中证2000组合策略观察 | GoFinTech Quant</title>
+  <meta name="description" content="中证2000组合策略公开观察页，展示组合信号、净值、K线和历史交易记录。" />
   <meta name="theme-color" content="#0b806f" />
-  <meta property="og:title" content="中证2000策略观察" />
-  <meta property="og:description" content="跟踪本期信号、净值曲线和核心表现指标。" />
+  <meta property="og:title" content="中证2000组合策略观察" />
+  <meta property="og:description" content="跟踪组合策略净值、中证2000日线和历史买卖点。" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://quant002.gofintech.cn/" />
   <link rel="canonical" href="https://quant002.gofintech.cn/" />
@@ -23,41 +23,35 @@
       --line: #dde5ef;
       --line-soft: #eef2f7;
       --blue: #255e91;
-      --blue-soft: #eaf3fb;
       --green: #0b806f;
-      --green-soft: #e7f6f2;
-      --amber: #b26a00;
-      --amber-soft: #fff4dc;
       --red: #b0443d;
-      --shadow: 0 18px 45px rgba(21, 39, 65, 0.10);
-      --shadow-soft: 0 8px 24px rgba(21, 39, 65, 0.07);
+      --amber: #b26a00;
+      --violet: #7356a8;
+      --shadow: 0 12px 34px rgba(21, 39, 65, 0.10);
       --hero: #f8fbff;
-      --hero-line: #d8e7f2;
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      background:
-        linear-gradient(180deg, var(--hero) 0 292px, var(--bg) 292px 100%);
+      min-width: 320px;
+      background: linear-gradient(180deg, var(--hero) 0 292px, var(--bg) 292px 100%);
       color: var(--ink);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", Arial, sans-serif;
       letter-spacing: 0;
-      min-width: 320px;
     }
     .shell {
-      max-width: 1180px;
+      max-width: 1240px;
       margin: 0 auto;
       padding: 26px 24px 34px;
     }
     .hero {
       display: flex;
+      min-height: 202px;
       align-items: center;
       justify-content: space-between;
       gap: 28px;
-      min-height: 202px;
-      color: var(--ink);
     }
-    .hero-copy { max-width: 780px; }
+    .hero-copy { max-width: 820px; }
     .brand-line {
       display: flex;
       align-items: center;
@@ -66,9 +60,9 @@
     }
     .brand-mark {
       display: inline-grid;
-      place-items: center;
       width: 32px;
       height: 32px;
+      place-items: center;
       border-radius: 8px;
       background: linear-gradient(135deg, var(--green), var(--blue));
       color: #ffffff;
@@ -83,16 +77,15 @@
     }
     .eyebrow {
       display: inline-flex;
-      align-items: center;
       min-height: 24px;
+      align-items: center;
       padding: 3px 10px;
       border: 1px solid rgba(11, 128, 111, 0.18);
       border-radius: 999px;
-      background: var(--green-soft);
+      background: #e7f6f2;
       color: var(--green);
       font-size: 11px;
       font-weight: 800;
-      letter-spacing: 0;
     }
     h1 {
       margin: 0 0 12px;
@@ -102,16 +95,16 @@
       letter-spacing: 0;
     }
     .meta {
+      max-width: 860px;
       color: #526274;
       font-size: 14px;
       line-height: 1.6;
-      max-width: 820px;
     }
     .hero-side {
       display: grid;
+      min-width: 180px;
       justify-items: end;
       gap: 8px;
-      min-width: 180px;
     }
     .badge-label {
       color: #6b7787;
@@ -128,12 +121,11 @@
       text-align: center;
       font-size: 18px;
       font-weight: 800;
-      box-shadow: var(--shadow-soft);
+      box-shadow: var(--shadow);
     }
     .badge.skip {
       color: var(--amber);
       border-color: rgba(178, 106, 0, 0.25);
-      background: #ffffff;
     }
     .kpis {
       display: grid;
@@ -142,16 +134,16 @@
       margin: 4px 0 16px;
     }
     .kpi, .panel {
-      background: var(--panel);
       border: 1px solid var(--line);
       border-radius: 8px;
-      box-shadow: var(--shadow-soft);
+      background: var(--panel);
+      box-shadow: 0 8px 24px rgba(21, 39, 65, 0.07);
     }
     .kpi {
       position: relative;
       min-height: 112px;
-      padding: 15px;
       overflow: hidden;
+      padding: 15px;
     }
     .kpi::before {
       content: "";
@@ -162,40 +154,38 @@
     }
     .kpi.is-action::before { background: var(--green); }
     .kpi.is-risk::before { background: var(--amber); }
-    .kpi.is-action {
-      background: linear-gradient(180deg, #ffffff 0%, var(--green-soft) 160%);
-    }
     .kpi-label {
+      margin-bottom: 10px;
       color: var(--muted);
       font-size: 12px;
       font-weight: 700;
-      margin-bottom: 10px;
     }
     .kpi-value {
+      color: var(--ink);
       font-size: 25px;
       line-height: 1.15;
       font-weight: 800;
       white-space: nowrap;
-      color: var(--ink);
     }
     .kpi span {
       display: block;
-      color: var(--muted);
       margin-top: 7px;
+      color: var(--muted);
       font-size: 12px;
     }
-    .grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-      gap: 16px;
+    .panel {
+      padding: 18px;
+      overflow: hidden;
     }
     .wide-panel {
       margin-bottom: 16px;
       box-shadow: var(--shadow);
     }
-    .panel {
-      padding: 18px;
-      overflow: hidden;
+    .grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: 16px;
+      margin-bottom: 16px;
     }
     .section-head {
       display: flex;
@@ -211,19 +201,115 @@
       font-weight: 800;
     }
     .section-kicker {
+      margin-top: 4px;
       color: var(--muted);
       font-size: 12px;
       line-height: 1.5;
-      margin-top: 4px;
     }
-    .table-scroll {
-      width: 100%;
-      overflow-x: auto;
+    .chart-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+    button {
+      min-height: 32px;
+      padding: 6px 10px;
       border: 1px solid var(--line);
       border-radius: 8px;
+      background: #ffffff;
+      color: #334155;
+      font: inherit;
+      font-size: 12px;
+      font-weight: 760;
+      cursor: pointer;
+    }
+    button:hover { background: var(--panel-soft); }
+    button.is-active {
+      border-color: rgba(37, 94, 145, 0.34);
+      background: #eaf3fb;
+      color: var(--blue);
+    }
+    .canvas-shell {
+      position: relative;
+      width: 100%;
+      min-height: 472px;
+      border: 1px solid var(--line-soft);
+      border-radius: 8px;
+      background: #ffffff;
+      overflow: hidden;
+    }
+    canvas {
+      display: block;
+      width: 100%;
+      height: 472px;
+      touch-action: none;
+      cursor: crosshair;
+    }
+    .chart-tooltip {
+      position: absolute;
+      display: none;
+      min-width: 206px;
+      padding: 10px 11px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.97);
+      box-shadow: var(--shadow);
+      color: var(--ink);
+      font-size: 12px;
+      line-height: 1.45;
+      pointer-events: none;
+      z-index: 4;
+    }
+    .chart-tooltip strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 12px;
+    }
+    .tooltip-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      white-space: nowrap;
+    }
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .legend span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--blue);
+    }
+    .dot.buy { background: var(--blue); }
+    .dot.sell { background: var(--violet); }
+    .dot.up { background: var(--red); }
+    .dot.down { background: var(--green); }
+    .table-scroll {
+      width: 100%;
+      overflow: auto;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #ffffff;
+    }
+    .trade-table-scroll {
+      max-height: 440px;
     }
     table {
       width: 100%;
+      min-width: 680px;
       border-collapse: collapse;
       font-size: 13px;
       background: #ffffff;
@@ -235,6 +321,9 @@
       white-space: nowrap;
     }
     th {
+      position: sticky;
+      top: 0;
+      z-index: 1;
       color: #475467;
       background: var(--panel-soft);
       font-size: 12px;
@@ -245,104 +334,24 @@
     tbody tr:hover td { background: #fbfdff; }
     .chip {
       display: inline-flex;
+      min-height: 22px;
       align-items: center;
       justify-content: center;
-      min-height: 22px;
       padding: 2px 8px;
       border-radius: 999px;
-      background: var(--blue-soft);
+      background: #eaf3fb;
       color: var(--blue);
       font-size: 12px;
       font-weight: 800;
     }
+    .chip.gap {
+      background: #e7f6f2;
+      color: var(--green);
+    }
     .metric-pos { color: var(--green); font-weight: 800; }
     .metric-risk { color: var(--red); font-weight: 800; }
-    .note {
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.7;
-      margin-top: 12px;
-    }
-    .chart-shell {
-      position: relative;
-      width: 100%;
-      min-height: 342px;
-      border: 1px solid var(--line-soft);
-      border-radius: 8px;
-      background: linear-gradient(180deg, #fbfdff 0%, #ffffff 100%);
-      overflow: hidden;
-    }
-    .chart {
-      display: block;
-      width: 100%;
-      height: auto;
-      min-height: 320px;
-      touch-action: none;
-    }
-    .plot-bg { fill: rgba(21, 95, 159, 0.035); }
-    .chart-title { font-size: 16px; font-weight: 800; fill: var(--ink); }
-    .chart-subtitle { font-size: 12px; fill: var(--muted); }
-    .axis-label { font-size: 11px; fill: var(--muted); }
-    .grid-line { stroke: #e4eaf2; stroke-width: 1; }
-    .axis-line { stroke: #b8c4d2; stroke-width: 1; }
-    .nav-line {
-      fill: none;
-      stroke-width: 3;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-    .legend-text { font-size: 12px; font-weight: 700; fill: #475467; }
-    .crosshair {
-      pointer-events: none;
-      display: none;
-    }
-    .crosshair line {
-      stroke: #7d8794;
-      stroke-width: 1;
-      stroke-dasharray: 4 4;
-    }
-    .crosshair circle {
-      stroke: #ffffff;
-      stroke-width: 2;
-    }
-    .tooltip {
-      position: absolute;
-      display: none;
-      min-width: 168px;
-      padding: 10px 11px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.96);
-      box-shadow: var(--shadow);
-      color: var(--ink);
-      font-size: 12px;
-      line-height: 1.45;
-      pointer-events: none;
-      z-index: 2;
-    }
-    .tooltip strong {
-      display: block;
-      margin-bottom: 4px;
-      font-size: 12px;
-    }
-    .tooltip-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      white-space: nowrap;
-    }
-    .swatch {
-      display: inline-block;
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      margin-right: 6px;
-      vertical-align: 0;
-    }
     .status {
       display: grid;
-      gap: 0;
       border: 1px solid var(--line);
       border-radius: 8px;
       overflow: hidden;
@@ -350,26 +359,30 @@
     }
     .status-item {
       display: flex;
+      min-height: 54px;
       align-items: center;
       justify-content: space-between;
       gap: 12px;
       padding: 13px 14px;
-      min-height: 54px;
       border-bottom: 1px solid var(--line-soft);
     }
-    .status-item:last-child {
-      border-bottom: 0;
-    }
+    .status-item:last-child { border-bottom: 0; }
     .status-item strong {
       display: block;
+      text-align: right;
       font-size: 15px;
       font-weight: 800;
-      text-align: right;
     }
     .status-item span {
       color: var(--muted);
       font-size: 12px;
       font-weight: 700;
+    }
+    .note {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.7;
     }
     .load-error {
       color: var(--red);
@@ -384,11 +397,7 @@
       font-size: 12px;
       padding: 18px 0 0;
     }
-    code {
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: 0.95em;
-    }
-    @media (max-width: 900px) {
+    @media (max-width: 980px) {
       .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .grid { grid-template-columns: 1fr; }
       .hero {
@@ -398,26 +407,25 @@
         gap: 18px;
       }
       .hero-side {
-        justify-items: start;
         min-width: 0;
+        justify-items: start;
       }
+      .section-head { flex-direction: column; }
+      .chart-toolbar { justify-content: flex-start; }
     }
     @media (max-width: 560px) {
-      body {
-        background: linear-gradient(180deg, var(--hero) 0 372px, var(--bg) 372px 100%);
-      }
+      body { background: linear-gradient(180deg, var(--hero) 0 392px, var(--bg) 392px 100%); }
       .shell { padding: 18px 14px 26px; }
-      .hero { min-height: 278px; }
+      .hero { min-height: 298px; }
       h1 { font-size: 25px; }
       .meta { font-size: 13px; }
       .badge { width: 100%; }
       .kpis { grid-template-columns: 1fr; }
       .kpi { min-height: 96px; }
       .panel { padding: 14px; }
-      .section-head { flex-direction: column; }
+      .canvas-shell { min-height: 398px; }
+      canvas { height: 398px; }
       th, td { padding: 10px 9px; }
-      .chart-shell { min-height: 288px; }
-      .chart { min-height: 270px; }
       .status-item {
         align-items: flex-start;
         flex-direction: column;
@@ -436,9 +444,9 @@
           <span class="brand-name">GoFinTech Quant</span>
           <span class="eyebrow">公开观察</span>
         </div>
-        <h1>中证2000策略观察</h1>
+        <h1>中证2000组合策略观察</h1>
         <div class="meta" id="snapshotMeta">数据更新中</div>
-        <div class="meta">用一页看清本期信号、净值走势和关键表现，适合持续跟踪小盘风格的市场节奏。</div>
+        <div class="meta">主策略优先叠加间断交易日腿，组合版本使用 2 个交易日冷却。</div>
       </div>
       <div class="hero-side">
         <div class="badge-label">本期信号</div>
@@ -451,15 +459,26 @@
     <section class="panel wide-panel">
       <div class="section-head">
         <div>
-          <h2>累计收益 / 净值曲线</h2>
-          <div class="section-kicker">跟踪策略和可交易 ETF 的净值变化。</div>
+          <h2>中证2000日线与买卖点</h2>
+          <div class="section-kicker">组合策略历史交易叠加在日线价格上。</div>
+        </div>
+        <div class="chart-toolbar">
+          <button type="button" data-range="90">近3月</button>
+          <button type="button" data-range="252">近1年</button>
+          <button type="button" data-range="756">近3年</button>
+          <button type="button" data-range="all">全区间</button>
         </div>
       </div>
-      <div class="chart-shell" id="chartShell">
-        <svg class="chart" id="navChart" viewBox="0 0 960 340" role="img" aria-label="策略和 ETF 净值曲线"></svg>
-        <div class="tooltip" id="chartTooltip"></div>
+      <div class="canvas-shell" id="klineShell">
+        <canvas id="klineCanvas"></canvas>
+        <div class="chart-tooltip" id="klineTooltip"></div>
       </div>
-      <div class="note">图表展示月度净值变化，便于观察趋势和阶段回撤。</div>
+      <div class="legend">
+        <span><i class="dot up"></i>上涨K线</span>
+        <span><i class="dot down"></i>下跌K线</span>
+        <span><i class="dot buy"></i>买入点</span>
+        <span><i class="dot sell"></i>卖出点</span>
+      </div>
     </section>
 
     <section class="grid">
@@ -467,7 +486,7 @@
         <div class="section-head">
           <div>
             <h2>核心表现</h2>
-            <div class="section-kicker">收益、回撤和净值表现。</div>
+            <div class="section-kicker">组合策略指数与 ETF 口径。</div>
           </div>
         </div>
         <div class="table-scroll">
@@ -485,7 +504,6 @@
             <tbody id="performanceRows"></tbody>
           </table>
         </div>
-        <div class="note">指标随公开快照更新，仅作观察交流，不构成投资建议。</div>
       </div>
 
       <div class="panel">
@@ -496,7 +514,31 @@
           </div>
         </div>
         <div class="status" id="statusGrid"></div>
-        <div class="note">更新节奏以页面展示的日期为准。</div>
+      </div>
+    </section>
+
+    <section class="panel wide-panel">
+      <div class="section-head">
+        <div>
+          <h2>历史交易记录</h2>
+          <div class="section-kicker">组合策略已完成交易。</div>
+        </div>
+      </div>
+      <div class="table-scroll trade-table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>信号日</th>
+              <th>策略</th>
+              <th>买入日</th>
+              <th>卖出日</th>
+              <th>买入价</th>
+              <th>卖出价</th>
+              <th>收益</th>
+            </tr>
+          </thead>
+          <tbody id="tradeRows"></tbody>
+        </table>
       </div>
     </section>
 
@@ -504,85 +546,58 @@
   </main>
 
   <script>
-    const SVG_NS = "http://www.w3.org/2000/svg";
-    const WIDTH = 960;
-    const HEIGHT = 340;
-    const PAD = { left: 62, right: 28, top: 52, bottom: 54 };
-
     const $ = (id) => document.getElementById(id);
-
-    function createSvg(tag, attrs = {}) {
-      const el = document.createElementNS(SVG_NS, tag);
-      Object.entries(attrs).forEach(([key, value]) => el.setAttribute(key, value));
-      return el;
-    }
-
-    function monthToDate(month) {
-      const [year, mon] = month.split("-").map(Number);
-      return new Date(Date.UTC(year, mon - 1, 1));
-    }
-
-    function formatMonthFromTs(ts) {
-      const d = new Date(ts);
-      const y = d.getUTCFullYear();
-      const m = String(d.getUTCMonth() + 1).padStart(2, "0");
-      return `${y}-${m}`;
-    }
-
-    function roundUp(value, step) {
-      return Math.ceil(value / step) * step;
-    }
+    const colors = {
+      ink: "#172033",
+      muted: "#667085",
+      line: "#dde5ef",
+      grid: "#eef2f7",
+      up: "#b0443d",
+      down: "#0b806f",
+      buy: "#255e91",
+      sell: "#7356a8",
+      bg: "#ffffff",
+      plot: "#fbfdff",
+    };
 
     function signalText(action) {
       return action === "TRADE" ? "信号亮起" : "等待观察";
     }
 
-    function kpiView(item, index) {
-      const labels = ["本期信号", "指数年化", "ETF年化", "指数收益回撤", "ETF收益回撤"];
-      const subs = {
-        "Next Action": (value) => value.replace("target ", "下次观察 "),
-        "Index Annualized": () => "中证2000指数",
-        "ETF Annualized": () => "可交易ETF",
-        "Index Calmar": () => "收益回撤比",
-        "ETF Calmar": () => "收益回撤比",
-      };
-      const value = index === 0 ? signalText(item.value) : item.value;
-      const sub = subs[item.label] ? subs[item.label](item.sub) : item.sub;
+    function kpiLabel(label) {
       return {
-        label: labels[index] || item.label,
-        value,
-        sub,
-      };
-    }
-
-    function targetText(target) {
-      if (target.includes("Index")) return "中证2000指数";
-      if (target.includes("ETF")) return "中证2000 ETF";
-      return target;
-    }
-
-    function typeText(type) {
-      if (type === "Theoretical") return "策略测算";
-      if (type === "Tradable") return "ETF跟踪";
-      return type;
+        "Next Action": "本期信号",
+        "Hybrid Index Annualized": "组合指数年化",
+        "Hybrid ETF Annualized": "组合ETF年化",
+        "Hybrid Index Calmar": "指数收益回撤",
+        "Hybrid ETF Calmar": "ETF收益回撤",
+      }[label] || label;
     }
 
     function renderKpis(kpis) {
       $("kpis").innerHTML = kpis.map((item, index) => {
-        const view = kpiView(item, index);
-        const classes = [
-          "kpi",
-          index === 0 ? "is-action" : "",
-          item.label.includes("Calmar") ? "is-risk" : "",
-        ].filter(Boolean).join(" ");
+        const isAction = index === 0;
+        const classes = ["kpi", isAction ? "is-action" : "", item.label.includes("Calmar") ? "is-risk" : ""].filter(Boolean).join(" ");
         return `
-        <div class="${classes}">
-          <div class="kpi-label">${view.label}</div>
-          <div class="kpi-value">${view.value}</div>
-          <span>${view.sub}</span>
-        </div>
-      `;
+          <div class="${classes}">
+            <div class="kpi-label">${kpiLabel(item.label)}</div>
+            <div class="kpi-value">${isAction ? signalText(item.value) : item.value}</div>
+            <span>${item.sub.replace("target ", "下次观察 ")}</span>
+          </div>
+        `;
       }).join("");
+    }
+
+    function targetText(target) {
+      if (target.includes("Index")) return "组合指数";
+      if (target.includes("ETF")) return "组合ETF";
+      return target;
+    }
+
+    function typeText(type) {
+      if (type === "Theoretical") return "指数口径";
+      if (type === "Tradable") return "ETF口径";
+      return type;
     }
 
     function renderPerformance(rows) {
@@ -598,12 +613,13 @@
       `).join("");
     }
 
-    function renderStatus(decision) {
+    function renderStatus(data) {
+      const decision = data.decision;
       $("statusGrid").innerHTML = [
+        ["数据截至", data.as_of],
         ["当前观察日", decision.date],
         ["下次观察", decision.next_checkpoint],
         ["本期信号", signalText(decision.action)],
-        ["页面版本", "公开版"],
       ].map(([label, value]) => `
         <div class="status-item">
           <span>${label}</span>
@@ -612,180 +628,358 @@
       `).join("");
     }
 
-    function normalizeSeries(series) {
-      return series.map((s) => ({
-        ...s,
-        points: s.points.map((p) => ({
-          month: p.month,
-          t: monthToDate(p.month).getTime(),
-          nav: Number(p.nav),
-        })),
-      }));
+    function renderTrades(rows) {
+      const ordered = [...rows].reverse();
+      $("tradeRows").innerHTML = ordered.map((row) => `
+        <tr>
+          <td>${row.signal_date}</td>
+          <td><span class="chip ${row.strategy === "间断腿" ? "gap" : ""}">${row.strategy}</span></td>
+          <td>${row.entry_date} ${row.entry_timing === "open" ? "开盘" : "收盘"}</td>
+          <td>${row.exit_date} ${row.exit_timing === "open" ? "开盘" : "收盘"}</td>
+          <td>${Number(row.entry_px).toFixed(2)}</td>
+          <td>${Number(row.exit_px).toFixed(2)}</td>
+          <td class="${row.ret_pct >= 0 ? "metric-pos" : "metric-risk"}">${Number(row.ret_pct).toFixed(2)}%</td>
+        </tr>
+      `).join("");
     }
 
-    function drawChart(rawSeries) {
-      const series = normalizeSeries(rawSeries);
-      const allPoints = series.flatMap((s) => s.points);
-      const svg = $("navChart");
-      svg.textContent = "";
-
-      if (!allPoints.length) {
-        svg.appendChild(createSvg("text", { x: 62, y: 60, class: "axis-label" })).textContent = "暂无数据";
-        return;
+    class KLineChart {
+      constructor(canvas, tooltip) {
+        this.canvas = canvas;
+        this.ctx = canvas.getContext("2d");
+        this.tooltip = tooltip;
+        this.candles = [];
+        this.trades = [];
+        this.markerMap = new Map();
+        this.start = 0;
+        this.end = 0;
+        this.dragging = false;
+        this.dragStartX = 0;
+        this.dragStartRange = [0, 0];
+        this.cross = null;
+        this.padding = { left: 62, right: 72, top: 24, bottom: 34 };
+        this.attachEvents();
       }
 
-      const minT = Math.min(...allPoints.map((p) => p.t));
-      const maxT = Math.max(...allPoints.map((p) => p.t));
-      const maxY = roundUp(Math.max(...allPoints.map((p) => p.nav)) + 0.05, 0.2);
-      const minY = Math.min(0.9, Math.floor(Math.min(...allPoints.map((p) => p.nav)) * 10) / 10);
-      const plotW = WIDTH - PAD.left - PAD.right;
-      const plotH = HEIGHT - PAD.top - PAD.bottom;
-      const xScale = (t) => PAD.left + ((t - minT) / (maxT - minT || 1)) * plotW;
-      const yScale = (v) => PAD.top + ((maxY - v) / (maxY - minY || 1)) * plotH;
-
-      svg.appendChild(createSvg("text", { x: PAD.left, y: 20, class: "chart-title" })).textContent = "策略净值 vs ETF净值";
-      svg.appendChild(createSvg("text", { x: PAD.left, y: 39, class: "chart-subtitle" })).textContent = "月度净值走势";
-      svg.appendChild(createSvg("rect", { x: PAD.left, y: PAD.top, width: plotW, height: plotH, class: "plot-bg" }));
-
-      const yTicks = 5;
-      for (let i = 0; i < yTicks; i += 1) {
-        const val = minY + ((maxY - minY) * i) / (yTicks - 1);
-        const y = yScale(val);
-        svg.appendChild(createSvg("line", { x1: PAD.left, x2: WIDTH - PAD.right, y1: y, y2: y, class: i === 0 ? "axis-line" : "grid-line" }));
-        const label = createSvg("text", { x: PAD.left - 10, y: y + 4, class: "axis-label", "text-anchor": "end" });
-        label.textContent = val.toFixed(1);
-        svg.appendChild(label);
+      setData(candles, trades) {
+        this.candles = candles.map((d, i) => ({ ...d, i, t: Date.parse(`${d.date}T00:00:00Z`) }));
+        this.trades = trades;
+        this.markerMap = this.buildMarkers(trades);
+        this.setRange(252);
       }
 
-      const xTickCount = 7;
-      for (let i = 0; i < xTickCount; i += 1) {
-        const t = minT + ((maxT - minT) * i) / (xTickCount - 1);
-        const x = xScale(t);
-        svg.appendChild(createSvg("line", { x1: x, x2: x, y1: PAD.top, y2: HEIGHT - PAD.bottom, class: "grid-line" }));
-        const label = createSvg("text", {
-          x,
-          y: HEIGHT - 18,
-          class: "axis-label",
-          "text-anchor": i === 0 ? "start" : i === xTickCount - 1 ? "end" : "middle",
+      buildMarkers(trades) {
+        const map = new Map();
+        const put = (date, item) => {
+          if (!map.has(date)) map.set(date, []);
+          map.get(date).push(item);
+        };
+        trades.forEach((trade) => {
+          put(trade.entry_date, { side: "buy", price: Number(trade.entry_px), strategy: trade.strategy, ret: Number(trade.ret_pct) });
+          put(trade.exit_date, { side: "sell", price: Number(trade.exit_px), strategy: trade.strategy, ret: Number(trade.ret_pct) });
         });
-        label.textContent = formatMonthFromTs(t);
-        svg.appendChild(label);
+        return map;
       }
 
-      let legendX = PAD.left;
-      series.forEach((s) => {
-        const pts = s.points.map((p) => `${xScale(p.t).toFixed(1)},${yScale(p.nav).toFixed(1)}`).join(" ");
-        svg.appendChild(createSvg("polyline", { points: pts, class: "nav-line", stroke: s.color }));
-        const last = s.points[s.points.length - 1];
-        svg.appendChild(createSvg("circle", { cx: xScale(last.t), cy: yScale(last.nav), r: 4, fill: s.color, stroke: "#fff", "stroke-width": 2 }));
-        svg.appendChild(createSvg("rect", { x: legendX, y: HEIGHT - 39, width: 10, height: 10, rx: 2, fill: s.color }));
-        const text = createSvg("text", { x: legendX + 16, y: HEIGHT - 30, class: "legend-text" });
-        text.textContent = `${s.label} 最新 ${s.latest_nav}`;
-        svg.appendChild(text);
-        legendX += 205;
-      });
-
-      const monthIndex = new Map();
-      allPoints.forEach((p) => monthIndex.set(p.month, p.t));
-      const months = [...monthIndex.entries()].sort((a, b) => a[1] - b[1]);
-
-      const crosshair = createSvg("g", { class: "crosshair" });
-      const vLine = createSvg("line", { x1: 0, x2: 0, y1: PAD.top, y2: HEIGHT - PAD.bottom });
-      const hLine = createSvg("line", { x1: PAD.left, x2: WIDTH - PAD.right, y1: 0, y2: 0 });
-      crosshair.appendChild(vLine);
-      crosshair.appendChild(hLine);
-      const pointDots = series.map((s) => {
-        const dot = createSvg("circle", { cx: 0, cy: 0, r: 4, fill: s.color });
-        dot.style.display = "none";
-        crosshair.appendChild(dot);
-        return dot;
-      });
-      svg.appendChild(crosshair);
-
-      const overlay = createSvg("rect", {
-        x: PAD.left,
-        y: PAD.top,
-        width: plotW,
-        height: plotH,
-        fill: "transparent",
-        style: "cursor: crosshair;",
-      });
-      svg.appendChild(overlay);
-
-      const tooltip = $("chartTooltip");
-      const shell = $("chartShell");
-
-      function nearestMonth(targetT) {
-        let best = months[0];
-        for (const item of months) {
-          if (Math.abs(item[1] - targetT) < Math.abs(best[1] - targetT)) best = item;
+      setRange(count) {
+        if (!this.candles.length) return;
+        if (count === "all") {
+          this.start = 0;
+          this.end = this.candles.length - 1;
+        } else {
+          const n = Math.max(24, Math.min(Number(count), this.candles.length));
+          this.end = this.candles.length - 1;
+          this.start = Math.max(0, this.end - n + 1);
         }
-        return best;
+        this.draw();
       }
 
-      function pointAtMonth(s, month) {
-        return s.points.find((p) => p.month === month);
+      attachEvents() {
+        window.addEventListener("resize", () => this.draw());
+        this.canvas.addEventListener("pointerdown", (event) => {
+          this.dragging = true;
+          this.dragStartX = event.offsetX;
+          this.dragStartRange = [this.start, this.end];
+          this.canvas.setPointerCapture(event.pointerId);
+        });
+        this.canvas.addEventListener("pointermove", (event) => {
+          const pos = this.eventPos(event);
+          if (this.dragging) {
+            const width = this.plotWidth();
+            const visible = this.end - this.start + 1;
+            const shift = Math.round(((this.dragStartX - pos.x) / Math.max(width, 1)) * visible);
+            this.moveTo(this.dragStartRange[0] + shift, this.dragStartRange[1] + shift);
+          }
+          this.cross = pos;
+          this.draw();
+          this.showTooltip(pos);
+        });
+        this.canvas.addEventListener("pointerup", (event) => {
+          this.dragging = false;
+          this.canvas.releasePointerCapture(event.pointerId);
+        });
+        this.canvas.addEventListener("pointerleave", () => {
+          if (!this.dragging) {
+            this.cross = null;
+            this.tooltip.style.display = "none";
+            this.draw();
+          }
+        });
+        this.canvas.addEventListener("wheel", (event) => {
+          event.preventDefault();
+          const pos = this.eventPos(event);
+          const plot = this.plotRect();
+          const anchor = Math.max(0, Math.min(1, (pos.x - plot.left) / Math.max(plot.width, 1)));
+          const visible = this.end - this.start + 1;
+          const next = Math.round(visible * (event.deltaY > 0 ? 1.16 : 0.86));
+          this.zoomTo(next, anchor);
+        }, { passive: false });
       }
 
-      function pointerToSvg(evt) {
-        const rect = svg.getBoundingClientRect();
-        const clientX = evt.touches ? evt.touches[0].clientX : evt.clientX;
-        const clientY = evt.touches ? evt.touches[0].clientY : evt.clientY;
+      eventPos(event) {
+        const rect = this.canvas.getBoundingClientRect();
         return {
-          x: ((clientX - rect.left) / rect.width) * WIDTH,
-          y: ((clientY - rect.top) / rect.height) * HEIGHT,
-          pageX: clientX - shell.getBoundingClientRect().left,
-          pageY: clientY - shell.getBoundingClientRect().top,
+          x: event.clientX - rect.left,
+          y: event.clientY - rect.top,
         };
       }
 
-      function showCrosshair(evt) {
-        const pos = pointerToSvg(evt);
-        const x = Math.max(PAD.left, Math.min(WIDTH - PAD.right, pos.x));
-        const y = Math.max(PAD.top, Math.min(HEIGHT - PAD.bottom, pos.y));
-        const targetT = minT + ((x - PAD.left) / plotW) * (maxT - minT);
-        const [month, snappedT] = nearestMonth(targetT);
-        const snappedX = xScale(snappedT);
-
-        crosshair.style.display = "block";
-        vLine.setAttribute("x1", snappedX);
-        vLine.setAttribute("x2", snappedX);
-        hLine.setAttribute("y1", y);
-        hLine.setAttribute("y2", y);
-
-        const rows = series.map((s, i) => {
-          const p = pointAtMonth(s, month);
-          if (p) {
-            pointDots[i].style.display = "block";
-            pointDots[i].setAttribute("cx", snappedX);
-            pointDots[i].setAttribute("cy", yScale(p.nav));
-          } else {
-            pointDots[i].style.display = "none";
-          }
-          const value = p ? p.nav.toFixed(2) : "--";
-          return `<div class="tooltip-row"><span><i class="swatch" style="background:${s.color}"></i>${s.label}</span><b>${value}</b></div>`;
-        }).join("");
-
-        tooltip.innerHTML = `<strong>${month}</strong>${rows}`;
-        tooltip.style.display = "block";
-        const left = Math.min(Math.max(pos.pageX + 12, 8), shell.clientWidth - tooltip.offsetWidth - 8);
-        const top = Math.min(Math.max(pos.pageY + 12, 8), shell.clientHeight - tooltip.offsetHeight - 8);
-        tooltip.style.left = `${left}px`;
-        tooltip.style.top = `${top}px`;
+      resizeCanvas() {
+        const rect = this.canvas.getBoundingClientRect();
+        const dpr = window.devicePixelRatio || 1;
+        const width = Math.max(320, Math.floor(rect.width));
+        const height = Math.max(320, Math.floor(rect.height));
+        if (this.canvas.width !== Math.floor(width * dpr) || this.canvas.height !== Math.floor(height * dpr)) {
+          this.canvas.width = Math.floor(width * dpr);
+          this.canvas.height = Math.floor(height * dpr);
+        }
+        this.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        this.width = width;
+        this.height = height;
       }
 
-      function hideCrosshair() {
-        crosshair.style.display = "none";
-        tooltip.style.display = "none";
+      plotRect() {
+        return {
+          left: this.padding.left,
+          top: this.padding.top,
+          right: this.width - this.padding.right,
+          bottom: this.height - this.padding.bottom,
+          width: this.width - this.padding.left - this.padding.right,
+          height: this.height - this.padding.top - this.padding.bottom,
+        };
       }
 
-      overlay.addEventListener("mousemove", showCrosshair);
-      overlay.addEventListener("mouseleave", hideCrosshair);
-      overlay.addEventListener("touchmove", (evt) => {
-        evt.preventDefault();
-        showCrosshair(evt);
-      }, { passive: false });
-      overlay.addEventListener("touchend", hideCrosshair);
+      plotWidth() {
+        return Math.max(1, this.width - this.padding.left - this.padding.right);
+      }
+
+      moveTo(start, end) {
+        const visible = end - start + 1;
+        if (start < 0) {
+          start = 0;
+          end = visible - 1;
+        }
+        if (end >= this.candles.length) {
+          end = this.candles.length - 1;
+          start = Math.max(0, end - visible + 1);
+        }
+        this.start = start;
+        this.end = end;
+      }
+
+      zoomTo(count, anchor) {
+        const minCount = 24;
+        const maxCount = this.candles.length;
+        const nextCount = Math.max(minCount, Math.min(maxCount, count));
+        const currentCount = this.end - this.start + 1;
+        const anchorIndex = this.start + Math.round(anchor * (currentCount - 1));
+        let start = anchorIndex - Math.round(anchor * (nextCount - 1));
+        let end = start + nextCount - 1;
+        this.moveTo(start, end);
+        this.draw();
+      }
+
+      visibleCandles() {
+        return this.candles.slice(this.start, this.end + 1);
+      }
+
+      scales() {
+        const plot = this.plotRect();
+        const visible = this.visibleCandles();
+        const lows = visible.map((d) => d.low);
+        const highs = visible.map((d) => d.high);
+        visible.forEach((d) => {
+          const markers = this.markerMap.get(d.date) || [];
+          markers.forEach((m) => {
+            lows.push(m.price);
+            highs.push(m.price);
+          });
+        });
+        let minY = Math.min(...lows);
+        let maxY = Math.max(...highs);
+        const pad = (maxY - minY || 1) * 0.08;
+        minY -= pad;
+        maxY += pad;
+        const x = (index) => plot.left + ((index - this.start + 0.5) / Math.max(1, visible.length)) * plot.width;
+        const y = (value) => plot.top + ((maxY - value) / Math.max(1, maxY - minY)) * plot.height;
+        return { plot, visible, minY, maxY, x, y };
+      }
+
+      draw() {
+        this.resizeCanvas();
+        const ctx = this.ctx;
+        ctx.clearRect(0, 0, this.width, this.height);
+        ctx.fillStyle = colors.bg;
+        ctx.fillRect(0, 0, this.width, this.height);
+        if (!this.candles.length) return;
+
+        const s = this.scales();
+        ctx.fillStyle = colors.plot;
+        ctx.fillRect(s.plot.left, s.plot.top, s.plot.width, s.plot.height);
+        ctx.strokeStyle = colors.grid;
+        ctx.lineWidth = 1;
+        ctx.font = "11px -apple-system, BlinkMacSystemFont, Segoe UI, Arial";
+        ctx.fillStyle = colors.muted;
+        ctx.textAlign = "right";
+        ctx.textBaseline = "middle";
+        for (let i = 0; i < 5; i += 1) {
+          const value = s.minY + ((s.maxY - s.minY) * i) / 4;
+          const y = s.y(value);
+          ctx.beginPath();
+          ctx.moveTo(s.plot.left, y);
+          ctx.lineTo(s.plot.right, y);
+          ctx.stroke();
+          ctx.fillText(value.toFixed(0), s.plot.left - 9, y);
+        }
+
+        const visibleCount = s.visible.length;
+        const candleW = Math.max(2, Math.min(12, s.plot.width / Math.max(visibleCount, 1) * 0.62));
+        s.visible.forEach((d) => {
+          const x = s.x(d.i);
+          const up = d.close >= d.open;
+          ctx.strokeStyle = up ? colors.up : colors.down;
+          ctx.fillStyle = up ? colors.up : colors.down;
+          ctx.beginPath();
+          ctx.moveTo(x, s.y(d.high));
+          ctx.lineTo(x, s.y(d.low));
+          ctx.stroke();
+          const yOpen = s.y(d.open);
+          const yClose = s.y(d.close);
+          const y = Math.min(yOpen, yClose);
+          const h = Math.max(1, Math.abs(yClose - yOpen));
+          ctx.fillRect(x - candleW / 2, y, candleW, h);
+        });
+
+        this.drawMarkers(s);
+        this.drawXAxis(s);
+        if (this.cross) this.drawCrosshair(s);
+      }
+
+      drawMarkers(s) {
+        const ctx = this.ctx;
+        s.visible.forEach((d) => {
+          const markers = this.markerMap.get(d.date) || [];
+          markers.forEach((marker, idx) => {
+            const x = s.x(d.i) + (idx % 3 - 1) * 7;
+            const y = s.y(marker.price);
+            ctx.fillStyle = marker.side === "buy" ? colors.buy : colors.sell;
+            ctx.beginPath();
+            if (marker.side === "buy") {
+              ctx.moveTo(x, y - 7);
+              ctx.lineTo(x - 6, y + 5);
+              ctx.lineTo(x + 6, y + 5);
+            } else {
+              ctx.moveTo(x, y + 7);
+              ctx.lineTo(x - 6, y - 5);
+              ctx.lineTo(x + 6, y - 5);
+            }
+            ctx.closePath();
+            ctx.fill();
+            ctx.strokeStyle = "#ffffff";
+            ctx.lineWidth = 1.2;
+            ctx.stroke();
+          });
+        });
+      }
+
+      drawXAxis(s) {
+        const ctx = this.ctx;
+        ctx.fillStyle = colors.muted;
+        ctx.textAlign = "center";
+        ctx.textBaseline = "top";
+        ctx.font = "11px -apple-system, BlinkMacSystemFont, Segoe UI, Arial";
+        const ticks = Math.min(7, s.visible.length);
+        for (let i = 0; i < ticks; i += 1) {
+          const pos = Math.round((s.visible.length - 1) * i / Math.max(1, ticks - 1));
+          const d = s.visible[pos];
+          const x = s.x(d.i);
+          ctx.fillText(d.date.slice(0, 7), x, s.plot.bottom + 10);
+        }
+      }
+
+      drawCrosshair(s) {
+        const ctx = this.ctx;
+        const plot = s.plot;
+        const x = Math.max(plot.left, Math.min(plot.right, this.cross.x));
+        const y = Math.max(plot.top, Math.min(plot.bottom, this.cross.y));
+        ctx.save();
+        ctx.strokeStyle = "#7d8794";
+        ctx.setLineDash([4, 4]);
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(x, plot.top);
+        ctx.lineTo(x, plot.bottom);
+        ctx.moveTo(plot.left, y);
+        ctx.lineTo(plot.right, y);
+        ctx.stroke();
+        ctx.restore();
+      }
+
+      nearestIndex(pos) {
+        const s = this.scales();
+        const rel = (pos.x - s.plot.left) / Math.max(1, s.plot.width);
+        const offset = Math.round(rel * s.visible.length - 0.5);
+        return Math.max(this.start, Math.min(this.end, this.start + offset));
+      }
+
+      showTooltip(pos) {
+        if (!this.candles.length) return;
+        const index = this.nearestIndex(pos);
+        const d = this.candles[index];
+        const markers = this.markerMap.get(d.date) || [];
+        const markerHtml = markers.map((m) => `
+          <div class="tooltip-row">
+            <span>${m.side === "buy" ? "买入" : "卖出"} ${m.strategy}</span>
+            <b>${m.price.toFixed(2)}</b>
+          </div>
+        `).join("");
+        this.tooltip.innerHTML = `
+          <strong>${d.date}</strong>
+          <div class="tooltip-row"><span>开盘</span><b>${d.open.toFixed(2)}</b></div>
+          <div class="tooltip-row"><span>最高</span><b>${d.high.toFixed(2)}</b></div>
+          <div class="tooltip-row"><span>最低</span><b>${d.low.toFixed(2)}</b></div>
+          <div class="tooltip-row"><span>收盘</span><b>${d.close.toFixed(2)}</b></div>
+          ${markerHtml}
+        `;
+        this.tooltip.style.display = "block";
+        const shell = $("klineShell");
+        const left = Math.min(Math.max(pos.x + 14, 8), shell.clientWidth - this.tooltip.offsetWidth - 8);
+        const top = Math.min(Math.max(pos.y + 14, 8), shell.clientHeight - this.tooltip.offsetHeight - 8);
+        this.tooltip.style.left = `${left}px`;
+        this.tooltip.style.top = `${top}px`;
+      }
+    }
+
+    function setupRangeButtons(chart) {
+      document.querySelectorAll("[data-range]").forEach((button) => {
+        button.addEventListener("click", () => {
+          document.querySelectorAll("[data-range]").forEach((el) => el.classList.remove("is-active"));
+          button.classList.add("is-active");
+          chart.setRange(button.dataset.range);
+        });
+      });
+      const defaultButton = document.querySelector('[data-range="252"]');
+      if (defaultButton) defaultButton.classList.add("is-active");
     }
 
     function renderDashboard(data) {
@@ -795,8 +989,12 @@
       badge.classList.toggle("skip", data.decision.action !== "TRADE");
       renderKpis(data.kpis);
       renderPerformance(data.performance);
-      renderStatus(data.decision);
-      drawChart(data.series);
+      renderStatus(data);
+      renderTrades(data.hybrid.trades || []);
+
+      const chart = new KLineChart($("klineCanvas"), $("klineTooltip"));
+      chart.setData(data.hybrid.candles || [], data.hybrid.trades || []);
+      setupRangeButtons(chart);
     }
 
     fetch("data/dashboard.json", { cache: "no-store" })
@@ -806,7 +1004,7 @@
       })
       .then(renderDashboard)
       .catch((err) => {
-        $("chartShell").innerHTML = `<div class="load-error">数据加载失败：${err.message}</div>`;
+        $("klineShell").innerHTML = `<div class="load-error">数据加载失败：${err.message}</div>`;
         $("actionBadge").textContent = "数据更新中";
       });
   </script>
