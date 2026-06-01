@@ -331,7 +331,7 @@
     }
     table {
       width: 100%;
-      min-width: 680px;
+      min-width: 980px;
       border-collapse: collapse;
       font-size: 13px;
       background: #ffffff;
@@ -369,6 +369,14 @@
     .chip.gap {
       background: #e7f6f2;
       color: var(--green);
+    }
+    .chip.main {
+      background: #fff4e5;
+      color: #a85300;
+    }
+    .chip.combo {
+      background: #eaf3fb;
+      color: var(--blue);
     }
     .metric-pos { color: var(--green); font-weight: 800; }
     .metric-risk { color: var(--red); font-weight: 800; }
@@ -508,18 +516,23 @@
         <div class="section-head">
           <div>
             <h2>核心表现</h2>
-            <div class="section-kicker">组合策略指数与 ETF 口径。</div>
+            <div class="section-kicker">组合、主策略、间断腿拆分；年化按 252 个交易日折算。</div>
           </div>
         </div>
         <div class="table-scroll">
           <table>
             <thead>
               <tr>
-                <th>观察对象</th>
+                <th>策略</th>
                 <th>口径</th>
+                <th>数据区间</th>
+                <th>交易日/年</th>
+                <th>交易数</th>
                 <th>年化</th>
+                <th>累计</th>
                 <th>最大回撤</th>
                 <th>收益回撤比</th>
+                <th>胜率</th>
                 <th>净值</th>
               </tr>
             </thead>
@@ -635,14 +648,36 @@
       return type;
     }
 
+    function componentClass(component = "") {
+      if (component.includes("间断")) return "gap";
+      if (component.includes("主策略")) return "main";
+      return "combo";
+    }
+
+    function periodText(row) {
+      if (row.period) return row.period;
+      if (row.start && row.end) return `${row.start} 至 ${row.end}`;
+      return "-";
+    }
+
+    function yearText(row) {
+      if (row.n_days && row.years) return `${row.n_days} / ${row.years}年`;
+      return "-";
+    }
+
     function renderPerformance(rows) {
       $("performanceRows").innerHTML = rows.map((row) => `
         <tr>
-          <td>${targetText(row.target)}</td>
+          <td><span class="chip ${componentClass(row.component)}">${row.component || targetText(row.target)}</span></td>
           <td><span class="chip">${typeText(row.type)}</span></td>
+          <td>${periodText(row)}</td>
+          <td>${yearText(row)}</td>
+          <td>${row.trades ?? row.weeks ?? "-"}</td>
           <td class="metric-pos">${row.ann_return}</td>
+          <td class="metric-pos">${row.cum_return || "-"}</td>
           <td class="metric-risk">${row.max_dd}</td>
           <td><strong>${row.calmar}</strong></td>
+          <td>${row.win_rate || "-"}</td>
           <td><strong>${row.latest_nav}</strong></td>
         </tr>
       `).join("");
@@ -1276,7 +1311,7 @@
       badge.textContent = signalText(data.decision.action);
       badge.classList.toggle("skip", data.decision.action !== "TRADE");
       renderKpis(data.kpis);
-      renderPerformance(data.performance);
+      renderPerformance(data.performance_components || data.performance || []);
       renderStatus(data);
       tradeState.rows = data.hybrid.trades || [];
       renderTrades(tradeState.rows);
