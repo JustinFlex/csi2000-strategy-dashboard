@@ -1,69 +1,69 @@
 {
-  "generated_at": "2026-06-01 20:53 CST",
-  "as_of": "2026-05-26",
+  "generated_at": "2026-06-18 10:22 CST",
+  "as_of": "2026-06-17",
   "decision": {
-    "date": "2026-05-26",
-    "next_checkpoint": "2026-05-29",
-    "action": "TRADE",
-    "predicted_gap_pct": 0.5479
+    "date": "2026-06-17",
+    "next_checkpoint": "2026-06-18",
+    "action": "SKIP",
+    "predicted_gap_pct": 0.172
   },
   "kpis": [
     {
       "label": "Next Action",
-      "value": "TRADE",
-      "sub": "target 2026-05-29"
+      "value": "SKIP",
+      "sub": "target 2026-06-18"
     },
     {
       "label": "Hybrid Index Annualized",
-      "value": "20.04%",
+      "value": "20.03%",
       "sub": "main + gap cool2"
     },
     {
       "label": "Hybrid ETF Annualized",
-      "value": "31.06%",
+      "value": "30.73%",
       "sub": "159531 tradable"
     },
     {
       "label": "Hybrid Index Calmar",
       "value": "4.49",
-      "sub": "trades 175"
+      "sub": "trades 176"
     },
     {
       "label": "Hybrid ETF Calmar",
-      "value": "7.22",
-      "sub": "trades 76"
+      "value": "7.14",
+      "sub": "trades 77"
     }
   ],
   "performance": [
     {
       "target": "CSI2000 Hybrid Index",
       "type": "Theoretical",
-      "ann_return": "20.04%",
+      "ann_return": "20.03%",
       "max_dd": "-4.46%",
       "calmar": "4.49",
       "sharpe": "2.07",
-      "weeks": 175,
+      "weeks": 176,
       "latest_nav": "4.23",
-      "cum_return": "323.1%"
+      "cum_return": "322.7%"
     },
     {
       "target": "CSI2000 Hybrid ETF",
       "type": "Tradable",
-      "ann_return": "31.06%",
+      "ann_return": "30.73%",
       "max_dd": "-4.30%",
-      "calmar": "7.22",
-      "sharpe": "2.14",
-      "weeks": 76,
+      "calmar": "7.14",
+      "sharpe": "2.13",
+      "weeks": 77,
       "latest_nav": "1.99",
-      "cum_return": "99.0%"
+      "cum_return": "98.8%"
     }
   ],
   "series": [
     {
       "label": "组合指数净值",
       "color": "#255e91",
-      "latest_nav": 4.2313,
-      "cum_return_pct": 323.13,
+      "latest_nav": 4.227,
+      "cum_return_pct": 322.7,
       "points": [
         {
           "month": "2018-03",
@@ -460,14 +460,18 @@
         {
           "month": "2026-05",
           "nav": 4.2313
+        },
+        {
+          "month": "2026-06",
+          "nav": 4.227
         }
       ]
     },
     {
       "label": "组合ETF净值",
       "color": "#0b806f",
-      "latest_nav": 1.9898,
-      "cum_return_pct": 98.98,
+      "latest_nav": 1.9876,
+      "cum_return_pct": 98.76,
       "points": [
         {
           "month": "2023-09",
@@ -600,54 +604,18 @@
         {
           "month": "2026-05",
           "nav": 1.9898
+        },
+        {
+          "month": "2026-06",
+          "nav": 1.9876
         }
       ]
     }
   ],
   "hybrid": {
-    "eval_start": "2018-03-09",
-    "eval_end": "2026-05-25",
+    "eval_start": "2018-03-16",
+    "eval_end": "2026-06-01",
     "candles": [
-      {
-        "date": "2018-03-09",
-        "open": 2110.6828,
-        "high": 2142.066,
-        "low": 2110.6828,
-        "close": 2142.066,
-        "amount": 61654609.43
-      },
-      {
-        "date": "2018-03-12",
-        "open": 2147.5224,
-        "high": 2174.5323,
-        "low": 2147.5224,
-        "close": 2174.5323,
-        "amount": 68136205.99
-      },
-      {
-        "date": "2018-03-13",
-        "open": 2171.4448,
-        "high": 2179.7413,
-        "low": 2162.8491,
-        "close": 2165.2186,
-        "amount": 58822456.35
-      },
-      {
-        "date": "2018-03-14",
-        "open": 2159.1761,
-        "high": 2164.102,
-        "low": 2145.3011,
-        "close": 2145.3011,
-        "amount": 52125888.74
-      },
-      {
-        "date": "2018-03-15",
-        "open": 2134.722,
-        "high": 2134.722,
-        "low": 2102.343,
-        "close": 2124.9591,
-        "amount": 53175174.53
-      },
       {
         "date": "2018-03-16",
         "open": 2124.1174,
@@ -16534,7 +16502,135 @@
         "high": 3654.5968,
         "low": 3558.7285,
         "close": 3609.1698,
-        "amount": 636080531.5
+        "amount": 636080531.45
+      },
+      {
+        "date": "2026-05-27",
+        "open": 3602.5287,
+        "high": 3615.0443,
+        "low": 3509.6213,
+        "close": 3534.2034,
+        "amount": 612074090.07
+      },
+      {
+        "date": "2026-05-28",
+        "open": 3523.2241,
+        "high": 3600.0374,
+        "low": 3515.5846,
+        "close": 3589.6986,
+        "amount": 585714781.17
+      },
+      {
+        "date": "2026-05-29",
+        "open": 3598.2801,
+        "high": 3603.2863,
+        "low": 3452.7536,
+        "close": 3470.6919,
+        "amount": 653421348.0
+      },
+      {
+        "date": "2026-06-01",
+        "open": 3461.4289,
+        "high": 3523.3102,
+        "low": 3454.8225,
+        "close": 3468.8676,
+        "amount": 549131891.33
+      },
+      {
+        "date": "2026-06-02",
+        "open": 3467.3825,
+        "high": 3476.2402,
+        "low": 3379.3727,
+        "close": 3460.3172,
+        "amount": 547659057.02
+      },
+      {
+        "date": "2026-06-03",
+        "open": 3457.193,
+        "high": 3500.9899,
+        "low": 3428.1409,
+        "close": 3467.0201,
+        "amount": 603635350.4
+      },
+      {
+        "date": "2026-06-04",
+        "open": 3435.6415,
+        "high": 3468.8502,
+        "low": 3430.9792,
+        "close": 3462.2428,
+        "amount": 565092734.79
+      },
+      {
+        "date": "2026-06-05",
+        "open": 3454.0529,
+        "high": 3517.6702,
+        "low": 3413.8972,
+        "close": 3466.5158,
+        "amount": 637585877.89
+      },
+      {
+        "date": "2026-06-08",
+        "open": 3350.601,
+        "high": 3446.9247,
+        "low": 3313.1396,
+        "close": 3354.7062,
+        "amount": 579501062.16
+      },
+      {
+        "date": "2026-06-09",
+        "open": 3397.2962,
+        "high": 3429.466,
+        "low": 3350.1692,
+        "close": 3429.466,
+        "amount": 551805667.47
+      },
+      {
+        "date": "2026-06-10",
+        "open": 3395.2187,
+        "high": 3414.1954,
+        "low": 3326.3957,
+        "close": 3368.0292,
+        "amount": 550242684.96
+      },
+      {
+        "date": "2026-06-11",
+        "open": 3343.2002,
+        "high": 3369.4725,
+        "low": 3313.7852,
+        "close": 3346.8774,
+        "amount": 533218678.55
+      },
+      {
+        "date": "2026-06-12",
+        "open": 3394.0889,
+        "high": 3419.9669,
+        "low": 3346.7012,
+        "close": 3363.5154,
+        "amount": 610139652.6
+      },
+      {
+        "date": "2026-06-15",
+        "open": 3387.6042,
+        "high": 3480.167,
+        "low": 3387.6042,
+        "close": 3480.167,
+        "amount": 533643565.7
+      },
+      {
+        "date": "2026-06-16",
+        "open": 3482.2114,
+        "high": 3545.5448,
+        "low": 3466.8221,
+        "close": 3537.9445,
+        "amount": 562576145.9
+      },
+      {
+        "date": "2026-06-17",
+        "open": 3516.6065,
+        "high": 3556.4609,
+        "low": 3514.7629,
+        "close": 3547.9501,
+        "amount": 579484419.37
       }
     ],
     "trades": [
@@ -18462,20 +18558,20 @@
         "entry_px": 3664.5212,
         "exit_px": 3674.8203,
         "ret_pct": 0.23
+      },
+      {
+        "strategy": "间断腿",
+        "signal_date": "2026-05-29",
+        "entry_date": "2026-05-29",
+        "exit_date": "2026-06-01",
+        "entry_timing": "close",
+        "exit_timing": "close",
+        "entry_px": 3470.6919,
+        "exit_px": 3468.8676,
+        "ret_pct": -0.1
       }
     ],
     "latest_trades": [
-      {
-        "strategy": "间断腿",
-        "signal_date": "2025-03-14",
-        "entry_date": "2025-03-14",
-        "exit_date": "2025-03-17",
-        "entry_timing": "close",
-        "exit_timing": "close",
-        "entry_px": 2679.8238,
-        "exit_px": 2700.723,
-        "ret_pct": 0.73
-      },
       {
         "strategy": "间断腿",
         "signal_date": "2025-03-21",
@@ -18904,6 +19000,17 @@
         "entry_px": 3664.5212,
         "exit_px": 3674.8203,
         "ret_pct": 0.23
+      },
+      {
+        "strategy": "间断腿",
+        "signal_date": "2026-05-29",
+        "entry_date": "2026-05-29",
+        "exit_date": "2026-06-01",
+        "entry_timing": "close",
+        "exit_timing": "close",
+        "entry_px": 3470.6919,
+        "exit_px": 3468.8676,
+        "ret_pct": -0.1
       }
     ]
   },
@@ -18911,188 +19018,66 @@
     {
       "key": "csi1000",
       "source_file": "/mnt/d/CSI2000_strategy/data/tushare_cache/csi1000.csv",
-      "rows": 3978,
+      "rows": 3994,
       "start": "2010-01-04",
-      "end": "2026-05-26"
+      "end": "2026-06-17"
     },
     {
       "key": "csi2000",
       "source_file": "/mnt/d/CSI2000_strategy/data/tushare_cache/csi2000_index.csv",
-      "rows": 3012,
+      "rows": 3028,
       "start": "2013-12-31",
-      "end": "2026-05-26"
+      "end": "2026-06-17"
     },
     {
       "key": "csi300",
-      "source_file": "/mnt/d/Work/BigFall/data/raw/index_daily_000300_SH.csv",
-      "rows": 3981,
+      "source_file": "/mnt/d/CSI2000_strategy/data/hybrid_cache/index_daily_000300_SH.csv",
+      "rows": 3994,
       "start": "2010-01-04",
-      "end": "2026-05-29"
+      "end": "2026-06-17"
     },
     {
       "key": "csi500",
-      "source_file": "/mnt/d/Work/BigFall/data/raw/index_daily_000905_SH.csv",
-      "rows": 3981,
+      "source_file": "/mnt/d/CSI2000_strategy/data/hybrid_cache/index_daily_000905_SH.csv",
+      "rows": 3994,
       "start": "2010-01-04",
-      "end": "2026-05-29"
+      "end": "2026-06-17"
     },
     {
       "key": "etf159531",
       "source_file": "/mnt/d/CSI2000_strategy/data/tushare_cache/csi2000_etf.csv",
-      "rows": 646,
+      "rows": 662,
       "start": "2023-09-18",
-      "end": "2026-05-26"
+      "end": "2026-06-17"
     },
     {
       "key": "hsi",
-      "source_file": "/mnt/d/Work/BigFall/data/raw/index_global_HSI.csv",
-      "rows": 4000,
-      "start": "2010-02-24",
-      "end": "2026-05-29"
+      "source_file": "/mnt/d/CSI2000_strategy/data/hybrid_cache/index_global_HSI.csv",
+      "rows": 4028,
+      "start": "2010-02-01",
+      "end": "2026-06-17"
     },
     {
       "key": "hktech",
-      "source_file": "/mnt/d/Work/BigFall/data/raw/index_global_HKTECH.csv",
-      "rows": 1433,
+      "source_file": "/mnt/d/CSI2000_strategy/data/hybrid_cache/index_global_HKTECH.csv",
+      "rows": 1446,
       "start": "2020-07-27",
-      "end": "2026-05-29"
+      "end": "2026-06-17"
     },
     {
       "key": "dji",
-      "source_file": "/mnt/d/Work/BigFall/data/raw/index_global_DJI.csv",
-      "rows": 3998,
-      "start": "2010-07-30",
-      "end": "2026-05-29"
+      "source_file": "/mnt/d/CSI2000_strategy/data/hybrid_cache/index_global_DJI.csv",
+      "rows": 4031,
+      "start": "2010-07-01",
+      "end": "2026-06-17"
     },
     {
       "key": "ftse",
-      "source_file": "/mnt/d/Work/BigFall/data/raw/index_global_FTSE.csv",
-      "rows": 4000,
-      "start": "2010-07-27",
-      "end": "2026-05-29"
+      "source_file": "/mnt/d/CSI2000_strategy/data/hybrid_cache/index_global_FTSE.csv",
+      "rows": 4031,
+      "start": "2010-07-01",
+      "end": "2026-06-17"
     }
   ],
-  "public_scope": "Published data includes aggregate strategy metrics, CSI2000 candles, and historical trade records.",
-  "performance_components": [
-    {
-      "component": "组合策略",
-      "version": "main_plus_gap_cool2",
-      "target": "CSI2000 Hybrid Index",
-      "type": "Theoretical",
-      "start": "2018-03-09",
-      "end": "2026-05-25",
-      "period": "2018-03-09 至 2026-05-25",
-      "n_days": 1990,
-      "years": "7.90",
-      "trades": 175,
-      "ann_return": "20.04%",
-      "cum_return": "323.1%",
-      "max_dd": "-4.46%",
-      "calmar": "4.49",
-      "sharpe": "2.07",
-      "win_rate": "73.1%",
-      "avg_trade": "0.84%",
-      "latest_nav": "4.23"
-    },
-    {
-      "component": "组合策略",
-      "version": "main_plus_gap_cool2",
-      "target": "CSI2000 Hybrid ETF",
-      "type": "Tradable",
-      "start": "2023-09-22",
-      "end": "2026-05-25",
-      "period": "2023-09-22 至 2026-05-25",
-      "n_days": 641,
-      "years": "2.54",
-      "trades": 76,
-      "ann_return": "31.06%",
-      "cum_return": "99.0%",
-      "max_dd": "-4.30%",
-      "calmar": "7.22",
-      "sharpe": "2.14",
-      "win_rate": "75.0%",
-      "avg_trade": "0.93%",
-      "latest_nav": "1.99"
-    },
-    {
-      "component": "主策略",
-      "version": "main_only",
-      "target": "CSI2000 Hybrid Index",
-      "type": "Theoretical",
-      "start": "2018-03-09",
-      "end": "2026-05-25",
-      "period": "2018-03-09 至 2026-05-25",
-      "n_days": 1990,
-      "years": "7.90",
-      "trades": 25,
-      "ann_return": "8.32%",
-      "cum_return": "88.0%",
-      "max_dd": "-2.48%",
-      "calmar": "3.35",
-      "sharpe": "1.57",
-      "win_rate": "92.0%",
-      "avg_trade": "2.58%",
-      "latest_nav": "1.88"
-    },
-    {
-      "component": "主策略",
-      "version": "main_only",
-      "target": "CSI2000 Hybrid ETF",
-      "type": "Tradable",
-      "start": "2023-09-22",
-      "end": "2026-05-25",
-      "period": "2023-09-22 至 2026-05-25",
-      "n_days": 641,
-      "years": "2.54",
-      "trades": 10,
-      "ann_return": "12.47%",
-      "cum_return": "34.8%",
-      "max_dd": "-2.43%",
-      "calmar": "5.13",
-      "sharpe": "1.39",
-      "win_rate": "90.0%",
-      "avg_trade": "3.09%",
-      "latest_nav": "1.35"
-    },
-    {
-      "component": "间断腿",
-      "version": "friday_gap_only",
-      "target": "CSI2000 Hybrid Index",
-      "type": "Theoretical",
-      "start": "2018-03-09",
-      "end": "2026-05-25",
-      "period": "2018-03-09 至 2026-05-25",
-      "n_days": 1990,
-      "years": "7.90",
-      "trades": 166,
-      "ann_return": "13.80%",
-      "cum_return": "177.6%",
-      "max_dd": "-4.53%",
-      "calmar": "3.05",
-      "sharpe": "1.65",
-      "win_rate": "70.5%",
-      "avg_trade": "0.63%",
-      "latest_nav": "2.78"
-    },
-    {
-      "component": "间断腿",
-      "version": "friday_gap_only",
-      "target": "CSI2000 Hybrid ETF",
-      "type": "Tradable",
-      "start": "2023-09-22",
-      "end": "2026-05-25",
-      "period": "2023-09-22 至 2026-05-25",
-      "n_days": 641,
-      "years": "2.54",
-      "trades": 74,
-      "ann_return": "21.93%",
-      "cum_return": "65.6%",
-      "max_dd": "-5.47%",
-      "calmar": "4.01",
-      "sharpe": "1.97",
-      "win_rate": "73.0%",
-      "avg_trade": "0.70%",
-      "latest_nav": "1.66"
-    }
-  ]
+  "public_scope": "Published data includes aggregate strategy metrics, CSI2000 candles, and historical trade records."
 }
