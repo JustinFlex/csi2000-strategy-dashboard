@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-06-18 10:22 CST",
-  "as_of": "2026-06-17",
+  "generated_at": "2026-06-29 09:57 CST",
+  "as_of": "2026-06-25",
   "decision": {
-    "date": "2026-06-17",
-    "next_checkpoint": "2026-06-18",
-    "action": "SKIP",
-    "predicted_gap_pct": 0.172
+    "date": "2026-06-25",
+    "next_checkpoint": "2026-06-26",
+    "action": "TRADE",
+    "predicted_gap_pct": 0.5002
   },
   "kpis": [
     {
       "label": "Next Action",
-      "value": "SKIP",
-      "sub": "target 2026-06-18"
+      "value": "TRADE",
+      "sub": "target 2026-06-26"
     },
     {
       "label": "Hybrid Index Annualized",
@@ -16631,6 +16631,46 @@
         "low": 3514.7629,
         "close": 3547.9501,
         "amount": 579484419.37
+      },
+      {
+        "date": "2026-06-18",
+        "open": 3534.8231,
+        "high": 3577.8072,
+        "low": 3519.3568,
+        "close": 3561.7105,
+        "amount": 577201740.14
+      },
+      {
+        "date": "2026-06-22",
+        "open": 3575.1163,
+        "high": 3589.0089,
+        "low": 3482.0589,
+        "close": 3589.0089,
+        "amount": 648884303.56
+      },
+      {
+        "date": "2026-06-23",
+        "open": 3582.7163,
+        "high": 3626.4841,
+        "low": 3548.9289,
+        "close": 3571.3476,
+        "amount": 607729989.09
+      },
+      {
+        "date": "2026-06-24",
+        "open": 3550.3895,
+        "high": 3569.8715,
+        "low": 3499.587,
+        "close": 3569.4094,
+        "amount": 590861973.84
+      },
+      {
+        "date": "2026-06-25",
+        "open": 3571.8424,
+        "high": 3582.0854,
+        "low": 3516.5601,
+        "close": 3538.0935,
+        "amount": 623408957.62
       }
     ],
     "trades": [
@@ -19018,65 +19058,65 @@
     {
       "key": "csi1000",
       "source_file": "/mnt/d/CSI2000_strategy/data/tushare_cache/csi1000.csv",
-      "rows": 3994,
+      "rows": 3999,
       "start": "2010-01-04",
-      "end": "2026-06-17"
+      "end": "2026-06-25"
     },
     {
       "key": "csi2000",
       "source_file": "/mnt/d/CSI2000_strategy/data/tushare_cache/csi2000_index.csv",
-      "rows": 3028,
+      "rows": 3033,
       "start": "2013-12-31",
-      "end": "2026-06-17"
+      "end": "2026-06-25"
     },
     {
       "key": "csi300",
       "source_file": "/mnt/d/CSI2000_strategy/data/hybrid_cache/index_daily_000300_SH.csv",
-      "rows": 3994,
+      "rows": 3999,
       "start": "2010-01-04",
-      "end": "2026-06-17"
+      "end": "2026-06-25"
     },
     {
       "key": "csi500",
       "source_file": "/mnt/d/CSI2000_strategy/data/hybrid_cache/index_daily_000905_SH.csv",
-      "rows": 3994,
+      "rows": 3999,
       "start": "2010-01-04",
-      "end": "2026-06-17"
+      "end": "2026-06-25"
     },
     {
       "key": "etf159531",
       "source_file": "/mnt/d/CSI2000_strategy/data/tushare_cache/csi2000_etf.csv",
-      "rows": 662,
+      "rows": 667,
       "start": "2023-09-18",
-      "end": "2026-06-17"
+      "end": "2026-06-25"
     },
     {
       "key": "hsi",
       "source_file": "/mnt/d/CSI2000_strategy/data/hybrid_cache/index_global_HSI.csv",
-      "rows": 4028,
+      "rows": 4033,
       "start": "2010-02-01",
-      "end": "2026-06-17"
+      "end": "2026-06-25"
     },
     {
       "key": "hktech",
       "source_file": "/mnt/d/CSI2000_strategy/data/hybrid_cache/index_global_HKTECH.csv",
-      "rows": 1446,
+      "rows": 1451,
       "start": "2020-07-27",
-      "end": "2026-06-17"
+      "end": "2026-06-25"
     },
     {
       "key": "dji",
       "source_file": "/mnt/d/CSI2000_strategy/data/hybrid_cache/index_global_DJI.csv",
-      "rows": 4031,
+      "rows": 4036,
       "start": "2010-07-01",
-      "end": "2026-06-17"
+      "end": "2026-06-25"
     },
     {
       "key": "ftse",
       "source_file": "/mnt/d/CSI2000_strategy/data/hybrid_cache/index_global_FTSE.csv",
-      "rows": 4031,
+      "rows": 4037,
       "start": "2010-07-01",
-      "end": "2026-06-17"
+      "end": "2026-06-25"
     }
   ],
   "public_scope": "Published data includes aggregate strategy metrics, CSI2000 candles, and historical trade records."
