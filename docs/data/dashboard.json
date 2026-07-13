@@ -1,70 +1,70 @@
 {
-  "generated_at": "2026-07-03 08:57 CST",
-  "as_of": "2026-07-02",
+  "generated_at": "2026-07-13 12:42 CST",
+  "as_of": "2026-07-10",
   "decision": {
-    "date": "2026-07-02",
-    "next_checkpoint": "2026-07-03",
-    "action": "WAIT",
-    "predicted_gap_pct": null,
+    "date": "2026-07-10",
+    "next_checkpoint": "2026-07-10",
+    "action": "SKIP",
+    "predicted_gap_pct": 0.2734,
     "decision_basis": "friday_close"
   },
   "kpis": [
     {
       "label": "Next Action",
-      "value": "WAIT",
-      "sub": "target 2026-07-03"
+      "value": "SKIP",
+      "sub": "target 2026-07-10"
     },
     {
       "label": "Hybrid Index Annualized",
-      "value": "20.88%",
+      "value": "20.27%",
       "sub": "main + gap cool2"
     },
     {
       "label": "Hybrid ETF Annualized",
-      "value": "35.49%",
+      "value": "32.83%",
       "sub": "159531 tradable"
     },
     {
       "label": "Hybrid Index Calmar",
-      "value": "3.18",
-      "sub": "trades 181"
+      "value": "3.09",
+      "sub": "trades 182"
     },
     {
       "label": "Hybrid ETF Calmar",
-      "value": "8.25",
-      "sub": "trades 72"
+      "value": "7.63",
+      "sub": "trades 73"
     }
   ],
   "performance": [
     {
       "target": "CSI2000 Hybrid Index",
       "type": "Theoretical",
-      "ann_return": "20.88%",
+      "ann_return": "20.27%",
       "max_dd": "-6.57%",
-      "calmar": "3.18",
-      "sharpe": "2.13",
-      "weeks": 181,
-      "latest_nav": "4.45",
-      "cum_return": "345.2%"
+      "calmar": "3.09",
+      "sharpe": "2.08",
+      "weeks": 182,
+      "latest_nav": "4.36",
+      "cum_return": "335.5%"
     },
     {
       "target": "CSI2000 Hybrid ETF",
       "type": "Tradable",
-      "ann_return": "35.49%",
+      "ann_return": "32.83%",
       "max_dd": "-4.30%",
-      "calmar": "8.25",
-      "sharpe": "2.46",
-      "weeks": 72,
-      "latest_nav": "2.18",
-      "cum_return": "117.9%"
+      "calmar": "7.63",
+      "sharpe": "2.33",
+      "weeks": 73,
+      "latest_nav": "2.13",
+      "cum_return": "112.7%"
     }
   ],
   "series": [
     {
       "label": "组合指数净值",
       "color": "#255e91",
-      "latest_nav": 4.4524,
-      "cum_return_pct": 345.24,
+      "latest_nav": 4.3555,
+      "cum_return_pct": 335.55,
       "points": [
         {
           "month": "2018-03",
@@ -465,14 +465,18 @@
         {
           "month": "2026-06",
           "nav": 4.4524
+        },
+        {
+          "month": "2026-07",
+          "nav": 4.3555
         }
       ]
     },
     {
       "label": "组合ETF净值",
       "color": "#0b806f",
-      "latest_nav": 2.1785,
-      "cum_return_pct": 117.85,
+      "latest_nav": 2.1274,
+      "cum_return_pct": 112.74,
       "points": [
         {
           "month": "2023-09",
@@ -609,13 +613,17 @@
         {
           "month": "2026-06",
           "nav": 2.1785
+        },
+        {
+          "month": "2026-07",
+          "nav": 2.1274
         }
       ]
     }
   ],
   "hybrid": {
     "eval_start": "2018-03-23",
-    "eval_end": "2026-06-01",
+    "eval_end": "2026-07-06",
     "candles": [
       {
         "date": "2018-03-23",
@@ -16672,6 +16680,54 @@
         "low": 3471.2185,
         "close": 3481.7066,
         "amount": 592767538.56
+      },
+      {
+        "date": "2026-07-03",
+        "open": 3480.4876,
+        "high": 3524.7171,
+        "low": 3458.8693,
+        "close": 3487.715,
+        "amount": 552698104.49
+      },
+      {
+        "date": "2026-07-06",
+        "open": 3496.2247,
+        "high": 3510.4045,
+        "low": 3398.359,
+        "close": 3413.5572,
+        "amount": 527991342.04
+      },
+      {
+        "date": "2026-07-07",
+        "open": 3399.7375,
+        "high": 3419.9776,
+        "low": 3300.812,
+        "close": 3313.1095,
+        "amount": 438713461.95
+      },
+      {
+        "date": "2026-07-08",
+        "open": 3316.5086,
+        "high": 3320.1366,
+        "low": 3223.8081,
+        "close": 3233.4737,
+        "amount": 415602569.17
+      },
+      {
+        "date": "2026-07-09",
+        "open": 3242.9279,
+        "high": 3279.4604,
+        "low": 3149.7187,
+        "close": 3277.0738,
+        "amount": 451375999.85
+      },
+      {
+        "date": "2026-07-10",
+        "open": 3276.7552,
+        "high": 3358.7835,
+        "low": 3272.9766,
+        "close": 3272.9877,
+        "amount": 517009486.39
       }
     ],
     "trades": [
@@ -18665,20 +18721,20 @@
         "entry_px": 3470.6919,
         "exit_px": 3468.8676,
         "ret_pct": -0.1
+      },
+      {
+        "strategy": "间断腿",
+        "signal_date": "2026-07-03",
+        "entry_date": "2026-07-03",
+        "exit_date": "2026-07-06",
+        "entry_timing": "close",
+        "exit_timing": "close",
+        "entry_px": 3487.715,
+        "exit_px": 3413.5572,
+        "ret_pct": -2.18
       }
     ],
     "latest_trades": [
-      {
-        "strategy": "间断腿",
-        "signal_date": "2025-02-21",
-        "entry_date": "2025-02-21",
-        "exit_date": "2025-02-24",
-        "entry_timing": "close",
-        "exit_timing": "close",
-        "entry_px": 2617.6703,
-        "exit_px": 2622.3816,
-        "ret_pct": 0.13
-      },
       {
         "strategy": "主策略",
         "signal_date": "2025-02-28",
@@ -19107,6 +19163,17 @@
         "entry_px": 3470.6919,
         "exit_px": 3468.8676,
         "ret_pct": -0.1
+      },
+      {
+        "strategy": "间断腿",
+        "signal_date": "2026-07-03",
+        "entry_date": "2026-07-03",
+        "exit_date": "2026-07-06",
+        "entry_timing": "close",
+        "exit_timing": "close",
+        "entry_px": 3487.715,
+        "exit_px": 3413.5572,
+        "ret_pct": -2.18
       }
     ]
   },
@@ -19114,65 +19181,65 @@
     {
       "key": "csi1000",
       "source_file": "/mnt/d/CSI2000_strategy/data/tushare_cache/csi1000.csv",
-      "rows": 4004,
+      "rows": 4010,
       "start": "2010-01-04",
-      "end": "2026-07-02"
+      "end": "2026-07-10"
     },
     {
       "key": "csi2000",
       "source_file": "/mnt/d/CSI2000_strategy/data/tushare_cache/csi2000_index.csv",
-      "rows": 3038,
+      "rows": 3044,
       "start": "2013-12-31",
-      "end": "2026-07-02"
+      "end": "2026-07-10"
     },
     {
       "key": "csi300",
       "source_file": "/mnt/d/CSI2000_strategy/data/hybrid_cache/index_daily_000300_SH.csv",
-      "rows": 4004,
+      "rows": 4010,
       "start": "2010-01-04",
-      "end": "2026-07-02"
+      "end": "2026-07-10"
     },
     {
       "key": "csi500",
       "source_file": "/mnt/d/CSI2000_strategy/data/hybrid_cache/index_daily_000905_SH.csv",
-      "rows": 4004,
+      "rows": 4010,
       "start": "2010-01-04",
-      "end": "2026-07-02"
+      "end": "2026-07-10"
     },
     {
       "key": "etf159531",
       "source_file": "/mnt/d/CSI2000_strategy/data/tushare_cache/csi2000_etf.csv",
-      "rows": 672,
+      "rows": 678,
       "start": "2023-09-18",
-      "end": "2026-07-02"
+      "end": "2026-07-10"
     },
     {
       "key": "hsi",
       "source_file": "/mnt/d/CSI2000_strategy/data/hybrid_cache/index_global_HSI.csv",
-      "rows": 4037,
+      "rows": 4043,
       "start": "2010-02-01",
-      "end": "2026-07-02"
+      "end": "2026-07-10"
     },
     {
       "key": "hktech",
       "source_file": "/mnt/d/CSI2000_strategy/data/hybrid_cache/index_global_HKTECH.csv",
-      "rows": 1455,
+      "rows": 1461,
       "start": "2020-07-27",
-      "end": "2026-07-02"
+      "end": "2026-07-10"
     },
     {
       "key": "dji",
       "source_file": "/mnt/d/CSI2000_strategy/data/hybrid_cache/index_global_DJI.csv",
-      "rows": 4041,
+      "rows": 4046,
       "start": "2010-07-01",
-      "end": "2026-07-02"
+      "end": "2026-07-10"
     },
     {
       "key": "ftse",
       "source_file": "/mnt/d/CSI2000_strategy/data/hybrid_cache/index_global_FTSE.csv",
-      "rows": 4042,
+      "rows": 4048,
       "start": "2010-07-01",
-      "end": "2026-07-02"
+      "end": "2026-07-10"
     }
   ],
   "public_scope": "Published data includes aggregate strategy metrics, CSI2000 candles, and historical trade records."
