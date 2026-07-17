@@ -1,482 +1,482 @@
 {
-  "generated_at": "2026-07-13 12:42 CST",
-  "as_of": "2026-07-10",
+  "generated_at": "2026-07-17 12:31 CST",
+  "as_of": "2026-07-16",
   "decision": {
-    "date": "2026-07-10",
-    "next_checkpoint": "2026-07-10",
-    "action": "SKIP",
-    "predicted_gap_pct": 0.2734,
+    "date": "2026-07-16",
+    "next_checkpoint": "2026-07-17",
+    "action": "WAIT",
+    "predicted_gap_pct": null,
     "decision_basis": "friday_close"
   },
   "kpis": [
     {
       "label": "Next Action",
-      "value": "SKIP",
-      "sub": "target 2026-07-10"
+      "value": "WAIT",
+      "sub": "target 2026-07-17"
     },
     {
       "label": "Hybrid Index Annualized",
-      "value": "20.27%",
+      "value": "19.59%",
       "sub": "main + gap cool2"
     },
     {
       "label": "Hybrid ETF Annualized",
-      "value": "32.83%",
+      "value": "33.02%",
       "sub": "159531 tradable"
     },
     {
       "label": "Hybrid Index Calmar",
-      "value": "3.09",
+      "value": "2.98",
       "sub": "trades 182"
     },
     {
       "label": "Hybrid ETF Calmar",
-      "value": "7.63",
-      "sub": "trades 73"
+      "value": "7.67",
+      "sub": "trades 74"
     }
   ],
   "performance": [
     {
       "target": "CSI2000 Hybrid Index",
       "type": "Theoretical",
-      "ann_return": "20.27%",
+      "ann_return": "19.59%",
       "max_dd": "-6.57%",
-      "calmar": "3.09",
-      "sharpe": "2.08",
+      "calmar": "2.98",
+      "sharpe": "2.03",
       "weeks": 182,
-      "latest_nav": "4.36",
-      "cum_return": "335.5%"
+      "latest_nav": "4.17",
+      "cum_return": "316.7%"
     },
     {
       "target": "CSI2000 Hybrid ETF",
       "type": "Tradable",
-      "ann_return": "32.83%",
+      "ann_return": "33.02%",
       "max_dd": "-4.30%",
-      "calmar": "7.63",
+      "calmar": "7.67",
       "sharpe": "2.33",
-      "weeks": 73,
-      "latest_nav": "2.13",
-      "cum_return": "112.7%"
+      "weeks": 74,
+      "latest_nav": "2.15",
+      "cum_return": "115.2%"
     }
   ],
   "series": [
     {
       "label": "组合指数净值",
       "color": "#255e91",
-      "latest_nav": 4.3555,
-      "cum_return_pct": 335.55,
+      "latest_nav": 4.1675,
+      "cum_return_pct": 316.75,
       "points": [
         {
           "month": "2018-03",
-          "nav": 1.0552
+          "nav": 1.0
         },
         {
           "month": "2018-04",
-          "nav": 1.0552
+          "nav": 1.0
         },
         {
           "month": "2018-05",
-          "nav": 1.0552
+          "nav": 1.0
         },
         {
           "month": "2018-06",
-          "nav": 1.0552
+          "nav": 1.0
         },
         {
           "month": "2018-07",
-          "nav": 1.0552
+          "nav": 1.0
         },
         {
           "month": "2018-08",
-          "nav": 1.0552
+          "nav": 1.0
         },
         {
           "month": "2018-09",
-          "nav": 1.0552
+          "nav": 1.0
         },
         {
           "month": "2018-10",
-          "nav": 1.0643
+          "nav": 1.0086
         },
         {
           "month": "2018-11",
-          "nav": 1.078
+          "nav": 1.0217
         },
         {
           "month": "2018-12",
-          "nav": 1.078
+          "nav": 1.0217
         },
         {
           "month": "2019-01",
-          "nav": 1.078
+          "nav": 1.0217
         },
         {
           "month": "2019-02",
-          "nav": 1.1293
+          "nav": 1.0703
         },
         {
           "month": "2019-03",
-          "nav": 1.2203
+          "nav": 1.1565
         },
         {
           "month": "2019-04",
-          "nav": 1.2381
+          "nav": 1.1733
         },
         {
           "month": "2019-05",
-          "nav": 1.2381
+          "nav": 1.1733
         },
         {
           "month": "2019-06",
-          "nav": 1.2381
+          "nav": 1.1733
         },
         {
           "month": "2019-07",
-          "nav": 1.1911
+          "nav": 1.1288
         },
         {
           "month": "2019-08",
-          "nav": 1.1911
+          "nav": 1.1288
         },
         {
           "month": "2019-09",
-          "nav": 1.2107
+          "nav": 1.1474
         },
         {
           "month": "2019-10",
-          "nav": 1.2107
+          "nav": 1.1474
         },
         {
           "month": "2019-11",
-          "nav": 1.2107
+          "nav": 1.1474
         },
         {
           "month": "2019-12",
-          "nav": 1.1844
+          "nav": 1.1225
         },
         {
           "month": "2020-01",
-          "nav": 1.221
+          "nav": 1.1571
         },
         {
           "month": "2020-02",
-          "nav": 1.3259
+          "nav": 1.2566
         },
         {
           "month": "2020-03",
-          "nav": 1.3848
+          "nav": 1.3123
         },
         {
           "month": "2020-04",
-          "nav": 1.3848
+          "nav": 1.3123
         },
         {
           "month": "2020-05",
-          "nav": 1.3848
+          "nav": 1.3123
         },
         {
           "month": "2020-06",
-          "nav": 1.4051
+          "nav": 1.3317
         },
         {
           "month": "2020-07",
-          "nav": 1.5226
+          "nav": 1.443
         },
         {
           "month": "2020-08",
-          "nav": 1.6439
+          "nav": 1.5579
         },
         {
           "month": "2020-09",
-          "nav": 1.6439
+          "nav": 1.5579
         },
         {
           "month": "2020-10",
-          "nav": 1.6353
+          "nav": 1.5498
         },
         {
           "month": "2020-11",
-          "nav": 1.6353
+          "nav": 1.5498
         },
         {
           "month": "2020-12",
-          "nav": 1.6353
+          "nav": 1.5498
         },
         {
           "month": "2021-01",
-          "nav": 1.6081
+          "nav": 1.524
         },
         {
           "month": "2021-02",
-          "nav": 1.6081
+          "nav": 1.524
         },
         {
           "month": "2021-03",
-          "nav": 1.5871
+          "nav": 1.5041
         },
         {
           "month": "2021-04",
-          "nav": 1.5603
+          "nav": 1.4787
         },
         {
           "month": "2021-05",
-          "nav": 1.5606
+          "nav": 1.479
         },
         {
           "month": "2021-06",
-          "nav": 1.5977
+          "nav": 1.5141
         },
         {
           "month": "2021-07",
-          "nav": 1.6704
+          "nav": 1.5831
         },
         {
           "month": "2021-08",
-          "nav": 1.7121
+          "nav": 1.6226
         },
         {
           "month": "2021-09",
-          "nav": 1.7507
+          "nav": 1.6591
         },
         {
           "month": "2021-10",
-          "nav": 1.7507
+          "nav": 1.6591
         },
         {
           "month": "2021-11",
-          "nav": 1.8326
+          "nav": 1.7368
         },
         {
           "month": "2021-12",
-          "nav": 1.7867
+          "nav": 1.6933
         },
         {
           "month": "2022-01",
-          "nav": 1.7867
+          "nav": 1.6933
         },
         {
           "month": "2022-02",
-          "nav": 1.7867
+          "nav": 1.6933
         },
         {
           "month": "2022-03",
-          "nav": 1.762
+          "nav": 1.6698
         },
         {
           "month": "2022-04",
-          "nav": 1.762
+          "nav": 1.6698
         },
         {
           "month": "2022-05",
-          "nav": 1.8074
+          "nav": 1.7129
         },
         {
           "month": "2022-06",
-          "nav": 1.8584
+          "nav": 1.7612
         },
         {
           "month": "2022-07",
-          "nav": 1.8868
+          "nav": 1.7881
         },
         {
           "month": "2022-08",
-          "nav": 1.9613
+          "nav": 1.8588
         },
         {
           "month": "2022-09",
-          "nav": 1.9875
+          "nav": 1.8836
         },
         {
           "month": "2022-10",
-          "nav": 1.9646
+          "nav": 1.8619
         },
         {
           "month": "2022-11",
-          "nav": 1.9771
+          "nav": 1.8737
         },
         {
           "month": "2022-12",
-          "nav": 1.983
+          "nav": 1.8793
         },
         {
           "month": "2023-01",
-          "nav": 2.0324
+          "nav": 1.9261
         },
         {
           "month": "2023-02",
-          "nav": 2.0563
+          "nav": 1.9488
         },
         {
           "month": "2023-03",
-          "nav": 2.0621
+          "nav": 1.9543
         },
         {
           "month": "2023-04",
-          "nav": 2.0394
+          "nav": 1.9327
         },
         {
           "month": "2023-05",
-          "nav": 2.0475
+          "nav": 1.9405
         },
         {
           "month": "2023-06",
-          "nav": 2.0861
+          "nav": 1.9771
         },
         {
           "month": "2023-07",
-          "nav": 2.0943
+          "nav": 1.9848
         },
         {
           "month": "2023-08",
-          "nav": 2.0848
+          "nav": 1.9757
         },
         {
           "month": "2023-09",
-          "nav": 2.1109
+          "nav": 2.0006
         },
         {
           "month": "2023-10",
-          "nav": 2.1272
+          "nav": 2.0159
         },
         {
           "month": "2023-11",
-          "nav": 2.226
+          "nav": 2.1096
         },
         {
           "month": "2023-12",
-          "nav": 2.2511
+          "nav": 2.1334
         },
         {
           "month": "2024-01",
-          "nav": 2.2511
+          "nav": 2.1334
         },
         {
           "month": "2024-02",
-          "nav": 2.372
+          "nav": 2.2479
         },
         {
           "month": "2024-03",
-          "nav": 2.5082
+          "nav": 2.377
         },
         {
           "month": "2024-04",
-          "nav": 2.5748
+          "nav": 2.4402
         },
         {
           "month": "2024-05",
-          "nav": 2.5534
+          "nav": 2.4199
         },
         {
           "month": "2024-06",
-          "nav": 2.5534
+          "nav": 2.4199
         },
         {
           "month": "2024-07",
-          "nav": 2.5534
+          "nav": 2.4199
         },
         {
           "month": "2024-08",
-          "nav": 2.5534
+          "nav": 2.4199
         },
         {
           "month": "2024-09",
-          "nav": 2.8352
+          "nav": 2.6869
         },
         {
           "month": "2024-10",
-          "nav": 3.0451
+          "nav": 2.8858
         },
         {
           "month": "2024-11",
-          "nav": 3.1912
+          "nav": 3.0243
         },
         {
           "month": "2024-12",
-          "nav": 3.2204
+          "nav": 3.052
         },
         {
           "month": "2025-01",
-          "nav": 3.2204
+          "nav": 3.052
         },
         {
           "month": "2025-02",
-          "nav": 3.3514
+          "nav": 3.1761
         },
         {
           "month": "2025-03",
-          "nav": 3.4347
+          "nav": 3.2551
         },
         {
           "month": "2025-04",
-          "nav": 3.4347
+          "nav": 3.2551
         },
         {
           "month": "2025-05",
-          "nav": 3.5584
+          "nav": 3.3723
         },
         {
           "month": "2025-06",
-          "nav": 3.6764
+          "nav": 3.4841
         },
         {
           "month": "2025-07",
-          "nav": 3.7914
+          "nav": 3.5931
         },
         {
           "month": "2025-08",
-          "nav": 4.039
+          "nav": 3.8278
         },
         {
           "month": "2025-09",
-          "nav": 4.137
+          "nav": 3.9206
         },
         {
           "month": "2025-10",
-          "nav": 4.1269
+          "nav": 3.9111
         },
         {
           "month": "2025-11",
-          "nav": 4.1508
+          "nav": 3.9338
         },
         {
           "month": "2025-12",
-          "nav": 4.1816
+          "nav": 3.9629
         },
         {
           "month": "2026-01",
-          "nav": 4.271
+          "nav": 4.0477
         },
         {
           "month": "2026-02",
-          "nav": 4.2447
+          "nav": 4.0227
         },
         {
           "month": "2026-03",
-          "nav": 4.3078
+          "nav": 4.0826
         },
         {
           "month": "2026-04",
-          "nav": 4.3879
+          "nav": 4.1585
         },
         {
           "month": "2026-05",
-          "nav": 4.457
+          "nav": 4.2239
         },
         {
           "month": "2026-06",
-          "nav": 4.4524
+          "nav": 4.2196
         },
         {
           "month": "2026-07",
-          "nav": 4.3555
+          "nav": 4.1675
         }
       ]
     },
     {
       "label": "组合ETF净值",
       "color": "#0b806f",
-      "latest_nav": 2.1274,
-      "cum_return_pct": 112.74,
+      "latest_nav": 2.1523,
+      "cum_return_pct": 115.23,
       "points": [
         {
           "month": "2023-09",
@@ -616,55 +616,15 @@
         },
         {
           "month": "2026-07",
-          "nav": 2.1274
+          "nav": 2.1523
         }
       ]
     }
   ],
   "hybrid": {
-    "eval_start": "2018-03-23",
-    "eval_end": "2026-07-06",
+    "eval_start": "2018-03-30",
+    "eval_end": "2026-07-15",
     "candles": [
-      {
-        "date": "2018-03-23",
-        "open": 2080.185,
-        "high": 2092.0811,
-        "low": 2000.7996,
-        "close": 2020.3138,
-        "amount": 70070142.9
-      },
-      {
-        "date": "2018-03-26",
-        "open": 1988.8707,
-        "high": 2045.8471,
-        "low": 1960.2389,
-        "close": 2045.8431,
-        "amount": 51638993.73
-      },
-      {
-        "date": "2018-03-27",
-        "open": 2060.9236,
-        "high": 2101.6416,
-        "low": 2060.9236,
-        "close": 2099.6312,
-        "amount": 63043097.77
-      },
-      {
-        "date": "2018-03-28",
-        "open": 2078.5706,
-        "high": 2104.2749,
-        "low": 2078.5706,
-        "close": 2093.5014,
-        "amount": 60389693.48
-      },
-      {
-        "date": "2018-03-29",
-        "open": 2098.3032,
-        "high": 2113.7373,
-        "low": 2095.5383,
-        "close": 2113.5676,
-        "amount": 56614004.92
-      },
       {
         "date": "2018-03-30",
         "open": 2117.687,
@@ -16728,20 +16688,41 @@
         "low": 3272.9766,
         "close": 3272.9877,
         "amount": 517009486.39
+      },
+      {
+        "date": "2026-07-13",
+        "open": 3249.745,
+        "high": 3257.3876,
+        "low": 3078.3061,
+        "close": 3088.0007,
+        "amount": 449169554.5
+      },
+      {
+        "date": "2026-07-14",
+        "open": 3087.4574,
+        "high": 3145.11,
+        "low": 3030.8792,
+        "close": 3143.758,
+        "amount": 402361842.2
+      },
+      {
+        "date": "2026-07-15",
+        "open": 3149.3483,
+        "high": 3177.9617,
+        "low": 3105.2466,
+        "close": 3118.7468,
+        "amount": 395021011.47
+      },
+      {
+        "date": "2026-07-16",
+        "open": 3084.044,
+        "high": 3138.9188,
+        "low": 3046.4279,
+        "close": 3060.6182,
+        "amount": 378357770.14
       }
     ],
     "trades": [
-      {
-        "strategy": "主策略",
-        "signal_date": "2018-03-23",
-        "entry_date": "2018-03-26",
-        "exit_date": "2018-03-27",
-        "entry_timing": "open",
-        "exit_timing": "close",
-        "entry_px": 1988.8707,
-        "exit_px": 2099.6312,
-        "ret_pct": 5.52
-      },
       {
         "strategy": "主策略",
         "signal_date": "2018-10-08",
@@ -18732,20 +18713,20 @@
         "entry_px": 3487.715,
         "exit_px": 3413.5572,
         "ret_pct": -2.18
+      },
+      {
+        "strategy": "主策略",
+        "signal_date": "2026-07-13",
+        "entry_date": "2026-07-14",
+        "exit_date": "2026-07-15",
+        "entry_timing": "open",
+        "exit_timing": "close",
+        "entry_px": 3087.4574,
+        "exit_px": 3118.7468,
+        "ret_pct": 0.96
       }
     ],
     "latest_trades": [
-      {
-        "strategy": "主策略",
-        "signal_date": "2025-02-28",
-        "entry_date": "2025-03-03",
-        "exit_date": "2025-03-04",
-        "entry_timing": "open",
-        "exit_timing": "close",
-        "entry_px": 2550.1111,
-        "exit_px": 2587.01,
-        "ret_pct": 1.4
-      },
       {
         "strategy": "间断腿",
         "signal_date": "2025-03-07",
@@ -19174,72 +19155,83 @@
         "entry_px": 3487.715,
         "exit_px": 3413.5572,
         "ret_pct": -2.18
+      },
+      {
+        "strategy": "主策略",
+        "signal_date": "2026-07-13",
+        "entry_date": "2026-07-14",
+        "exit_date": "2026-07-15",
+        "entry_timing": "open",
+        "exit_timing": "close",
+        "entry_px": 3087.4574,
+        "exit_px": 3118.7468,
+        "ret_pct": 0.96
       }
     ]
   },
   "source_metadata": [
     {
       "key": "csi1000",
-      "source_file": "/mnt/d/CSI2000_strategy/data/tushare_cache/csi1000.csv",
-      "rows": 4010,
+      "source_file": "/mnt/d/csi2000_strategy/data/tushare_cache/csi1000.csv",
+      "rows": 4014,
       "start": "2010-01-04",
-      "end": "2026-07-10"
+      "end": "2026-07-16"
     },
     {
       "key": "csi2000",
-      "source_file": "/mnt/d/CSI2000_strategy/data/tushare_cache/csi2000_index.csv",
-      "rows": 3044,
+      "source_file": "/mnt/d/csi2000_strategy/data/tushare_cache/csi2000_index.csv",
+      "rows": 3048,
       "start": "2013-12-31",
-      "end": "2026-07-10"
+      "end": "2026-07-16"
     },
     {
       "key": "csi300",
-      "source_file": "/mnt/d/CSI2000_strategy/data/hybrid_cache/index_daily_000300_SH.csv",
-      "rows": 4010,
+      "source_file": "/mnt/d/csi2000_strategy/data/hybrid_cache/index_daily_000300_SH.csv",
+      "rows": 4014,
       "start": "2010-01-04",
-      "end": "2026-07-10"
+      "end": "2026-07-16"
     },
     {
       "key": "csi500",
-      "source_file": "/mnt/d/CSI2000_strategy/data/hybrid_cache/index_daily_000905_SH.csv",
-      "rows": 4010,
+      "source_file": "/mnt/d/csi2000_strategy/data/hybrid_cache/index_daily_000905_SH.csv",
+      "rows": 4014,
       "start": "2010-01-04",
-      "end": "2026-07-10"
+      "end": "2026-07-16"
     },
     {
       "key": "etf159531",
-      "source_file": "/mnt/d/CSI2000_strategy/data/tushare_cache/csi2000_etf.csv",
-      "rows": 678,
+      "source_file": "/mnt/d/csi2000_strategy/data/tushare_cache/csi2000_etf.csv",
+      "rows": 682,
       "start": "2023-09-18",
-      "end": "2026-07-10"
+      "end": "2026-07-16"
     },
     {
       "key": "hsi",
-      "source_file": "/mnt/d/CSI2000_strategy/data/hybrid_cache/index_global_HSI.csv",
-      "rows": 4043,
+      "source_file": "/mnt/d/csi2000_strategy/data/hybrid_cache/index_global_HSI.csv",
+      "rows": 4047,
       "start": "2010-02-01",
-      "end": "2026-07-10"
+      "end": "2026-07-16"
     },
     {
       "key": "hktech",
-      "source_file": "/mnt/d/CSI2000_strategy/data/hybrid_cache/index_global_HKTECH.csv",
-      "rows": 1461,
+      "source_file": "/mnt/d/csi2000_strategy/data/hybrid_cache/index_global_HKTECH.csv",
+      "rows": 1465,
       "start": "2020-07-27",
-      "end": "2026-07-10"
+      "end": "2026-07-16"
     },
     {
       "key": "dji",
-      "source_file": "/mnt/d/CSI2000_strategy/data/hybrid_cache/index_global_DJI.csv",
-      "rows": 4046,
+      "source_file": "/mnt/d/csi2000_strategy/data/hybrid_cache/index_global_DJI.csv",
+      "rows": 4049,
       "start": "2010-07-01",
-      "end": "2026-07-10"
+      "end": "2026-07-16"
     },
     {
       "key": "ftse",
-      "source_file": "/mnt/d/CSI2000_strategy/data/hybrid_cache/index_global_FTSE.csv",
-      "rows": 4048,
+      "source_file": "/mnt/d/csi2000_strategy/data/hybrid_cache/index_global_FTSE.csv",
+      "rows": 4051,
       "start": "2010-07-01",
-      "end": "2026-07-10"
+      "end": "2026-07-16"
     }
   ],
   "public_scope": "Published data includes aggregate strategy metrics, CSI2000 candles, and historical trade records."
