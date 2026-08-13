@@ -609,7 +609,10 @@
     };
 
     function signalText(action) {
-      return action === "TRADE" ? "信号亮起" : "等待观察";
+      if (action === "TRADE") return "信号亮起";
+      if (action === "SKIP") return "本期不交易";
+      if (action === "WAIT") return "等待周五收盘";
+      return "等待观察";
     }
 
     function kpiLabel(label) {

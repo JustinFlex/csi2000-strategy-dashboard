@@ -50,4 +50,4 @@ Do not add a root `index.html`, `.nojekyll`, GitHub Pages settings, raw cache
 files, notebooks, model scripts, holdings, signal details, or backtest details
 to this public repository.
 
-Current snapshot uses market data through `2026-07-16`.
+Current snapshot uses market data through `2026-08-13`.

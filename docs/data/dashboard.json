@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-07-17 12:31 CST",
-  "as_of": "2026-07-16",
+  "generated_at": "2026-08-13 23:56 CST",
+  "as_of": "2026-08-13",
   "decision": {
-    "date": "2026-07-16",
-    "next_checkpoint": "2026-07-17",
+    "date": "2026-08-13",
+    "next_checkpoint": "2026-08-14",
     "action": "WAIT",
     "predicted_gap_pct": null,
     "decision_basis": "friday_close"
@@ -12,11 +12,11 @@
     {
       "label": "Next Action",
       "value": "WAIT",
-      "sub": "target 2026-07-17"
+      "sub": "target 2026-08-14"
     },
     {
       "label": "Hybrid Index Annualized",
-      "value": "19.59%",
+      "value": "19.72%",
       "sub": "main + gap cool2"
     },
     {
@@ -26,7 +26,7 @@
     },
     {
       "label": "Hybrid Index Calmar",
-      "value": "2.98",
+      "value": "3.00",
       "sub": "trades 182"
     },
     {
@@ -39,10 +39,10 @@
     {
       "target": "CSI2000 Hybrid Index",
       "type": "Theoretical",
-      "ann_return": "19.59%",
+      "ann_return": "19.72%",
       "max_dd": "-6.57%",
-      "calmar": "2.98",
-      "sharpe": "2.03",
+      "calmar": "3.00",
+      "sharpe": "2.04",
       "weeks": 182,
       "latest_nav": "4.17",
       "cum_return": "316.7%"
@@ -66,10 +66,6 @@
       "latest_nav": 4.1675,
       "cum_return_pct": 316.75,
       "points": [
-        {
-          "month": "2018-03",
-          "nav": 1.0
-        },
         {
           "month": "2018-04",
           "nav": 1.0
@@ -622,113 +618,9 @@
     }
   ],
   "hybrid": {
-    "eval_start": "2018-03-30",
+    "eval_start": "2018-04-20",
     "eval_end": "2026-07-15",
     "candles": [
-      {
-        "date": "2018-03-30",
-        "open": 2117.687,
-        "high": 2145.2594,
-        "low": 2117.687,
-        "close": 2145.2594,
-        "amount": 64897609.06
-      },
-      {
-        "date": "2018-04-02",
-        "open": 2150.4043,
-        "high": 2164.6372,
-        "low": 2149.5706,
-        "close": 2153.0987,
-        "amount": 71483905.05
-      },
-      {
-        "date": "2018-04-03",
-        "open": 2124.7261,
-        "high": 2133.9745,
-        "low": 2122.1969,
-        "close": 2133.5803,
-        "amount": 62576781.82
-      },
-      {
-        "date": "2018-04-04",
-        "open": 2141.4687,
-        "high": 2150.2268,
-        "low": 2127.2925,
-        "close": 2129.4182,
-        "amount": 61737847.22
-      },
-      {
-        "date": "2018-04-09",
-        "open": 2119.7855,
-        "high": 2139.3645,
-        "low": 2104.279,
-        "close": 2136.3576,
-        "amount": 59634627.64
-      },
-      {
-        "date": "2018-04-10",
-        "open": 2134.7442,
-        "high": 2137.2083,
-        "low": 2112.6669,
-        "close": 2136.5448,
-        "amount": 65520073.59
-      },
-      {
-        "date": "2018-04-11",
-        "open": 2140.2719,
-        "high": 2158.8427,
-        "low": 2140.2719,
-        "close": 2155.5378,
-        "amount": 67565668.58
-      },
-      {
-        "date": "2018-04-12",
-        "open": 2151.6668,
-        "high": 2158.0373,
-        "low": 2141.0186,
-        "close": 2146.0345,
-        "amount": 66438985.83
-      },
-      {
-        "date": "2018-04-13",
-        "open": 2150.6026,
-        "high": 2154.5001,
-        "low": 2134.9935,
-        "close": 2137.1713,
-        "amount": 58966115.88
-      },
-      {
-        "date": "2018-04-16",
-        "open": 2131.5994,
-        "high": 2135.0391,
-        "low": 2108.1543,
-        "close": 2121.9771,
-        "amount": 52623605.02
-      },
-      {
-        "date": "2018-04-17",
-        "open": 2124.2414,
-        "high": 2127.4013,
-        "low": 2072.8078,
-        "close": 2072.8078,
-        "amount": 59315290.54
-      },
-      {
-        "date": "2018-04-18",
-        "open": 2079.5527,
-        "high": 2094.7952,
-        "low": 2041.9327,
-        "close": 2092.3126,
-        "amount": 56497440.96
-      },
-      {
-        "date": "2018-04-19",
-        "open": 2087.5679,
-        "high": 2105.3081,
-        "low": 2087.5679,
-        "close": 2095.8156,
-        "amount": 55893298.8
-      },
       {
         "date": "2018-04-20",
         "open": 2086.3259,
@@ -16720,6 +16612,166 @@
         "low": 3046.4279,
         "close": 3060.6182,
         "amount": 378357770.14
+      },
+      {
+        "date": "2026-07-17",
+        "open": 3048.5357,
+        "high": 3052.7267,
+        "low": 2850.9091,
+        "close": 2871.411,
+        "amount": 413202081.98
+      },
+      {
+        "date": "2026-07-20",
+        "open": 2898.6364,
+        "high": 2915.0046,
+        "low": 2708.9392,
+        "close": 2754.7279,
+        "amount": 418636537.22
+      },
+      {
+        "date": "2026-07-21",
+        "open": 2758.3459,
+        "high": 2821.8191,
+        "low": 2585.3525,
+        "close": 2821.8145,
+        "amount": 445886002.09
+      },
+      {
+        "date": "2026-07-22",
+        "open": 2798.526,
+        "high": 2843.7479,
+        "low": 2766.9626,
+        "close": 2786.2781,
+        "amount": 366004069.48
+      },
+      {
+        "date": "2026-07-23",
+        "open": 2785.497,
+        "high": 2834.2484,
+        "low": 2783.291,
+        "close": 2832.8432,
+        "amount": 338295177.99
+      },
+      {
+        "date": "2026-07-24",
+        "open": 2799.5232,
+        "high": 2822.3421,
+        "low": 2752.7286,
+        "close": 2754.6389,
+        "amount": 303187019.09
+      },
+      {
+        "date": "2026-07-27",
+        "open": 2748.1107,
+        "high": 2851.7202,
+        "low": 2746.2948,
+        "close": 2851.7202,
+        "amount": 315389981.84
+      },
+      {
+        "date": "2026-07-28",
+        "open": 2822.9398,
+        "high": 2868.4266,
+        "low": 2791.0662,
+        "close": 2803.3707,
+        "amount": 316429266.7
+      },
+      {
+        "date": "2026-07-29",
+        "open": 2801.4676,
+        "high": 2829.3289,
+        "low": 2758.9684,
+        "close": 2815.1152,
+        "amount": 342474624.19
+      },
+      {
+        "date": "2026-07-30",
+        "open": 2801.3448,
+        "high": 2825.3897,
+        "low": 2711.8393,
+        "close": 2722.1273,
+        "amount": 346591122.12
+      },
+      {
+        "date": "2026-07-31",
+        "open": 2779.5447,
+        "high": 2843.5942,
+        "low": 2779.5447,
+        "close": 2809.2143,
+        "amount": 373207721.5
+      },
+      {
+        "date": "2026-08-03",
+        "open": 2810.6173,
+        "high": 2839.3648,
+        "low": 2809.4783,
+        "close": 2839.1571,
+        "amount": 327541147.38
+      },
+      {
+        "date": "2026-08-04",
+        "open": 2861.3918,
+        "high": 2926.4768,
+        "low": 2850.6463,
+        "close": 2920.8145,
+        "amount": 351592126.74
+      },
+      {
+        "date": "2026-08-05",
+        "open": 2917.7951,
+        "high": 3006.6406,
+        "low": 2917.4954,
+        "close": 3000.2908,
+        "amount": 406909826.04
+      },
+      {
+        "date": "2026-08-06",
+        "open": 2987.5005,
+        "high": 3040.2019,
+        "low": 2985.5364,
+        "close": 3036.4679,
+        "amount": 427492648.58
+      },
+      {
+        "date": "2026-08-07",
+        "open": 3037.3191,
+        "high": 3085.257,
+        "low": 2987.7218,
+        "close": 3085.257,
+        "amount": 449499824.19
+      },
+      {
+        "date": "2026-08-10",
+        "open": 3096.2316,
+        "high": 3120.8289,
+        "low": 3067.3155,
+        "close": 3120.8289,
+        "amount": 442731174.08
+      },
+      {
+        "date": "2026-08-11",
+        "open": 3104.4221,
+        "high": 3134.8449,
+        "low": 3074.3655,
+        "close": 3105.7378,
+        "amount": 409064359.55
+      },
+      {
+        "date": "2026-08-12",
+        "open": 3108.2789,
+        "high": 3160.1714,
+        "low": 3108.2789,
+        "close": 3159.9817,
+        "amount": 394230743.34
+      },
+      {
+        "date": "2026-08-13",
+        "open": 3176.389,
+        "high": 3184.4131,
+        "low": 3124.7932,
+        "close": 3124.7932,
+        "amount": 468631644.07
       }
     ],
     "trades": [
@@ -19172,66 +19224,66 @@
   "source_metadata": [
     {
       "key": "csi1000",
-      "source_file": "/mnt/d/csi2000_strategy/data/tushare_cache/csi1000.csv",
-      "rows": 4014,
+      "source_file": "/mnt/d/CSI2000_strategy/data/tushare_cache/csi1000.csv",
+      "rows": 4034,
       "start": "2010-01-04",
-      "end": "2026-07-16"
+      "end": "2026-08-13"
     },
     {
       "key": "csi2000",
-      "source_file": "/mnt/d/csi2000_strategy/data/tushare_cache/csi2000_index.csv",
-      "rows": 3048,
+      "source_file": "/mnt/d/CSI2000_strategy/data/tushare_cache/csi2000_index.csv",
+      "rows": 3068,
       "start": "2013-12-31",
-      "end": "2026-07-16"
+      "end": "2026-08-13"
     },
     {
       "key": "csi300",
-      "source_file": "/mnt/d/csi2000_strategy/data/hybrid_cache/index_daily_000300_SH.csv",
-      "rows": 4014,
+      "source_file": "/mnt/d/CSI2000_strategy/data/hybrid_cache/index_daily_000300_SH.csv",
+      "rows": 4034,
       "start": "2010-01-04",
-      "end": "2026-07-16"
+      "end": "2026-08-13"
     },
     {
       "key": "csi500",
-      "source_file": "/mnt/d/csi2000_strategy/data/hybrid_cache/index_daily_000905_SH.csv",
-      "rows": 4014,
+      "source_file": "/mnt/d/CSI2000_strategy/data/hybrid_cache/index_daily_000905_SH.csv",
+      "rows": 4034,
       "start": "2010-01-04",
-      "end": "2026-07-16"
+      "end": "2026-08-13"
     },
     {
       "key": "etf159531",
-      "source_file": "/mnt/d/csi2000_strategy/data/tushare_cache/csi2000_etf.csv",
-      "rows": 682,
+      "source_file": "/mnt/d/CSI2000_strategy/data/tushare_cache/csi2000_etf.csv",
+      "rows": 702,
       "start": "2023-09-18",
-      "end": "2026-07-16"
+      "end": "2026-08-13"
     },
     {
       "key": "hsi",
-      "source_file": "/mnt/d/csi2000_strategy/data/hybrid_cache/index_global_HSI.csv",
-      "rows": 4047,
+      "source_file": "/mnt/d/CSI2000_strategy/data/hybrid_cache/index_global_HSI.csv",
+      "rows": 4067,
       "start": "2010-02-01",
-      "end": "2026-07-16"
+      "end": "2026-08-13"
     },
     {
       "key": "hktech",
-      "source_file": "/mnt/d/csi2000_strategy/data/hybrid_cache/index_global_HKTECH.csv",
-      "rows": 1465,
+      "source_file": "/mnt/d/CSI2000_strategy/data/hybrid_cache/index_global_HKTECH.csv",
+      "rows": 1485,
       "start": "2020-07-27",
-      "end": "2026-07-16"
+      "end": "2026-08-13"
     },
     {
       "key": "dji",
-      "source_file": "/mnt/d/csi2000_strategy/data/hybrid_cache/index_global_DJI.csv",
-      "rows": 4049,
+      "source_file": "/mnt/d/CSI2000_strategy/data/hybrid_cache/index_global_DJI.csv",
+      "rows": 4068,
       "start": "2010-07-01",
-      "end": "2026-07-16"
+      "end": "2026-08-12"
     },
     {
       "key": "ftse",
-      "source_file": "/mnt/d/csi2000_strategy/data/hybrid_cache/index_global_FTSE.csv",
-      "rows": 4051,
+      "source_file": "/mnt/d/CSI2000_strategy/data/hybrid_cache/index_global_FTSE.csv",
+      "rows": 4070,
       "start": "2010-07-01",
-      "end": "2026-07-16"
+      "end": "2026-08-12"
     }
   ],
   "public_scope": "Published data includes aggregate strategy metrics, CSI2000 candles, and historical trade records."
