@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-09-14 14:09 CST",
-  "as_of": "2026-09-11",
+  "generated_at": "2026-09-19 17:57 CST",
+  "as_of": "2026-09-18",
   "decision": {
-    "date": "2026-09-11",
-    "next_checkpoint": "2026-09-11",
-    "action": "SKIP",
-    "predicted_gap_pct": -0.1415,
+    "date": "2026-09-18",
+    "next_checkpoint": "2026-09-18",
+    "action": "TRADE",
+    "predicted_gap_pct": 0.3122,
     "decision_basis": "friday_close"
   },
   "kpis": [
     {
       "label": "Next Action",
-      "value": "SKIP",
-      "sub": "target 2026-09-11"
+      "value": "TRADE",
+      "sub": "target 2026-09-18"
     },
     {
       "label": "Hybrid Index Annualized",
@@ -16880,6 +16880,46 @@
         "low": 3016.4838,
         "close": 3073.668,
         "amount": 413878081.45
+      },
+      {
+        "date": "2026-09-14",
+        "open": 3058.0966,
+        "high": 3116.9049,
+        "low": 3046.6728,
+        "close": 3104.5704,
+        "amount": 375318169.22
+      },
+      {
+        "date": "2026-09-15",
+        "open": 3099.4351,
+        "high": 3113.181,
+        "low": 3066.1983,
+        "close": 3068.612,
+        "amount": 372495825.8
+      },
+      {
+        "date": "2026-09-16",
+        "open": 3063.9349,
+        "high": 3139.1956,
+        "low": 3051.3831,
+        "close": 3132.9682,
+        "amount": 394111699.83
+      },
+      {
+        "date": "2026-09-17",
+        "open": 3123.5179,
+        "high": 3145.9132,
+        "low": 3110.1369,
+        "close": 3136.5773,
+        "amount": 407222479.55
+      },
+      {
+        "date": "2026-09-18",
+        "open": 3159.8902,
+        "high": 3194.3869,
+        "low": 3159.8902,
+        "close": 3192.2066,
+        "amount": 442708670.58
       }
     ],
     "trades": [
@@ -19365,66 +19405,66 @@
   "source_metadata": [
     {
       "key": "csi1000",
-      "source_file": "/mnt/d/CSI2000_strategy/data/tushare_cache/csi1000.csv",
-      "rows": 4055,
+      "source_file": "data/tushare_cache/csi1000.csv",
+      "rows": 4060,
       "start": "2010-01-04",
-      "end": "2026-09-11"
+      "end": "2026-09-18"
     },
     {
       "key": "csi2000",
-      "source_file": "/mnt/d/CSI2000_strategy/data/tushare_cache/csi2000_index.csv",
-      "rows": 3089,
+      "source_file": "data/tushare_cache/csi2000_index.csv",
+      "rows": 3094,
       "start": "2013-12-31",
-      "end": "2026-09-11"
+      "end": "2026-09-18"
     },
     {
       "key": "csi300",
-      "source_file": "/mnt/d/CSI2000_strategy/data/hybrid_cache/index_daily_000300_SH.csv",
-      "rows": 4055,
+      "source_file": "data/hybrid_cache/index_daily_000300_SH.csv",
+      "rows": 4060,
       "start": "2010-01-04",
-      "end": "2026-09-11"
+      "end": "2026-09-18"
     },
     {
       "key": "csi500",
-      "source_file": "/mnt/d/CSI2000_strategy/data/hybrid_cache/index_daily_000905_SH.csv",
-      "rows": 4055,
+      "source_file": "data/hybrid_cache/index_daily_000905_SH.csv",
+      "rows": 4060,
       "start": "2010-01-04",
-      "end": "2026-09-11"
+      "end": "2026-09-18"
     },
     {
       "key": "etf159531",
-      "source_file": "/mnt/d/CSI2000_strategy/data/tushare_cache/csi2000_etf.csv",
-      "rows": 723,
+      "source_file": "data/tushare_cache/csi2000_etf.csv",
+      "rows": 728,
       "start": "2023-09-18",
-      "end": "2026-09-11"
+      "end": "2026-09-18"
     },
     {
       "key": "hsi",
-      "source_file": "/mnt/d/CSI2000_strategy/data/hybrid_cache/index_global_HSI.csv",
-      "rows": 4088,
+      "source_file": "data/hybrid_cache/index_global_HSI.csv",
+      "rows": 4093,
       "start": "2010-02-01",
-      "end": "2026-09-11"
+      "end": "2026-09-18"
     },
     {
       "key": "hktech",
-      "source_file": "/mnt/d/CSI2000_strategy/data/hybrid_cache/index_global_HKTECH.csv",
-      "rows": 1506,
+      "source_file": "data/hybrid_cache/index_global_HKTECH.csv",
+      "rows": 1511,
       "start": "2020-07-27",
-      "end": "2026-09-11"
+      "end": "2026-09-18"
     },
     {
       "key": "dji",
-      "source_file": "/mnt/d/CSI2000_strategy/data/hybrid_cache/index_global_DJI.csv",
-      "rows": 4089,
+      "source_file": "data/hybrid_cache/index_global_DJI.csv",
+      "rows": 4094,
       "start": "2010-07-01",
-      "end": "2026-09-11"
+      "end": "2026-09-18"
     },
     {
       "key": "ftse",
-      "source_file": "/mnt/d/CSI2000_strategy/data/hybrid_cache/index_global_FTSE.csv",
-      "rows": 4091,
+      "source_file": "data/hybrid_cache/index_global_FTSE.csv",
+      "rows": 4096,
       "start": "2010-07-01",
-      "end": "2026-09-11"
+      "end": "2026-09-18"
     }
   ],
   "public_scope": "Published data includes aggregate strategy metrics, CSI2000 candles, and historical trade records."
