@@ -1,78 +1,75 @@
 {
-  "generated_at": "2026-09-23 15:12 CST",
+  "generated_at": "2026-09-23 15:27 CST",
   "as_of": "2026-09-22",
   "decision": {
     "date": "2026-09-22",
-    "next_checkpoint": "2026-09-24",
-    "target_entry_date": "2026-09-25",
+    "next_checkpoint": "2026-09-23",
+    "target_entry_date": "2026-09-24",
+    "target_exit_date": "2026-09-28",
     "signal_date": null,
-    "action": "SKIP",
+    "action": "WAIT",
     "predicted_gap_pct": null,
-    "decision_basis": "thursday_close",
-    "reason": "entry_market_closed"
+    "decision_basis": "previous_session_close",
+    "reason": "awaiting_signal_close"
   },
   "kpis": [
     {
       "label": "Next Action",
-      "value": "SKIP",
-      "sub": "target 2026-09-25"
+      "value": "WAIT",
+      "sub": "target 2026-09-24"
     },
     {
       "label": "Hybrid Index Annualized",
-      "value": "18.23%",
+      "value": "19.19%",
       "sub": "main + gap cool2"
     },
     {
       "label": "Hybrid ETF Annualized",
-      "value": "25.80%",
+      "value": "34.68%",
       "sub": "159531 tradable"
     },
     {
       "label": "Hybrid Index Calmar",
-      "value": "2.08",
-      "sub": "trades 181"
+      "value": "2.19",
+      "sub": "trades 174"
     },
     {
       "label": "Hybrid ETF Calmar",
-      "value": "2.97",
-      "sub": "trades 84"
+      "value": "4.00",
+      "sub": "trades 92"
     }
   ],
   "performance": [
     {
       "target": "CSI2000 Hybrid Index",
       "type": "Theoretical",
-      "ann_return": "18.23%",
+      "ann_return": "19.19%",
       "max_dd": "-8.75%",
-      "calmar": "2.08",
-      "sharpe": "1.87",
-      "weeks": 181,
-      "latest_nav": "3.82",
-      "cum_return": "282.2%"
+      "calmar": "2.19",
+      "sharpe": "1.88",
+      "weeks": 174,
+      "latest_nav": "4.05",
+      "cum_return": "305.0%"
     },
     {
       "target": "CSI2000 Hybrid ETF",
       "type": "Tradable",
-      "ann_return": "25.80%",
+      "ann_return": "34.68%",
       "max_dd": "-8.68%",
-      "calmar": "2.97",
-      "sharpe": "1.83",
-      "weeks": 84,
-      "latest_nav": "1.91",
-      "cum_return": "90.9%"
+      "calmar": "4.00",
+      "sharpe": "2.17",
+      "weeks": 92,
+      "latest_nav": "2.33",
+      "cum_return": "132.7%"
     }
   ],
   "series": [
     {
       "label": "组合指数净值",
       "color": "#255e91",
-      "latest_nav": 3.8221,
-      "cum_return_pct": 282.21,
+      "latest_nav": 4.0504,
+      "cum_return_pct": 305.04,
       "points": [
-        {
-          "month": "2018-05",
-          "nav": 1.0
-        },
         {
           "month": "2018-06",
           "nav": 1.0
@@ -107,375 +104,379 @@
         },
         {
           "month": "2019-02",
-          "nav": 1.0703
+          "nav": 1.0217
         },
         {
           "month": "2019-03",
-          "nav": 1.1565
+          "nav": 1.104
         },
         {
           "month": "2019-04",
-          "nav": 1.1852
+          "nav": 1.1409
         },
         {
           "month": "2019-05",
-          "nav": 1.1852
+          "nav": 1.1409
         },
         {
           "month": "2019-06",
-          "nav": 1.1852
+          "nav": 1.1409
         },
         {
           "month": "2019-07",
-          "nav": 1.1853
+          "nav": 1.1409
         },
         {
           "month": "2019-08",
-          "nav": 1.1853
+          "nav": 1.1409
         },
         {
           "month": "2019-09",
-          "nav": 1.2047
+          "nav": 1.1735
         },
         {
           "month": "2019-10",
-          "nav": 1.2047
+          "nav": 1.1735
         },
         {
           "month": "2019-11",
-          "nav": 1.2047
+          "nav": 1.1735
         },
         {
           "month": "2019-12",
-          "nav": 1.1786
+          "nav": 1.1735
         },
         {
           "month": "2020-01",
-          "nav": 1.215
+          "nav": 1.1967
         },
         {
           "month": "2020-02",
-          "nav": 1.2942
+          "nav": 1.2748
         },
         {
           "month": "2020-03",
-          "nav": 1.3517
+          "nav": 1.3314
         },
         {
           "month": "2020-04",
-          "nav": 1.3517
+          "nav": 1.3314
         },
         {
           "month": "2020-05",
-          "nav": 1.3517
+          "nav": 1.3314
         },
         {
           "month": "2020-06",
-          "nav": 1.3688
+          "nav": 1.3483
         },
         {
           "month": "2020-07",
-          "nav": 1.4833
+          "nav": 1.461
         },
         {
           "month": "2020-08",
-          "nav": 1.5875
+          "nav": 1.5516
         },
         {
           "month": "2020-09",
-          "nav": 1.5875
+          "nav": 1.5516
         },
         {
           "month": "2020-10",
-          "nav": 1.5875
+          "nav": 1.5516
         },
         {
           "month": "2020-11",
-          "nav": 1.5875
+          "nav": 1.5516
         },
         {
           "month": "2020-12",
-          "nav": 1.5875
+          "nav": 1.5516
         },
         {
           "month": "2021-01",
-          "nav": 1.5875
+          "nav": 1.5516
         },
         {
           "month": "2021-02",
-          "nav": 1.5875
+          "nav": 1.5516
         },
         {
           "month": "2021-03",
-          "nav": 1.5875
+          "nav": 1.5516
         },
         {
           "month": "2021-04",
-          "nav": 1.5608
+          "nav": 1.5516
         },
         {
           "month": "2021-05",
-          "nav": 1.5825
+          "nav": 1.5516
         },
         {
           "month": "2021-06",
-          "nav": 1.6201
+          "nav": 1.5405
         },
         {
           "month": "2021-07",
-          "nav": 1.6939
+          "nav": 1.5833
         },
         {
           "month": "2021-08",
-          "nav": 1.7362
+          "nav": 1.5913
         },
         {
           "month": "2021-09",
-          "nav": 1.7753
+          "nav": 1.6037
         },
         {
           "month": "2021-10",
-          "nav": 1.7753
+          "nav": 1.6037
         },
         {
           "month": "2021-11",
-          "nav": 1.8583
+          "nav": 1.6582
         },
         {
           "month": "2021-12",
-          "nav": 1.8118
+          "nav": 1.6166
         },
         {
           "month": "2022-01",
-          "nav": 1.8118
+          "nav": 1.6166
         },
         {
           "month": "2022-02",
-          "nav": 1.8118
+          "nav": 1.6166
         },
         {
           "month": "2022-03",
-          "nav": 1.7867
+          "nav": 1.5943
         },
         {
           "month": "2022-04",
-          "nav": 1.7867
+          "nav": 1.5943
         },
         {
           "month": "2022-05",
-          "nav": 1.8327
+          "nav": 1.6354
         },
         {
           "month": "2022-06",
-          "nav": 1.8845
+          "nav": 1.7099
         },
         {
           "month": "2022-07",
-          "nav": 1.9133
+          "nav": 1.736
         },
         {
           "month": "2022-08",
-          "nav": 1.9889
+          "nav": 1.8046
         },
         {
           "month": "2022-09",
-          "nav": 2.0155
+          "nav": 1.8287
         },
         {
           "month": "2022-10",
-          "nav": 2.04
+          "nav": 1.851
         },
         {
           "month": "2022-11",
-          "nav": 2.053
+          "nav": 1.8628
         },
         {
           "month": "2022-12",
-          "nav": 2.0127
+          "nav": 1.8262
         },
         {
           "month": "2023-01",
-          "nav": 2.0629
+          "nav": 1.8717
         },
         {
           "month": "2023-02",
-          "nav": 2.0872
+          "nav": 1.8938
         },
         {
           "month": "2023-03",
-          "nav": 2.0959
+          "nav": 1.9017
         },
         {
           "month": "2023-04",
-          "nav": 2.0512
+          "nav": 1.856
         },
         {
           "month": "2023-05",
-          "nav": 2.0621
+          "nav": 1.856
         },
         {
           "month": "2023-06",
-          "nav": 2.084
+          "nav": 1.8187
         },
         {
           "month": "2023-07",
-          "nav": 2.0906
+          "nav": 1.8244
         },
         {
           "month": "2023-08",
-          "nav": 2.0845
+          "nav": 1.8191
         },
         {
           "month": "2023-09",
-          "nav": 2.0898
+          "nav": 1.8237
         },
         {
           "month": "2023-10",
-          "nav": 2.0537
+          "nav": 1.8313
         },
         {
           "month": "2023-11",
-          "nav": 2.1492
+          "nav": 1.9164
         },
         {
           "month": "2023-12",
-          "nav": 2.1416
+          "nav": 1.9096
         },
         {
           "month": "2024-01",
-          "nav": 2.1416
+          "nav": 1.9096
         },
         {
           "month": "2024-02",
-          "nav": 2.2565
+          "nav": 2.0121
         },
         {
           "month": "2024-03",
-          "nav": 2.3861
+          "nav": 2.1276
         },
         {
           "month": "2024-04",
-          "nav": 2.3861
+          "nav": 2.0788
         },
         {
           "month": "2024-05",
-          "nav": 2.3663
+          "nav": 2.1027
         },
         {
           "month": "2024-06",
-          "nav": 2.3663
+          "nav": 2.1027
         },
         {
           "month": "2024-07",
-          "nav": 2.3663
+          "nav": 2.1027
         },
         {
           "month": "2024-08",
-          "nav": 2.2987
+          "nav": 2.0426
         },
         {
           "month": "2024-09",
-          "nav": 2.5524
+          "nav": 2.268
         },
         {
           "month": "2024-10",
-          "nav": 2.7413
+          "nav": 2.6459
         },
         {
           "month": "2024-11",
-          "nav": 2.8729
+          "nav": 2.7729
         },
         {
           "month": "2024-12",
-          "nav": 2.8311
+          "nav": 2.7983
         },
         {
           "month": "2025-01",
-          "nav": 2.8311
+          "nav": 2.7983
         },
         {
           "month": "2025-02",
-          "nav": 2.9462
+          "nav": 2.912
         },
         {
           "month": "2025-03",
-          "nav": 2.9607
+          "nav": 2.9264
         },
         {
           "month": "2025-04",
-          "nav": 2.9607
+          "nav": 2.9264
         },
         {
           "month": "2025-05",
-          "nav": 3.0674
+          "nav": 3.0318
         },
         {
           "month": "2025-06",
-          "nav": 3.2131
+          "nav": 3.1758
         },
         {
           "month": "2025-07",
-          "nav": 3.3135
+          "nav": 3.2751
         },
         {
           "month": "2025-08",
-          "nav": 3.53
+          "nav": 3.489
         },
         {
           "month": "2025-09",
-          "nav": 3.6441
+          "nav": 3.6018
         },
         {
           "month": "2025-10",
-          "nav": 3.6855
+          "nav": 3.6427
         },
         {
           "month": "2025-11",
-          "nav": 3.7068
+          "nav": 3.73
         },
         {
           "month": "2025-12",
-          "nav": 3.7043
+          "nav": 3.7275
         },
         {
           "month": "2026-01",
-          "nav": 3.7835
+          "nav": 3.8693
         },
         {
           "month": "2026-02",
-          "nav": 3.8052
+          "nav": 3.8914
         },
         {
           "month": "2026-03",
-          "nav": 3.8617
+          "nav": 3.9493
         },
         {
           "month": "2026-04",
-          "nav": 3.9335
+          "nav": 4.0227
         },
         {
           "month": "2026-05",
-          "nav": 3.9954
+          "nav": 4.167
         },
         {
           "month": "2026-06",
-          "nav": 3.9523
+          "nav": 4.122
         },
         {
           "month": "2026-07",
-          "nav": 3.6809
+          "nav": 3.839
         },
         {
           "month": "2026-08",
-          "nav": 3.8221
+          "nav": 3.9862
+        },
+        {
+          "month": "2026-09",
+          "nav": 4.0504
         }
       ]
     },
     {
       "label": "组合ETF净值",
       "color": "#0b806f",
-      "latest_nav": 1.9094,
-      "cum_return_pct": 90.94,
+      "latest_nav": 2.3273,
+      "cum_return_pct": 132.73,
       "points": [
         {
           "month": "2023-09",
@@ -483,271 +484,155 @@
         },
         {
           "month": "2023-10",
-          "nav": 0.9757
+          "nav": 1.0021
         },
         {
           "month": "2023-11",
-          "nav": 1.0223
+          "nav": 1.05
         },
         {
           "month": "2023-12",
-          "nav": 1.0217
+          "nav": 1.0493
         },
         {
           "month": "2024-01",
-          "nav": 1.0217
+          "nav": 1.0493
         },
         {
           "month": "2024-02",
-          "nav": 1.0879
+          "nav": 1.1174
         },
         {
           "month": "2024-03",
-          "nav": 1.2126
+          "nav": 1.2454
         },
         {
           "month": "2024-04",
-          "nav": 1.2126
+          "nav": 1.2172
         },
         {
           "month": "2024-05",
-          "nav": 1.1958
+          "nav": 1.2245
         },
         {
           "month": "2024-06",
-          "nav": 1.1958
+          "nav": 1.2245
         },
         {
           "month": "2024-07",
-          "nav": 1.1958
+          "nav": 1.2245
         },
         {
           "month": "2024-08",
-          "nav": 1.1613
+          "nav": 1.1891
         },
         {
           "month": "2024-09",
-          "nav": 1.2742
+          "nav": 1.3047
         },
         {
           "month": "2024-10",
-          "nav": 1.3592
+          "nav": 1.515
         },
         {
           "month": "2024-11",
-          "nav": 1.4414
+          "nav": 1.6066
         },
         {
           "month": "2024-12",
-          "nav": 1.4139
+          "nav": 1.6123
         },
         {
           "month": "2025-01",
-          "nav": 1.4139
+          "nav": 1.6123
         },
         {
           "month": "2025-02",
-          "nav": 1.4735
+          "nav": 1.6803
         },
         {
           "month": "2025-03",
-          "nav": 1.4736
+          "nav": 1.6804
         },
         {
           "month": "2025-04",
-          "nav": 1.4736
+          "nav": 1.6804
         },
         {
           "month": "2025-05",
-          "nav": 1.5261
+          "nav": 1.7403
         },
         {
           "month": "2025-06",
-          "nav": 1.6031
+          "nav": 1.828
         },
         {
           "month": "2025-07",
-          "nav": 1.651
+          "nav": 1.8826
         },
         {
           "month": "2025-08",
-          "nav": 1.7497
+          "nav": 1.9952
         },
         {
           "month": "2025-09",
-          "nav": 1.8145
+          "nav": 2.0691
         },
         {
           "month": "2025-10",
-          "nav": 1.8423
+          "nav": 2.1008
         },
         {
           "month": "2025-11",
-          "nav": 1.8535
+          "nav": 2.1522
         },
         {
           "month": "2025-12",
-          "nav": 1.8499
+          "nav": 2.148
         },
         {
           "month": "2026-01",
-          "nav": 1.8914
+          "nav": 2.2313
         },
         {
           "month": "2026-02",
-          "nav": 1.9004
+          "nav": 2.2419
         },
         {
           "month": "2026-03",
-          "nav": 1.9107
+          "nav": 2.254
         },
         {
           "month": "2026-04",
-          "nav": 1.9504
+          "nav": 2.3009
         },
         {
           "month": "2026-05",
-          "nav": 1.9898
+          "nav": 2.3872
         },
         {
           "month": "2026-06",
-          "nav": 1.9645
+          "nav": 2.3568
         },
         {
           "month": "2026-07",
-          "nav": 1.8384
+          "nav": 2.2055
         },
         {
           "month": "2026-08",
-          "nav": 1.9094
+          "nav": 2.2907
+        },
+        {
+          "month": "2026-09",
+          "nav": 2.3273
         }
       ]
     }
   ],
   "hybrid": {
-    "eval_start": "2018-05-11",
-    "eval_end": "2026-08-31",
+    "eval_start": "2018-06-01",
+    "eval_end": "2026-09-07",
     "candles": [
-      {
-        "date": "2018-05-11",
-        "open": 2136.6851,
-        "high": 2136.6851,
-        "low": 2110.165,
-        "close": 2110.165,
-        "amount": 63924586.4
-      },
-      {
-        "date": "2018-05-14",
-        "open": 2103.3034,
-        "high": 2107.5118,
-        "low": 2089.1271,
-        "close": 2093.487,
-        "amount": 52418154.88
-      },
-      {
-        "date": "2018-05-15",
-        "open": 2092.325,
-        "high": 2118.7231,
-        "low": 2088.7138,
-        "close": 2118.7231,
-        "amount": 52678121.73
-      },
-      {
-        "date": "2018-05-16",
-        "open": 2112.4907,
-        "high": 2123.5113,
-        "low": 2109.3082,
-        "close": 2109.6924,
-        "amount": 57247898.73
-      },
-      {
-        "date": "2018-05-17",
-        "open": 2107.123,
-        "high": 2111.969,
-        "low": 2103.5254,
-        "close": 2107.4277,
-        "amount": 54730233.01
-      },
-      {
-        "date": "2018-05-18",
-        "open": 2104.7408,
-        "high": 2118.0711,
-        "low": 2097.1287,
-        "close": 2118.0711,
-        "amount": 55670156.69
-      },
-      {
-        "date": "2018-05-21",
-        "open": 2124.9432,
-        "high": 2149.5593,
-        "low": 2124.9432,
-        "close": 2148.3589,
-        "amount": 67051347.08
-      },
-      {
-        "date": "2018-05-22",
-        "open": 2145.4972,
-        "high": 2159.375,
-        "low": 2142.2073,
-        "close": 2159.375,
-        "amount": 68559554.94
-      },
-      {
-        "date": "2018-05-23",
-        "open": 2152.3679,
-        "high": 2156.1486,
-        "low": 2138.1346,
-        "close": 2138.1346,
-        "amount": 67972311.16
-      },
-      {
-        "date": "2018-05-24",
-        "open": 2134.6786,
-        "high": 2144.9712,
-        "low": 2134.6786,
-        "close": 2139.1343,
-        "amount": 58577096.76
-      },
-      {
-        "date": "2018-05-25",
-        "open": 2136.6452,
-        "high": 2138.2671,
-        "low": 2121.0624,
-        "close": 2123.5955,
-        "amount": 61979141.71
-      },
-      {
-        "date": "2018-05-28",
-        "open": 2121.1147,
-        "high": 2121.6343,
-        "low": 2102.4154,
-        "close": 2106.408,
-        "amount": 62718568.53
-      },
-      {
-        "date": "2018-05-29",
-        "open": 2099.8199,
-        "high": 2113.8516,
-        "low": 2086.1307,
-        "close": 2086.3639,
-        "amount": 60243361.85
-      },
-      {
-        "date": "2018-05-30",
-        "open": 2055.3606,
-        "high": 2055.3606,
-        "low": 2002.9989,
-        "close": 2003.4203,
-        "amount": 62813370.34
-      },
-      {
-        "date": "2018-05-31",
-        "open": 2016.3105,
-        "high": 2041.5568,
-        "low": 2012.053,
-        "close": 2041.5568,
-        "amount": 51560317.25
-      },
       {
         "date": "2018-06-01",
         "open": 2033.377,
@@ -16937,17 +16822,6 @@
       },
       {
         "strategy": "间断腿",
-        "signal_date": "2019-02-21",
-        "entry_date": "2019-02-22",
-        "exit_date": "2019-02-25",
-        "entry_timing": "close",
-        "exit_timing": "close",
-        "entry_px": 1701.9796,
-        "exit_px": 1783.7758,
-        "ret_pct": 4.76
-      },
-      {
-        "strategy": "间断腿",
         "signal_date": "2019-02-28",
         "entry_date": "2019-03-01",
         "exit_date": "2019-03-04",
@@ -17003,14 +16877,14 @@
       },
       {
         "strategy": "间断腿",
-        "signal_date": "2019-04-18",
-        "entry_date": "2019-04-19",
-        "exit_date": "2019-04-22",
+        "signal_date": "2019-04-03",
+        "entry_date": "2019-04-04",
+        "exit_date": "2019-04-08",
         "entry_timing": "close",
         "exit_timing": "close",
-        "entry_px": 2109.6915,
-        "exit_px": 2087.3488,
-        "ret_pct": -1.11
+        "entry_px": 2097.9688,
+        "exit_px": 2093.1688,
+        "ret_pct": -0.28
       },
       {
         "strategy": "主策略",
@@ -17036,36 +16910,14 @@
       },
       {
         "strategy": "间断腿",
-        "signal_date": "2019-09-19",
-        "entry_date": "2019-09-20",
-        "exit_date": "2019-09-23",
+        "signal_date": "2019-09-11",
+        "entry_date": "2019-09-12",
+        "exit_date": "2019-09-16",
         "entry_timing": "close",
         "exit_timing": "close",
-        "entry_px": 1871.8696,
-        "exit_px": 1858.2123,
-        "ret_pct": -0.78
-      },
-      {
-        "strategy": "间断腿",
-        "signal_date": "2019-12-19",
-        "entry_date": "2019-12-20",
-        "exit_date": "2019-12-23",
-        "entry_timing": "close",
-        "exit_timing": "close",
-        "entry_px": 1826.4687,
-        "exit_px": 1783.4131,
-        "ret_pct": -2.41
-      },
-      {
-        "strategy": "间断腿",
-        "signal_date": "2019-12-26",
-        "entry_date": "2019-12-27",
-        "exit_date": "2019-12-30",
-        "entry_timing": "close",
-        "exit_timing": "close",
-        "entry_px": 1820.4075,
-        "exit_px": 1825.759,
-        "ret_pct": 0.24
+        "entry_px": 1886.691,
+        "exit_px": 1895.2205,
+        "ret_pct": 0.4
       },
       {
         "strategy": "间断腿",
@@ -17088,17 +16940,6 @@
         "entry_px": 1928.3488,
         "exit_px": 1952.3133,
         "ret_pct": 1.19
-      },
-      {
-        "strategy": "间断腿",
-        "signal_date": "2020-01-16",
-        "entry_date": "2020-01-17",
-        "exit_date": "2020-01-20",
-        "entry_timing": "close",
-        "exit_timing": "close",
-        "entry_px": 1931.2264,
-        "exit_px": 1953.1145,
-        "ret_pct": 1.08
       },
       {
         "strategy": "主策略",
@@ -17200,17 +17041,6 @@
         "ret_pct": 3.12
       },
       {
-        "strategy": "间断腿",
-        "signal_date": "2020-08-06",
-        "entry_date": "2020-08-07",
-        "exit_date": "2020-08-10",
-        "entry_timing": "close",
-        "exit_timing": "close",
-        "entry_px": 2336.8462,
-        "exit_px": 2356.2686,
-        "ret_pct": 0.78
-      },
-      {
         "strategy": "主策略",
         "signal_date": "2020-08-14",
         "entry_date": "2020-08-17",
@@ -17223,50 +17053,6 @@
       },
       {
         "strategy": "间断腿",
-        "signal_date": "2021-04-08",
-        "entry_date": "2021-04-09",
-        "exit_date": "2021-04-12",
-        "entry_timing": "close",
-        "exit_timing": "close",
-        "entry_px": 2051.9245,
-        "exit_px": 2025.088,
-        "ret_pct": -1.36
-      },
-      {
-        "strategy": "间断腿",
-        "signal_date": "2021-04-22",
-        "entry_date": "2021-04-23",
-        "exit_date": "2021-04-26",
-        "entry_timing": "close",
-        "exit_timing": "close",
-        "entry_px": 2070.6617,
-        "exit_px": 2064.7936,
-        "ret_pct": -0.33
-      },
-      {
-        "strategy": "间断腿",
-        "signal_date": "2021-05-27",
-        "entry_date": "2021-05-28",
-        "exit_date": "2021-05-31",
-        "entry_timing": "close",
-        "exit_timing": "close",
-        "entry_px": 2132.273,
-        "exit_px": 2163.0801,
-        "ret_pct": 1.39
-      },
-      {
-        "strategy": "间断腿",
-        "signal_date": "2021-06-03",
-        "entry_date": "2021-06-04",
-        "exit_date": "2021-06-07",
-        "entry_timing": "close",
-        "exit_timing": "close",
-        "entry_px": 2161.9098,
-        "exit_px": 2181.0553,
-        "ret_pct": 0.84
-      },
-      {
-        "strategy": "间断腿",
         "signal_date": "2021-06-10",
         "entry_date": "2021-06-11",
         "exit_date": "2021-06-15",
@@ -17275,39 +17061,6 @@
         "entry_px": 2173.4138,
         "exit_px": 2158.9121,
         "ret_pct": -0.72
-      },
-      {
-        "strategy": "间断腿",
-        "signal_date": "2021-06-17",
-        "entry_date": "2021-06-18",
-        "exit_date": "2021-06-21",
-        "entry_timing": "close",
-        "exit_timing": "close",
-        "entry_px": 2172.6858,
-        "exit_px": 2204.479,
-        "ret_pct": 1.41
-      },
-      {
-        "strategy": "间断腿",
-        "signal_date": "2021-06-24",
-        "entry_date": "2021-06-25",
-        "exit_date": "2021-06-28",
-        "entry_timing": "close",
-        "exit_timing": "close",
-        "entry_px": 2211.9236,
-        "exit_px": 2231.4905,
-        "ret_pct": 0.83
-      },
-      {
-        "strategy": "间断腿",
-        "signal_date": "2021-07-08",
-        "entry_date": "2021-07-09",
-        "exit_date": "2021-07-12",
-        "entry_timing": "close",
-        "exit_timing": "close",
-        "entry_px": 2272.3398,
-        "exit_px": 2312.7018,
-        "ret_pct": 1.73
       },
       {
         "strategy": "间断腿",
@@ -17330,17 +17083,6 @@
         "entry_px": 2274.6828,
         "exit_px": 2341.2213,
         "ret_pct": 2.88
-      },
-      {
-        "strategy": "间断腿",
-        "signal_date": "2021-07-29",
-        "entry_date": "2021-07-30",
-        "exit_date": "2021-08-02",
-        "entry_timing": "close",
-        "exit_timing": "close",
-        "entry_px": 2310.8277,
-        "exit_px": 2357.8341,
-        "ret_pct": 1.98
       },
       {
         "strategy": "间断腿",
@@ -17377,28 +17119,6 @@
       },
       {
         "strategy": "间断腿",
-        "signal_date": "2021-09-02",
-        "entry_date": "2021-09-03",
-        "exit_date": "2021-09-06",
-        "entry_timing": "close",
-        "exit_timing": "close",
-        "entry_px": 2459.9079,
-        "exit_px": 2478.9124,
-        "ret_pct": 0.72
-      },
-      {
-        "strategy": "间断腿",
-        "signal_date": "2021-09-09",
-        "entry_date": "2021-09-10",
-        "exit_date": "2021-09-13",
-        "entry_timing": "close",
-        "exit_timing": "close",
-        "entry_px": 2517.8866,
-        "exit_px": 2537.6149,
-        "ret_pct": 0.73
-      },
-      {
-        "strategy": "间断腿",
         "signal_date": "2021-09-16",
         "entry_date": "2021-09-17",
         "exit_date": "2021-09-22",
@@ -17418,17 +17138,6 @@
         "entry_px": 2481.7674,
         "exit_px": 2496.1326,
         "ret_pct": 0.53
-      },
-      {
-        "strategy": "间断腿",
-        "signal_date": "2021-11-18",
-        "entry_date": "2021-11-19",
-        "exit_date": "2021-11-22",
-        "entry_timing": "close",
-        "exit_timing": "close",
-        "entry_px": 2542.0551,
-        "exit_px": 2574.7564,
-        "ret_pct": 1.24
       },
       {
         "strategy": "主策略",
@@ -17495,6 +17204,17 @@
         "entry_px": 2085.6804,
         "exit_px": 2140.4928,
         "ret_pct": 2.58
+      },
+      {
+        "strategy": "间断腿",
+        "signal_date": "2022-06-01",
+        "entry_date": "2022-06-02",
+        "exit_date": "2022-06-06",
+        "entry_timing": "close",
+        "exit_timing": "close",
+        "entry_px": 2219.2126,
+        "exit_px": 2257.7617,
+        "ret_pct": 1.69
       },
       {
         "strategy": "间断腿",
@@ -17817,6 +17537,17 @@
       },
       {
         "strategy": "间断腿",
+        "signal_date": "2023-04-03",
+        "entry_date": "2023-04-04",
+        "exit_date": "2023-04-06",
+        "entry_timing": "close",
+        "exit_timing": "close",
+        "entry_px": 2482.187,
+        "exit_px": 2476.5054,
+        "ret_pct": -0.28
+      },
+      {
+        "strategy": "间断腿",
         "signal_date": "2023-04-06",
         "entry_date": "2023-04-07",
         "exit_date": "2023-04-10",
@@ -17850,28 +17581,6 @@
       },
       {
         "strategy": "间断腿",
-        "signal_date": "2023-05-04",
-        "entry_date": "2023-05-05",
-        "exit_date": "2023-05-08",
-        "entry_timing": "close",
-        "exit_timing": "close",
-        "entry_px": 2399.3903,
-        "exit_px": 2413.2851,
-        "ret_pct": 0.53
-      },
-      {
-        "strategy": "间断腿",
-        "signal_date": "2023-06-01",
-        "entry_date": "2023-06-02",
-        "exit_date": "2023-06-05",
-        "entry_timing": "close",
-        "exit_timing": "close",
-        "entry_px": 2452.6537,
-        "exit_px": 2469.1055,
-        "ret_pct": 0.62
-      },
-      {
-        "strategy": "间断腿",
         "signal_date": "2023-06-15",
         "entry_date": "2023-06-16",
         "exit_date": "2023-06-19",
@@ -17880,6 +17589,17 @@
         "entry_px": 2504.0613,
         "exit_px": 2516.3338,
         "ret_pct": 0.44
+      },
+      {
+        "strategy": "间断腿",
+        "signal_date": "2023-06-20",
+        "entry_date": "2023-06-21",
+        "exit_date": "2023-06-26",
+        "entry_timing": "close",
+        "exit_timing": "close",
+        "entry_px": 2463.2788,
+        "exit_px": 2404.3994,
+        "ret_pct": -2.44
       },
       {
         "strategy": "间断腿",
@@ -17982,6 +17702,17 @@
       },
       {
         "strategy": "间断腿",
+        "signal_date": "2023-09-27",
+        "entry_date": "2023-09-28",
+        "exit_date": "2023-10-09",
+        "entry_timing": "close",
+        "exit_timing": "close",
+        "entry_px": 2354.1718,
+        "exit_px": 2347.0921,
+        "ret_pct": -0.35
+      },
+      {
+        "strategy": "间断腿",
         "signal_date": "2023-10-12",
         "entry_date": "2023-10-13",
         "exit_date": "2023-10-16",
@@ -17990,17 +17721,6 @@
         "entry_px": 2354.9898,
         "exit_px": 2341.6275,
         "ret_pct": -0.62
-      },
-      {
-        "strategy": "间断腿",
-        "signal_date": "2023-10-19",
-        "entry_date": "2023-10-20",
-        "exit_date": "2023-10-23",
-        "entry_timing": "close",
-        "exit_timing": "close",
-        "entry_px": 2237.7028,
-        "exit_px": 2183.4598,
-        "ret_pct": -2.47
       },
       {
         "strategy": "间断腿",
@@ -18147,6 +17867,28 @@
       },
       {
         "strategy": "间断腿",
+        "signal_date": "2024-04-02",
+        "entry_date": "2024-04-03",
+        "exit_date": "2024-04-08",
+        "entry_timing": "close",
+        "exit_timing": "close",
+        "entry_px": 2145.2129,
+        "exit_px": 2096.9979,
+        "ret_pct": -2.3
+      },
+      {
+        "strategy": "间断腿",
+        "signal_date": "2024-04-29",
+        "entry_date": "2024-04-30",
+        "exit_date": "2024-05-06",
+        "entry_timing": "close",
+        "exit_timing": "close",
+        "entry_px": 2071.938,
+        "exit_px": 2114.3754,
+        "ret_pct": 2.0
+      },
+      {
+        "strategy": "间断腿",
         "signal_date": "2024-05-09",
         "entry_date": "2024-05-10",
         "exit_date": "2024-05-13",
@@ -18199,6 +17941,17 @@
         "entry_px": 1950.0088,
         "exit_px": 2166.1692,
         "ret_pct": 11.04
+      },
+      {
+        "strategy": "间断腿",
+        "signal_date": "2024-09-27",
+        "entry_date": "2024-09-30",
+        "exit_date": "2024-10-08",
+        "entry_timing": "close",
+        "exit_timing": "close",
+        "entry_px": 2166.1692,
+        "exit_px": 2353.9612,
+        "ret_pct": 8.62
       },
       {
         "strategy": "主策略",
@@ -18276,6 +18029,17 @@
         "entry_px": 2377.7006,
         "exit_px": 2377.6208,
         "ret_pct": -0.05
+      },
+      {
+        "strategy": "间断腿",
+        "signal_date": "2024-11-28",
+        "entry_date": "2024-11-29",
+        "exit_date": "2024-12-02",
+        "entry_timing": "close",
+        "exit_timing": "close",
+        "entry_px": 2471.1295,
+        "exit_px": 2531.7734,
+        "ret_pct": 2.4
       },
       {
         "strategy": "间断腿",
@@ -18642,6 +18406,17 @@
       },
       {
         "strategy": "间断腿",
+        "signal_date": "2025-11-20",
+        "entry_date": "2025-11-21",
+        "exit_date": "2025-11-24",
+        "entry_timing": "close",
+        "exit_timing": "close",
+        "entry_px": 2944.5633,
+        "exit_px": 2999.2626,
+        "ret_pct": 1.81
+      },
+      {
+        "strategy": "间断腿",
         "signal_date": "2025-12-25",
         "entry_date": "2025-12-26",
         "exit_date": "2025-12-29",
@@ -18650,6 +18425,17 @@
         "entry_px": 3206.5109,
         "exit_px": 3205.927,
         "ret_pct": -0.07
+      },
+      {
+        "strategy": "间断腿",
+        "signal_date": "2025-12-30",
+        "entry_date": "2025-12-31",
+        "exit_date": "2026-01-05",
+        "entry_timing": "close",
+        "exit_timing": "close",
+        "entry_px": 3203.2319,
+        "exit_px": 3257.0905,
+        "ret_pct": 1.63
       },
       {
         "strategy": "间断腿",
@@ -18774,6 +18560,17 @@
       },
       {
         "strategy": "间断腿",
+        "signal_date": "2026-04-29",
+        "entry_date": "2026-04-30",
+        "exit_date": "2026-05-06",
+        "entry_timing": "close",
+        "exit_timing": "close",
+        "entry_px": 3512.5554,
+        "exit_px": 3583.9252,
+        "ret_pct": 1.98
+      },
+      {
+        "strategy": "间断腿",
         "signal_date": "2026-05-07",
         "entry_date": "2026-05-08",
         "exit_date": "2026-05-11",
@@ -18892,53 +18689,20 @@
         "entry_px": 3149.1759,
         "exit_px": 3180.13,
         "ret_pct": 0.93
+      },
+      {
+        "strategy": "间断腿",
+        "signal_date": "2026-09-03",
+        "entry_date": "2026-09-04",
+        "exit_date": "2026-09-07",
+        "entry_timing": "close",
+        "exit_timing": "close",
+        "entry_px": 3120.61,
+        "exit_px": 3172.3544,
+        "ret_pct": 1.61
       }
     ],
     "latest_trades": [
-      {
-        "strategy": "间断腿",
-        "signal_date": "2025-06-26",
-        "entry_date": "2025-06-27",
-        "exit_date": "2025-06-30",
-        "entry_timing": "close",
-        "exit_timing": "close",
-        "entry_px": 2664.9703,
-        "exit_px": 2705.9813,
-        "ret_pct": 1.49
-      },
-      {
-        "strategy": "间断腿",
-        "signal_date": "2025-07-03",
-        "entry_date": "2025-07-04",
-        "exit_date": "2025-07-07",
-        "entry_timing": "close",
-        "exit_timing": "close",
-        "entry_px": 2680.6835,
-        "exit_px": 2698.6939,
-        "ret_pct": 0.62
-      },
-      {
-        "strategy": "间断腿",
-        "signal_date": "2025-07-10",
-        "entry_date": "2025-07-11",
-        "exit_date": "2025-07-14",
-        "entry_timing": "close",
-        "exit_timing": "close",
-        "entry_px": 2742.9699,
-        "exit_px": 2760.4326,
-        "ret_pct": 0.59
-      },
-      {
-        "strategy": "间断腿",
-        "signal_date": "2025-07-17",
-        "entry_date": "2025-07-18",
-        "exit_date": "2025-07-21",
-        "entry_timing": "close",
-        "exit_timing": "close",
-        "entry_px": 2790.7649,
-        "exit_px": 2826.2895,
-        "ret_pct": 1.22
-      },
       {
         "strategy": "间断腿",
         "signal_date": "2025-07-24",
@@ -19084,6 +18848,17 @@
       },
       {
         "strategy": "间断腿",
+        "signal_date": "2025-11-20",
+        "entry_date": "2025-11-21",
+        "exit_date": "2025-11-24",
+        "entry_timing": "close",
+        "exit_timing": "close",
+        "entry_px": 2944.5633,
+        "exit_px": 2999.2626,
+        "ret_pct": 1.81
+      },
+      {
+        "strategy": "间断腿",
         "signal_date": "2025-12-25",
         "entry_date": "2025-12-26",
         "exit_date": "2025-12-29",
@@ -19092,6 +18867,17 @@
         "entry_px": 3206.5109,
         "exit_px": 3205.927,
         "ret_pct": -0.07
+      },
+      {
+        "strategy": "间断腿",
+        "signal_date": "2025-12-30",
+        "entry_date": "2025-12-31",
+        "exit_date": "2026-01-05",
+        "entry_timing": "close",
+        "exit_timing": "close",
+        "entry_px": 3203.2319,
+        "exit_px": 3257.0905,
+        "ret_pct": 1.63
       },
       {
         "strategy": "间断腿",
@@ -19216,6 +19002,17 @@
       },
       {
         "strategy": "间断腿",
+        "signal_date": "2026-04-29",
+        "entry_date": "2026-04-30",
+        "exit_date": "2026-05-06",
+        "entry_timing": "close",
+        "exit_timing": "close",
+        "entry_px": 3512.5554,
+        "exit_px": 3583.9252,
+        "ret_pct": 1.98
+      },
+      {
+        "strategy": "间断腿",
         "signal_date": "2026-05-07",
         "entry_date": "2026-05-08",
         "exit_date": "2026-05-11",
@@ -19334,6 +19131,17 @@
         "entry_px": 3149.1759,
         "exit_px": 3180.13,
         "ret_pct": 0.93
+      },
+      {
+        "strategy": "间断腿",
+        "signal_date": "2026-09-03",
+        "entry_date": "2026-09-04",
+        "exit_date": "2026-09-07",
+        "entry_timing": "close",
+        "exit_timing": "close",
+        "entry_px": 3120.61,
+        "exit_px": 3172.3544,
+        "ret_pct": 1.61
       }
     ]
   },

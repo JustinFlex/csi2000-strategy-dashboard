@@ -611,11 +611,12 @@
 
     function signalText(action, decision = {}) {
       if (action === "TRADE") return "信号亮起";
-      if (action === "SKIP" && decision.reason === "entry_market_closed") return "目标日休市，跳过";
-      if (action === "SKIP") return "本期不交易";
+      if (action === "NO_TRADE" || action === "SKIP") return "本期不参与";
       if (action === "WAIT") {
+        if (decision.reason === "awaiting_calendar") return "等待交易日历";
         if (decision.reason === "insufficient_data") return "等待数据补齐";
-        const weekday = decision.next_checkpoint ? new Date(`${decision.next_checkpoint}T00:00:00Z`).getUTCDay() : (decision.decision_basis === "friday_close" ? 5 : 4);
+        if (!decision.next_checkpoint) return "等待信号确认";
+        const weekday = new Date(`${decision.next_checkpoint}T00:00:00Z`).getUTCDay();
         return `等待周${["日", "一", "二", "三", "四", "五", "六"][weekday]}收盘`;
       }
       return "等待观察";
@@ -697,9 +698,10 @@
       $("statusGrid").innerHTML = [
         ["数据截至", data.as_of],
         ["当前观察日", decision.date],
-        ["信号确认日", decision.next_checkpoint],
-        ["信号数据日", decision.signal_date || (decision.reason === "entry_market_closed" ? "本期跳过" : "待确认")],
-        ["目标交易日", decision.target_entry_date || decision.next_checkpoint],
+        ["信号确认日", decision.next_checkpoint || "待确认"],
+        ["信号数据日", decision.signal_date || "待确认"],
+        ["休市前交易日", decision.target_entry_date || "待确认"],
+        ["休市后交易日", decision.target_exit_date || "待确认"],
         ["本期信号", signalText(decision.action, decision)],
       ].map(([label, value]) => `
         <div class="status-item">
@@ -1318,9 +1320,9 @@
 
     function renderDashboard(data) {
       $("snapshotMeta").textContent = `数据截至 ${data.as_of} · 更新于 ${data.generated_at}`;
-      $("gapTimingNote").textContent = data.decision.decision_basis === "friday_close"
-        ? "间断腿按周五收盘数据确认。"
-        : "间断腿按周四收盘数据确认，周五收盘执行；目标日休市则跳过。";
+      $("gapTimingNote").textContent = ["entry_close", "friday_close"].includes(data.decision.decision_basis)
+        ? "周末及节假日均纳入间断窗口；按休市前最后交易日的收盘数据确认信号。"
+        : "周末及节假日均纳入间断窗口；提前一个交易日收盘确认是否参与，普通周为周四确认。";
       const badge = $("actionBadge");
       badge.textContent = signalText(data.decision.action, data.decision);
       badge.classList.toggle("skip", data.decision.action !== "TRADE");
