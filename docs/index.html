@@ -476,6 +476,7 @@
         </div>
         <h1>中证2000组合策略观察</h1>
         <div class="meta" id="snapshotMeta">数据更新中</div>
+        <div class="meta" id="backtestMeta"></div>
         <div class="meta">主策略优先叠加间断交易日腿，组合版本使用 2 个交易日冷却。</div>
         <div class="meta" id="gapTimingNote"></div>
       </div>
@@ -518,6 +519,7 @@
           <div>
             <h2>核心表现</h2>
             <div class="section-kicker">组合、主策略、间断腿拆分；年化按 252 个交易日折算。</div>
+            <div class="section-kicker" id="performanceNote"></div>
           </div>
         </div>
         <div class="table-scroll">
@@ -567,6 +569,7 @@
           <button type="button" data-trade-filter="all">全部</button>
           <button type="button" data-trade-filter="main">主策略</button>
           <button type="button" data-trade-filter="gap">间断腿</button>
+          <button type="button" data-trade-filter="handoff">接续持仓</button>
         </div>
       </div>
       <div class="table-scroll trade-table-scroll">
@@ -697,6 +700,7 @@
       const decision = data.decision;
       $("statusGrid").innerHTML = [
         ["数据截至", data.as_of],
+        ["回测截至", data.backtest?.as_of || data.hybrid.eval_end],
         ["当前观察日", decision.date],
         ["信号确认日", decision.next_checkpoint || "待确认"],
         ["信号数据日", decision.signal_date || "待确认"],
@@ -715,14 +719,15 @@
       const filtered = rows.filter((row) => {
         if (filter === "main") return row.strategy === "主策略";
         if (filter === "gap") return row.strategy === "间断腿";
+        if (filter === "handoff") return row.strategy === "间断转主策略";
         return true;
       });
-      $("tradeKicker").textContent = `当前显示 ${filtered.length} / ${rows.length} 笔已完成交易。`;
+      $("tradeKicker").textContent = `指数口径 · 当前显示 ${filtered.length} / ${rows.length} 笔回测已完成交易。`;
       const ordered = [...filtered].reverse();
       $("tradeRows").innerHTML = ordered.map((row) => `
         <tr>
           <td>${row.signal_date}</td>
-          <td><span class="chip ${row.strategy === "间断腿" ? "gap" : ""}">${row.strategy}</span></td>
+          <td><span class="chip ${row.strategy === "间断腿" ? "gap" : row.strategy === "间断转主策略" ? "combo" : "main"}">${row.strategy}</span></td>
           <td>${row.entry_date} ${row.entry_timing === "open" ? "开盘" : "收盘"}</td>
           <td>${row.exit_date} ${row.exit_timing === "open" ? "开盘" : "收盘"}</td>
           <td>${Number(row.entry_px).toFixed(2)}</td>
@@ -1319,7 +1324,10 @@
     }
 
     function renderDashboard(data) {
-      $("snapshotMeta").textContent = `数据截至 ${data.as_of} · 更新于 ${data.generated_at}`;
+      $("snapshotMeta").textContent = `行情截至 ${data.as_of} · 更新于 ${data.generated_at}`;
+      $("backtestMeta").textContent = data.backtest
+        ? `${data.backtest.label} · 固定回测截至 ${data.backtest.as_of}` : "";
+      $("performanceNote").textContent = data.backtest?.notes?.join(" ") || "";
       $("gapTimingNote").textContent = ["entry_close", "friday_close"].includes(data.decision.decision_basis)
         ? "周末及节假日均纳入间断窗口；按休市前最后交易日的收盘数据确认信号。"
         : "周末及节假日均纳入间断窗口；提前一个交易日收盘确认是否参与，普通周为周四确认。";
