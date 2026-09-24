@@ -2,20 +2,19 @@
   "version": 1,
   "plan": {
     "version": 1,
-    "as_of": "2026-09-23",
-    "generated_at": "2026-09-24T12:22:36.743345+08:00",
+    "as_of": "2026-09-24",
+    "generated_at": "2026-09-24T21:04:20.586681+08:00",
     "enabled": true,
     "status": "armed",
-    "target_date": "2026-09-24",
-    "scheduled_at": "2026-09-24T14:50:00+08:00",
+    "target_date": "2026-09-28",
+    "scheduled_at": "2026-09-28T14:50:00+08:00",
     "reasons": [
-      "休市前交易日：确认间断腿是否参与",
-      "趋势前提允许主策略触发：复核次日开盘信号"
+      "休市后首个交易日：检查间断仓退出或接续"
     ],
     "timezone": "Asia/Shanghai",
     "snapshot_time": "14:50",
     "cutoff_time": "15:00",
-    "next_session": "2026-09-28"
+    "next_session": "2026-09-29"
   },
   "latest": {
     "status": "ready",
@@ -143,7 +142,13 @@
     "next_main_signal": false,
     "predicted_gap_pct": 0.05228436783119522,
     "prediction_threshold_pct": 0.3,
-    "raw_gap_action": "NO_TRADE"
+    "raw_gap_action": "NO_TRADE",
+    "close_confirmation": {
+      "date": "2026-09-24",
+      "action": "NO_TRADE",
+      "changed": false,
+      "label": "Tushare正式收盘的原始间断信号（不含组合占用与冷却）"
+    }
   },
-  "updated_at": "2026-09-24T14:57:58.141272+08:00"
+  "updated_at": "2026-09-24T21:04:20.638190+08:00"
 }

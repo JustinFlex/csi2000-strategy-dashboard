@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-24 12:22 CST",
-  "as_of": "2026-09-23",
+  "generated_at": "2026-09-24 21:04 CST",
+  "as_of": "2026-09-24",
   "display_version": "entry_close_20260922",
   "backtest": {
     "as_of": "2026-09-22",
@@ -16,20 +16,20 @@
     ]
   },
   "decision": {
-    "date": "2026-09-23",
+    "date": "2026-09-24",
     "next_checkpoint": "2026-09-24",
     "target_entry_date": "2026-09-24",
     "target_exit_date": "2026-09-28",
-    "signal_date": null,
-    "action": "WAIT",
-    "predicted_gap_pct": null,
+    "signal_date": "2026-09-24",
+    "action": "NO_TRADE",
+    "predicted_gap_pct": 0.0519,
     "decision_basis": "entry_close",
-    "reason": "awaiting_signal_close"
+    "reason": "below_threshold"
   },
   "kpis": [
     {
       "label": "Next Action",
-      "value": "WAIT",
+      "value": "NO_TRADE",
       "sub": "target 2026-09-24"
     },
     {
@@ -16922,6 +16922,14 @@
         "low": 3247.6665,
         "close": 3259.7898,
         "amount": 443609659.1
+      },
+      {
+        "date": "2026-09-24",
+        "open": 3248.513,
+        "high": 3258.9908,
+        "low": 3208.896,
+        "close": 3209.6326,
+        "amount": 413079678.42
       }
     ],
     "trades": [
@@ -19320,65 +19328,65 @@
     {
       "key": "csi1000",
       "source_file": "csi1000.csv",
-      "rows": 4063,
+      "rows": 4064,
       "start": "2010-01-04",
-      "end": "2026-09-23"
+      "end": "2026-09-24"
     },
     {
       "key": "csi2000",
       "source_file": "csi2000_index.csv",
-      "rows": 3097,
+      "rows": 3098,
       "start": "2013-12-31",
-      "end": "2026-09-23"
+      "end": "2026-09-24"
     },
     {
       "key": "csi300",
       "source_file": "index_daily_000300_SH.csv",
-      "rows": 4063,
+      "rows": 4064,
       "start": "2010-01-04",
-      "end": "2026-09-23"
+      "end": "2026-09-24"
     },
     {
       "key": "csi500",
       "source_file": "index_daily_000905_SH.csv",
-      "rows": 4063,
+      "rows": 4064,
       "start": "2010-01-04",
-      "end": "2026-09-23"
+      "end": "2026-09-24"
     },
     {
       "key": "etf159531",
       "source_file": "csi2000_etf.csv",
-      "rows": 731,
+      "rows": 732,
       "start": "2023-09-18",
-      "end": "2026-09-23"
+      "end": "2026-09-24"
     },
     {
       "key": "hsi",
       "source_file": "index_global_HSI.csv",
-      "rows": 4096,
+      "rows": 4097,
       "start": "2010-02-01",
-      "end": "2026-09-23"
+      "end": "2026-09-24"
     },
     {
       "key": "hktech",
       "source_file": "index_global_HKTECH.csv",
-      "rows": 1514,
+      "rows": 1515,
       "start": "2020-07-27",
-      "end": "2026-09-23"
+      "end": "2026-09-24"
     },
     {
       "key": "dji",
       "source_file": "index_global_DJI.csv",
-      "rows": 4096,
+      "rows": 4097,
       "start": "2010-07-01",
-      "end": "2026-09-22"
+      "end": "2026-09-23"
     },
     {
       "key": "ftse",
       "source_file": "index_global_FTSE.csv",
-      "rows": 4098,
+      "rows": 4099,
       "start": "2010-07-01",
-      "end": "2026-09-22"
+      "end": "2026-09-23"
     }
   ],
   "public_scope": "Published data includes aggregate strategy metrics, CSI2000 candles, and historical trade records."
