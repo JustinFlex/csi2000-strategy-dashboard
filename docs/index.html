@@ -329,6 +329,14 @@
     .trade-table-scroll {
       max-height: 440px;
     }
+    #intradayQuotesWrap table { min-width: 640px; }
+    #intradayThresholds td:nth-child(n+5) {
+      min-width: 140px;
+      max-width: 220px;
+      white-space: normal;
+      text-align: left;
+      line-height: 1.6;
+    }
     table {
       width: 100%;
       min-width: 980px;
@@ -481,12 +489,32 @@
         <div class="meta" id="gapTimingNote"></div>
       </div>
       <div class="hero-side">
-        <div class="badge-label">本期信号</div>
+        <div class="badge-label">正式收盘信号</div>
         <div class="badge" id="actionBadge">...</div>
       </div>
     </header>
 
     <section class="kpis" id="kpis"></section>
+
+    <section class="panel wide-panel" aria-labelledby="intradayTitle">
+      <div class="section-head">
+        <div>
+          <h2 id="intradayTitle">14:50 交易观察</h2>
+          <div class="section-kicker" id="intradayPlan">正在读取自动观察计划…</div>
+        </div>
+        <span class="chip" id="intradayState" role="status">等待计划</span>
+      </div>
+      <p id="intradaySummary">晚间更新后自动识别候选日，以上海时间14:50快照近似收盘进行判断。</p>
+      <p class="section-kicker" id="intradayTime"></p>
+      <div class="table-scroll" id="intradayQuotesWrap" hidden>
+        <table>
+          <thead><tr><th>关键标的</th><th>快照价</th><th>较昨收</th><th>报价时间（上海）</th><th>来源</th></tr></thead>
+          <tbody id="intradayQuotes"></tbody>
+        </table>
+      </div>
+      <div id="intradayThresholds" style="margin-top:18px"></div>
+      <p class="section-kicker" id="intradayNotes"></p>
+    </section>
 
     <section class="panel wide-panel">
       <div class="section-head">
@@ -593,6 +621,7 @@
     <footer>公开信息仅作策略观察与交流，不构成任何投资建议。</footer>
   </main>
 
+  <script src="intraday.js" defer></script>
   <script>
     const $ = (id) => document.getElementById(id);
     const colors = {
@@ -627,7 +656,7 @@
 
     function kpiLabel(label) {
       return {
-        "Next Action": "本期信号",
+        "Next Action": "正式收盘信号",
         "Hybrid Index Annualized": "组合指数年化",
         "Hybrid ETF Annualized": "组合ETF年化",
         "Hybrid Index Calmar": "指数收益回撤",

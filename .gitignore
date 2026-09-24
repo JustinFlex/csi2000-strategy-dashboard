@@ -6,6 +6,7 @@ __pycache__/
 data/
 !docs/data/
 !docs/data/dashboard.json
+!docs/data/intraday.json
 outputs/
 strategy_dashboard.html
 scripts/
@@ -15,3 +16,17 @@ requirements.txt
 .env
 .venv/
 venv/
+
+# Local macOS environment and publication worktree
+.venv/
+.runtime/
+.env
+.tushare_token
+MACOS_SETUP.md
+requirements-macos.lock
+每日更新.command
+打开项目.command
+
+# Private, permanent research records (separate from runtime and public site).
+research/
+RESEARCH_RECORDS.md
