@@ -520,7 +520,7 @@
       <div class="section-head">
         <div>
           <h2>中证2000日线与买卖点</h2>
-          <div class="section-kicker">组合策略历史交易叠加在日线价格上。</div>
+          <div class="section-kicker">移动十字光标查看当日涨跌幅；买卖点同时显示本笔已完成交易的最终收益（指数回测口径）。</div>
         </div>
         <div class="chart-toolbar">
           <button type="button" data-range="90">近3月</button>
@@ -1005,8 +1005,8 @@
           map.get(date).push(item);
         };
         trades.forEach((trade) => {
-          put(trade.entry_date, { side: "buy", price: Number(trade.entry_px), strategy: trade.strategy, ret: Number(trade.ret_pct) });
-          put(trade.exit_date, { side: "sell", price: Number(trade.exit_px), strategy: trade.strategy, ret: Number(trade.ret_pct) });
+          put(trade.entry_date, { side: "buy", price: Number(trade.entry_px), strategy: trade.strategy, ret: trade.ret_pct });
+          put(trade.exit_date, { side: "sell", price: Number(trade.exit_px), strategy: trade.strategy, ret: trade.ret_pct });
         });
         return map;
       }
@@ -1303,15 +1303,26 @@
         if (!this.candles.length) return;
         const index = this.nearestIndex(pos);
         const d = this.candles[index];
+        const previousClose = this.candles[index - 1]?.close;
+        const dailyChange = Number.isFinite(previousClose) && previousClose > 0
+          ? (d.close / previousClose - 1) * 100 : null;
+        const percentHtml = (value) => {
+          if (!Number.isFinite(value)) return "<b>—</b>";
+          const rounded = Number(value.toFixed(2));
+          const color = rounded > 0 ? colors.up : rounded < 0 ? colors.down : colors.ink;
+          return `<b style="color:${color}">${rounded > 0 ? "+" : ""}${rounded.toFixed(2)}%</b>`;
+        };
         const markers = this.markerMap.get(d.date) || [];
         const markerHtml = markers.map((m) => `
           <div class="tooltip-row">
             <span>${m.side === "buy" ? "买入" : "卖出"} ${m.strategy}</span>
             <b>${m.price.toFixed(2)}</b>
           </div>
+          <div class="tooltip-row"><span>本笔最终收益（指数回测）</span>${percentHtml(m.ret)}</div>
         `).join("");
         this.tooltip.innerHTML = `
           <strong>${d.date}</strong>
+          <div class="tooltip-row"><span>涨跌幅（较昨收）</span>${percentHtml(dailyChange)}</div>
           <div class="tooltip-row"><span>开盘</span><b>${d.open.toFixed(2)}</b></div>
           <div class="tooltip-row"><span>最高</span><b>${d.high.toFixed(2)}</b></div>
           <div class="tooltip-row"><span>最低</span><b>${d.low.toFixed(2)}</b></div>
