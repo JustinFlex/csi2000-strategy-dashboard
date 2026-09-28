@@ -62,8 +62,9 @@ equity curves, and historical trades share this fixed reference period and
 include idle trading days. Daily market candles and the entry-close observation
 calendar continue to refresh separately; the page labels both dates.
 
-The current market snapshot is through `2026-09-23`. Performance assumes fills
-at historical open/close prices; after-close execution remains unverified.
+The page labels the current daily-market date separately from intraday quote
+times. Performance assumes fills at historical open/close prices; after-close
+execution remains unverified.
 
 ## Conditional intraday observations
 
@@ -80,7 +81,15 @@ timestamps and matching previous closes. Missing or stale essential inputs
 produce a waiting state. An unavailable or incomplete overseas close also
 blocks decisions when the main-strategy state depends on it.
 
-The separate observation panel shows provisional decisions, price boundaries,
+The observation panel separates the main strategy's new signal from gap-leg
+arrangements. Each card explains its result and execution constraints. Main
+signal explanations distinguish failed conditions, occupied dates, and missing
+or pending overseas inputs. Gap exit dates are explicitly conditional on an
+actual position. Archived snapshots remain labeled with their observation date;
+the last formal gap signal is a separate historical reference, not a combined
+trade instruction.
+
+The panel also shows provisional decisions, price boundaries,
 changes relative to the previous close and the snapshot, and the decisions
 below/at/above each boundary. These are conditional scenarios with other inputs
 held fixed. Main-strategy priority and two-session cooldown still apply; actual

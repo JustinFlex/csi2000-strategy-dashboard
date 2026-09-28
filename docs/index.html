@@ -129,7 +129,7 @@
     }
     .kpis {
       display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 12px;
       margin: 4px 0 16px;
     }
@@ -416,6 +416,29 @@
       font-size: 12px;
       font-weight: 700;
     }
+    .strategy-grid, .basis-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .strategy-card { padding: 20px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel-soft); min-width: 0; }
+    .strategy-card h3 { font-size: 16px; margin: 0 0 14px; }
+    .strategy-status { font-size: 24px; font-weight: 800; line-height: 1.35; margin: 0 0 7px; }
+    .tone-neutral { color: var(--ink); }
+    .tone-triggered { color: var(--green); }
+    .tone-pending, .tone-blocked { color: var(--amber); }
+    .strategy-scope { color: var(--muted); font-size: 12px; line-height: 1.6; margin: 0; }
+    .strategy-reasons { padding-left: 18px; margin: 16px 0; font-size: 13px; line-height: 1.8; }
+    .strategy-reasons li + li { margin-top: 7px; }
+    .execution-note { padding-top: 14px; border-top: 1px solid var(--line); font-size: 13px; line-height: 1.75; }
+    .execution-note span { color: var(--muted); font-size: 12px; font-weight: 700; }
+    .execution-note p { margin: 5px 0 0; }
+    .basis-grid { padding: 14px 0 18px; font-size: 12px; line-height: 1.7; }
+    .basis-grid span { display: block; color: var(--muted); }
+    .basis-grid strong { font-size: 13px; }
+    .observation-banner { margin: 0; padding: 12px 14px; border-left: 3px solid var(--blue); background: #eef5fc; font-size: 13px; line-height: 1.7; }
+    .observation-banner.historical { border-color: var(--amber); background: #fff8ec; }
+    .observation-detail { margin-top: 18px; border-top: 1px solid var(--line-soft); padding-top: 14px; }
+    .observation-detail summary { cursor: pointer; font-size: 13px; font-weight: 700; line-height: 1.6; }
+    .observation-detail[open] summary { margin-bottom: 14px; }
+    .formal-reference { margin-top: 18px; }
+    .formal-reference .badge { display: inline-flex; font-size: 16px; padding: 9px 14px; margin: 6px 0; }
     .note {
       margin-top: 12px;
       color: var(--muted);
@@ -438,6 +461,7 @@
     @media (max-width: 980px) {
       .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .grid { grid-template-columns: 1fr; }
+      .strategy-grid { grid-template-columns: 1fr; }
       .hero {
         align-items: flex-start;
         flex-direction: column;
@@ -459,6 +483,8 @@
       .meta { font-size: 13px; }
       .badge { width: 100%; }
       .kpis { grid-template-columns: 1fr; }
+      .basis-grid { grid-template-columns: 1fr; gap: 8px; }
+      .strategy-card { padding: 16px; }
       .kpi { min-height: 96px; }
       .panel { padding: 14px; }
       .canvas-shell { min-height: 398px; }
@@ -486,35 +512,67 @@
         <div class="meta" id="snapshotMeta">数据更新中</div>
         <div class="meta" id="backtestMeta"></div>
         <div class="meta">主策略优先叠加间断交易日腿，组合版本使用 2 个交易日冷却。</div>
-        <div class="meta" id="gapTimingNote"></div>
-      </div>
-      <div class="hero-side">
-        <div class="badge-label">正式收盘信号</div>
-        <div class="badge" id="actionBadge">...</div>
       </div>
     </header>
-
-    <section class="kpis" id="kpis"></section>
 
     <section class="panel wide-panel" aria-labelledby="intradayTitle">
       <div class="section-head">
         <div>
-          <h2 id="intradayTitle">14:50 交易观察</h2>
-          <div class="section-kicker" id="intradayPlan">正在读取自动观察计划…</div>
+          <h2 id="intradayTitle">交易信号与执行安排</h2>
+          <div class="section-kicker">主策略与间断腿分别判断；信号触发后，再核对执行时点与持仓。</div>
         </div>
         <span class="chip" id="intradayState" role="status">等待计划</span>
       </div>
-      <p id="intradaySummary">晚间更新后自动识别候选日，以上海时间14:50快照近似收盘进行判断。</p>
-      <p class="section-kicker" id="intradayTime"></p>
-      <div class="table-scroll" id="intradayQuotesWrap" hidden>
-        <table>
+      <p class="observation-banner" id="intradaySummary">正在读取策略观察记录…</p>
+      <div class="basis-grid">
+        <div><span>本次信号依据 · 上海时间</span><strong id="intradayTime">等待快照</strong></div>
+        <div><span>正式日线基准</span><strong id="intradayFormal">正在读取…</strong></div>
+      </div>
+      <div class="strategy-grid">
+        <article class="strategy-card" aria-labelledby="mainStrategyTitle">
+          <h3 id="mainStrategyTitle">主策略 · 新信号</h3>
+          <p class="strategy-status tone-pending" id="mainStrategyStatus">等待检查</p>
+          <p class="strategy-scope" id="mainStrategyScope"></p>
+          <ul class="strategy-reasons" id="mainStrategyReasons"></ul>
+          <div class="execution-note"><span>执行安排</span><p id="mainStrategyExecution">尚无可展示的判断。</p></div>
+          <details class="observation-detail" id="mainStrategyDetails" hidden>
+            <summary>查看逐项条件与检查范围</summary>
+            <ul class="strategy-reasons" id="mainStrategyConditions"></ul>
+          </details>
+        </article>
+        <article class="strategy-card" aria-labelledby="gapStrategyTitle">
+          <h3 id="gapStrategyTitle">间断腿 · 本轮安排</h3>
+          <p class="strategy-status tone-pending" id="gapStrategyStatus">等待检查</p>
+          <p class="strategy-scope" id="gapStrategyScope"></p>
+          <ul class="strategy-reasons" id="gapStrategyReasons"></ul>
+          <div class="execution-note"><span>执行安排</span><p id="gapStrategyExecution">尚无可展示的判断。</p></div>
+        </article>
+      </div>
+      <p class="note">这里展示策略计划；系统不读取您的实际持仓与成交。“未触发新信号”也不代表已有持仓需要退出。</p>
+      <div id="intradayThresholds" class="observation-detail"></div>
+      <details class="observation-detail" id="intradayQuotesWrap" hidden>
+        <summary>查看关键行情与数据来源</summary>
+        <div class="table-scroll"><table>
           <thead><tr><th>关键标的</th><th>快照价</th><th>较昨收</th><th>报价时间（上海）</th><th>来源</th></tr></thead>
           <tbody id="intradayQuotes"></tbody>
-        </table>
-      </div>
-      <div id="intradayThresholds" style="margin-top:18px"></div>
+        </table></div>
+      </details>
+      <details class="observation-detail">
+        <summary>自动监控安排</summary>
+        <p class="section-kicker" id="intradayPlan">正在读取自动观察计划…</p>
+        <p class="note">晚间更新后识别候选日；当日14:50起至15:00前约每3分钟检查。Mac需保持开机、联网并登录。</p>
+      </details>
       <p class="section-kicker" id="intradayNotes"></p>
+      <details class="observation-detail formal-reference" id="dailyReference">
+        <summary id="dailyReferenceTitle">间断腿 · 最近正式日线信号</summary>
+        <p class="note">以下仅为间断腿的原始信号，不包含主策略占用与冷却限制，也不代表当前组合操作。</p>
+        <div class="badge-label" id="formalGapDate"></div>
+        <div class="badge" id="actionBadge">正在读取…</div>
+        <p class="section-kicker" id="gapTimingNote"></p>
+      </details>
     </section>
+
+    <section class="kpis" id="kpis" aria-label="历史回测表现"></section>
 
     <section class="panel wide-panel">
       <div class="section-head">
@@ -579,8 +637,8 @@
       <div class="panel">
         <div class="section-head">
           <div>
-            <h2>观察日历</h2>
-            <div class="section-kicker">信号确认时间与目标交易日。</div>
+          <h2>间断腿观察日历</h2>
+            <div class="section-kicker">最近正式日线对应的间断窗口，不代表主策略状态。</div>
           </div>
         </div>
         <div class="status" id="statusGrid"></div>
@@ -656,7 +714,7 @@
 
     function kpiLabel(label) {
       return {
-        "Next Action": "正式收盘信号",
+        "Next Action": "间断腿原始信号",
         "Hybrid Index Annualized": "组合指数年化",
         "Hybrid ETF Annualized": "组合ETF年化",
         "Hybrid Index Calmar": "指数收益回撤",
@@ -665,13 +723,12 @@
     }
 
     function renderKpis(kpis, decision) {
-      $("kpis").innerHTML = kpis.map((item, index) => {
-        const isAction = index === 0;
-        const classes = ["kpi", isAction ? "is-action" : "", item.label.includes("Calmar") ? "is-risk" : ""].filter(Boolean).join(" ");
+      $("kpis").innerHTML = kpis.filter(item => item.label !== "Next Action").map((item) => {
+        const classes = ["kpi", item.label.includes("Calmar") ? "is-risk" : ""].filter(Boolean).join(" ");
         return `
           <div class="${classes}">
             <div class="kpi-label">${kpiLabel(item.label)}</div>
-            <div class="kpi-value">${isAction ? signalText(item.value, decision) : item.value}</div>
+            <div class="kpi-value">${item.value}</div>
             <span>${item.sub.replace("target ", "目标交易 ")}</span>
           </div>
         `;
@@ -730,12 +787,12 @@
       $("statusGrid").innerHTML = [
         ["数据截至", data.as_of],
         ["回测截至", data.backtest?.as_of || data.hybrid.eval_end],
-        ["当前观察日", decision.date],
+        ["日线观察日", decision.date],
         ["信号确认日", decision.next_checkpoint || "待确认"],
         ["信号数据日", decision.signal_date || "待确认"],
         ["休市前交易日", decision.target_entry_date || "待确认"],
         ["休市后交易日", decision.target_exit_date || "待确认"],
-        ["本期信号", signalText(decision.action, decision)],
+        ["间断腿原始信号", signalText(decision.action, decision)],
       ].map(([label, value]) => `
         <div class="status-item">
           <span>${label}</span>
@@ -1364,7 +1421,12 @@
     }
 
     function renderDashboard(data) {
-      $("snapshotMeta").textContent = `行情截至 ${data.as_of} · 更新于 ${data.generated_at}`;
+      $("snapshotMeta").textContent = `正式日线截至 ${data.as_of} · 日线更新于 ${data.generated_at}`;
+      $("dailyReference").dataset.asOf = data.as_of;
+      $("dailyReferenceTitle").textContent = `间断腿 · 最近正式日线信号（${data.as_of}）`;
+      $("formalGapDate").textContent = `信号数据日 ${data.decision.signal_date || "待确认"} · 目标入场日 ${data.decision.target_entry_date || "待确认"}`;
+      $("intradayFormal").textContent = `${data.as_of} · 正式日线`;
+      window.dispatchEvent(new Event("dashboard-ready"));
       $("backtestMeta").textContent = data.backtest
         ? `${data.backtest.label} · 固定回测截至 ${data.backtest.as_of}` : "";
       $("performanceNote").textContent = data.backtest?.notes?.join(" ") || "";
