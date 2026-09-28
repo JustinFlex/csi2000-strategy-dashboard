@@ -18,137 +18,107 @@
   },
   "latest": {
     "status": "ready",
-    "date": "2026-09-24",
-    "captured_at": "2026-09-24T14:57:58.141272+08:00",
-    "action": "NO_TRADE",
-    "summary": "间断腿不参与",
+    "date": "2026-09-28",
+    "captured_at": "2026-09-28T14:50:19.921974+08:00",
+    "action": "EXIT_GAP_CLOSE",
+    "summary": "间断腿计划收盘退出（如有持仓）",
     "provisional": true,
     "quotes": [
       {
         "key": "csi1000",
         "name": "中证1000",
-        "price": 7570.43,
-        "previous_close": 7745.56,
-        "open": 7707.87,
-        "high": 7725.52,
-        "low": 7569.51,
-        "quoted_at": "2026-09-24T14:57:03+08:00",
-        "source": "腾讯财经",
-        "change_pct": -2.261037291041579
+        "price": 7293.47,
+        "previous_close": 7570.14,
+        "open": 7551.22,
+        "high": 7551.22,
+        "low": 7246.61,
+        "quoted_at": "2026-09-28T14:50:18+08:00",
+        "source": "东方财富",
+        "change_pct": -3.654754073240385
+      },
+      {
+        "key": "csi2000",
+        "name": "中证2000",
+        "price": 3106.59,
+        "previous_close": 3209.63,
+        "open": 3207.87,
+        "high": 3207.89,
+        "low": 3088.14,
+        "quoted_at": "2026-09-28T14:50:15+08:00",
+        "source": "东方财富",
+        "change_pct": -3.2103388864136995
       },
       {
         "key": "etf159531",
         "name": "159531 ETF",
-        "price": 1.503,
-        "previous_close": 1.523,
-        "open": 1.518,
-        "high": 1.523,
-        "low": 1.501,
-        "quoted_at": "2026-09-24T14:57:54+08:00",
-        "source": "腾讯财经",
-        "change_pct": -1.3131976362442566
+        "price": 1.448,
+        "previous_close": 1.503,
+        "open": 1.502,
+        "high": 1.502,
+        "low": 1.439,
+        "quoted_at": "2026-09-28T14:50:18+08:00",
+        "source": "东方财富",
+        "change_pct": -3.659347970725213
       },
       {
         "key": "csi300",
         "name": "沪深300",
-        "price": 4440.75,
-        "previous_close": 4517.28,
-        "open": 4499.86,
-        "high": 4500.2,
-        "low": 4440.43,
-        "quoted_at": "2026-09-24T14:57:03+08:00",
-        "source": "腾讯财经",
-        "change_pct": -1.6941610880883973
+        "price": 4341.68,
+        "previous_close": 4439.14,
+        "open": 4423.82,
+        "high": 4423.82,
+        "low": 4323.57,
+        "quoted_at": "2026-09-28T14:50:18+08:00",
+        "source": "东方财富",
+        "change_pct": -2.1954702937956427
       },
       {
         "key": "csi500",
         "name": "中证500",
-        "price": 7627.56,
-        "previous_close": 7791.82,
-        "open": 7763.73,
-        "high": 7774.22,
-        "low": 7626.16,
-        "quoted_at": "2026-09-24T14:57:03+08:00",
-        "source": "腾讯财经",
-        "change_pct": -2.108108246853746
+        "price": 7403.81,
+        "previous_close": 7624.07,
+        "open": 7599.2,
+        "high": 7601.09,
+        "low": 7364.43,
+        "quoted_at": "2026-09-28T14:50:18+08:00",
+        "source": "东方财富",
+        "change_pct": -2.8890081019717684
       },
       {
         "key": "dji",
         "name": "道琼斯（已收盘）",
-        "price": 51511.59,
-        "previous_close": 51863.69,
-        "open": 51771.41,
-        "high": 51846.81,
-        "low": 51477.53,
-        "quoted_at": "2026-09-23T16:36:26-04:00",
-        "source": "腾讯财经",
-        "change_pct": -0.6788950034214758
+        "price": 51828.62,
+        "previous_close": 51349.98,
+        "open": 51359.7,
+        "high": 51874.94,
+        "low": 51339.24,
+        "quoted_at": "2026-09-26T03:59:59+08:00",
+        "source": "东方财富",
+        "change_pct": 0.9321133133839643
       },
       {
-        "key": "csi2000",
-        "name": "中证2000",
-        "price": 3209.55,
-        "previous_close": 3259.79,
-        "open": 3248.51,
-        "high": 3258.99,
-        "low": 3208.9,
-        "quoted_at": "2026-09-24T14:57:42+08:00",
-        "source": "中证指数官网",
-        "change_pct": -1.541203574463379
+        "key": "ftse",
+        "name": "富时100（已收盘）",
+        "price": 10695.25,
+        "previous_close": 10679.99,
+        "open": 10679.89,
+        "high": 10753.35,
+        "low": 10666.95,
+        "quoted_at": "2026-09-25T23:35:30+08:00",
+        "source": "东方财富",
+        "change_pct": 0.14288402891762253
       }
     ],
-    "thresholds": [
-      {
-        "key": "csi1000",
-        "name": "中证1000",
-        "label": "主策略跌幅门槛",
-        "price": 7513.190872,
-        "change_pct": -3.0000000000000027,
-        "from_snapshot_pct": -0.7560882010665182,
-        "below": "预留主策略次日开盘，间断腿不新开仓",
-        "at": "预留主策略次日开盘，间断腿不新开仓",
-        "above": "间断腿不参与"
-      },
-      {
-        "key": "csi2000",
-        "name": "中证2000",
-        "label": "主策略跌幅门槛",
-        "price": 3129.398208,
-        "change_pct": -4.0000000000000036,
-        "from_snapshot_pct": -2.497290648221717,
-        "below": "预留主策略次日开盘，间断腿不新开仓",
-        "at": "预留主策略次日开盘，间断腿不新开仓",
-        "above": "间断腿不参与"
-      },
-      {
-        "key": "csi1000",
-        "name": "中证1000",
-        "label": "间断模型参与门槛",
-        "price": 7775.857215184431,
-        "change_pct": 0.391187010015015,
-        "from_snapshot_pct": 2.713547515589343,
-        "below": "间断腿不参与",
-        "at": "间断腿不参与",
-        "above": "间断腿参与"
-      }
-    ],
+    "thresholds": [],
     "issues": [
       "恒生快照暂不可用；当前分支结论不依赖该报价。",
       "当日港股及欧美最终收盘尚不可知；晚间正式信号仍可能变化。"
     ],
-    "valid_until": "2026-09-24T15:00:00+08:00",
+    "valid_until": "2026-09-28T15:00:00+08:00",
     "assumption": "逐一改变一个标的价格，其他标的及T-1历史不变；以快照作为收盘近似。",
     "position_note": "持有与退出均指策略计划；实际持仓和成交需自行核对。",
     "next_main_signal": false,
-    "predicted_gap_pct": 0.05228436783119522,
-    "prediction_threshold_pct": 0.3,
-    "raw_gap_action": "NO_TRADE",
-    "close_confirmation": {
-      "date": "2026-09-24",
-      "action": "NO_TRADE",
-      "changed": false,
-      "label": "Tushare正式收盘的原始间断信号（不含组合占用与冷却）"
-    }
+    "threshold_note": "在其他条件固定时，单一标的收盘价变化不会改变当前交易安排。"
   },
-  "updated_at": "2026-09-24T21:04:20.638190+08:00"
+  "updated_at": "2026-09-28T14:50:19.921974+08:00"
 }
