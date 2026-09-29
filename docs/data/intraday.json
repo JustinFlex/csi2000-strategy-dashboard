@@ -2,20 +2,22 @@
   "version": 1,
   "plan": {
     "version": 1,
-    "as_of": "2026-09-28",
-    "generated_at": "2026-09-28T21:05:41.543732+08:00",
-    "enabled": false,
-    "status": "disabled",
-    "target_date": "2026-09-29",
-    "scheduled_at": "2026-09-29T14:50:00+08:00",
-    "reasons": [],
+    "as_of": "2026-09-29",
+    "generated_at": "2026-09-29T21:05:59.800724+08:00",
+    "enabled": true,
+    "status": "armed",
+    "target_date": "2026-09-30",
+    "scheduled_at": "2026-09-30T14:50:00+08:00",
+    "reasons": [
+      "休市前交易日：确认间断腿是否参与"
+    ],
     "timezone": "Asia/Shanghai",
     "snapshot_time": "14:50",
     "cutoff_time": "15:00",
-    "next_session": "2026-09-30",
-    "gap_entry": false,
+    "next_session": "2026-10-08",
+    "gap_entry": true,
     "gap_exit": false,
-    "main_next_eligible": false
+    "main_next_eligible": true
   },
   "latest": {
     "status": "ready",
@@ -142,5 +144,5 @@
       ]
     }
   },
-  "updated_at": "2026-09-28T21:05:41.595000+08:00"
+  "updated_at": "2026-09-29T21:05:59.854943+08:00"
 }
