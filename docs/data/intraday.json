@@ -2,22 +2,22 @@
   "version": 1,
   "plan": {
     "version": 1,
-    "as_of": "2026-09-29",
-    "generated_at": "2026-09-29T21:05:59.800724+08:00",
+    "as_of": "2026-09-30",
+    "generated_at": "2026-09-30T21:05:41.848443+08:00",
     "enabled": true,
     "status": "armed",
-    "target_date": "2026-09-30",
-    "scheduled_at": "2026-09-30T14:50:00+08:00",
+    "target_date": "2026-10-08",
+    "scheduled_at": "2026-10-08T14:50:00+08:00",
     "reasons": [
-      "休市前交易日：确认间断腿是否参与"
+      "休市后首个交易日：检查间断仓退出或接续"
     ],
     "timezone": "Asia/Shanghai",
     "snapshot_time": "14:50",
     "cutoff_time": "15:00",
-    "next_session": "2026-10-08",
-    "gap_entry": true,
-    "gap_exit": false,
-    "main_next_eligible": true
+    "next_session": "2026-10-09",
+    "gap_entry": false,
+    "gap_exit": true,
+    "main_next_eligible": false
   },
   "latest": {
     "status": "ready",
@@ -144,7 +144,13 @@
     "next_main_signal": false,
     "predicted_gap_pct": -0.2530915662490831,
     "prediction_threshold_pct": 0.3,
-    "raw_gap_action": "NO_TRADE"
+    "raw_gap_action": "NO_TRADE",
+    "close_confirmation": {
+      "date": "2026-09-30",
+      "action": "NO_TRADE",
+      "changed": false,
+      "label": "Tushare正式收盘的原始间断信号（不含组合占用与冷却）"
+    }
   },
-  "updated_at": "2026-09-30T14:57:41.920386+08:00"
+  "updated_at": "2026-09-30T21:05:41.901602+08:00"
 }
