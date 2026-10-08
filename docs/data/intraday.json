@@ -2,22 +2,22 @@
   "version": 1,
   "plan": {
     "version": 1,
-    "as_of": "2026-09-30",
-    "generated_at": "2026-09-30T21:05:41.848443+08:00",
+    "as_of": "2026-10-08",
+    "generated_at": "2026-10-08T21:07:32.472189+08:00",
     "enabled": true,
     "status": "armed",
-    "target_date": "2026-10-08",
-    "scheduled_at": "2026-10-08T14:50:00+08:00",
+    "target_date": "2026-10-09",
+    "scheduled_at": "2026-10-09T14:50:00+08:00",
     "reasons": [
-      "休市后首个交易日：检查间断仓退出或接续"
+      "休市前交易日：确认间断腿是否参与"
     ],
     "timezone": "Asia/Shanghai",
     "snapshot_time": "14:50",
     "cutoff_time": "15:00",
-    "next_session": "2026-10-09",
-    "gap_entry": false,
-    "gap_exit": true,
-    "main_next_eligible": false
+    "next_session": "2026-10-12",
+    "gap_entry": true,
+    "gap_exit": false,
+    "main_next_eligible": true
   },
   "latest": {
     "status": "ready",
@@ -144,5 +144,5 @@
     "next_main_signal": false,
     "threshold_note": "在其他条件固定时，单一标的收盘价变化不会改变当前交易安排。"
   },
-  "updated_at": "2026-10-08T14:58:16.948477+08:00"
+  "updated_at": "2026-10-08T21:07:32.525898+08:00"
 }
