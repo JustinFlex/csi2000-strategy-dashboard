@@ -2,20 +2,22 @@
   "version": 1,
   "plan": {
     "version": 1,
-    "as_of": "2026-10-14",
-    "generated_at": "2026-10-14T21:06:44.290939+08:00",
-    "enabled": false,
-    "status": "disabled",
-    "target_date": "2026-10-15",
-    "scheduled_at": "2026-10-15T14:50:00+08:00",
-    "reasons": [],
+    "as_of": "2026-10-15",
+    "generated_at": "2026-10-15T21:04:15.477460+08:00",
+    "enabled": true,
+    "status": "armed",
+    "target_date": "2026-10-16",
+    "scheduled_at": "2026-10-16T14:50:00+08:00",
+    "reasons": [
+      "休市前交易日：确认间断腿是否参与"
+    ],
     "timezone": "Asia/Shanghai",
     "snapshot_time": "14:50",
     "cutoff_time": "15:00",
-    "next_session": "2026-10-16",
-    "gap_entry": false,
+    "next_session": "2026-10-19",
+    "gap_entry": true,
     "gap_exit": false,
-    "main_next_eligible": false
+    "main_next_eligible": true
   },
   "latest": {
     "status": "ready",
@@ -173,5 +175,5 @@
       "label": "Tushare正式收盘的原始间断信号（不含组合占用与冷却）"
     }
   },
-  "updated_at": "2026-10-14T21:06:44.344666+08:00"
+  "updated_at": "2026-10-15T21:04:15.533375+08:00"
 }
