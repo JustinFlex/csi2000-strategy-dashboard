@@ -2,20 +2,18 @@
   "version": 1,
   "plan": {
     "version": 1,
-    "as_of": "2026-10-15",
-    "generated_at": "2026-10-15T21:04:15.477460+08:00",
-    "enabled": true,
-    "status": "armed",
-    "target_date": "2026-10-16",
-    "scheduled_at": "2026-10-16T14:50:00+08:00",
-    "reasons": [
-      "休市前交易日：确认间断腿是否参与"
-    ],
+    "as_of": "2026-10-20",
+    "generated_at": "2026-10-20T21:07:41.027160+08:00",
+    "enabled": false,
+    "status": "disabled",
+    "target_date": "2026-10-21",
+    "scheduled_at": "2026-10-21T14:50:00+08:00",
+    "reasons": [],
     "timezone": "Asia/Shanghai",
     "snapshot_time": "14:50",
     "cutoff_time": "15:00",
-    "next_session": "2026-10-19",
-    "gap_entry": true,
+    "next_session": "2026-10-22",
+    "gap_entry": false,
     "gap_exit": false,
     "main_next_eligible": true
   },
@@ -169,5 +167,5 @@
     "prediction_threshold_pct": 0.3,
     "raw_gap_action": "NO_TRADE"
   },
-  "updated_at": "2026-10-16T14:59:47.556789+08:00"
+  "updated_at": "2026-10-20T21:07:41.080909+08:00"
 }
